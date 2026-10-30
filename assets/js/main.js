@@ -1,10 +1,6 @@
 /* Laura Moro — site v3 */
-const CONFIG = {
-  email: "lauramoro325@gmail.com",
-  // WhatsApp desligado até a Laura confirmar uso público do número.
-  // Para ligar: whatsapp: "5541995616526"
-  whatsapp: ""
-};
+// E-mail vem do painel (window.SITE_CONFIG, gerado no index.html).
+const CONFIG = Object.assign({ email: "lauramoro325@gmail.com", whatsapp: "" }, window.SITE_CONFIG || {});
 
 (() => {
   const $ = (s, c = document) => c.querySelector(s);

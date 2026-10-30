@@ -1,19 +1,25 @@
+---
+---
+{%- assign d = site.data.site -%}
+{%- assign g = d.geral -%}
+{%- assign c = d.contato -%}
+{%- assign insta = 'https://instagram.com/' | append: c.instagram -%}
 <!doctype html>
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Laura Moro | Estrategista de Conteúdo e Creator Mobile em Curitiba</title>
-<meta name="description" content="Conteúdo para contar histórias, criar conexões e deixar marcas. Estratégia de conteúdo, criação e Creator Mobile para marcas, empresas e eventos em Curitiba.">
+<title>{{ g.titulo | escape }}</title>
+<meta name="description" content="{{ g.descricao | escape }}">
 <meta name="theme-color" content="#C2D1E8">
 <meta name="author" content="Laura Moro">
 <meta name="robots" content="index, follow">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Laura Moro | Estrategista de Conteúdo e Creator Mobile">
-<meta property="og:description" content="Conteúdo para contar histórias, criar conexões e deixar marcas.">
-<meta property="og:image" content="https://lauraisabelemoro.github.io/assets/img/og-laura-moro.jpg">
+<meta property="og:title" content="{{ g.titulo_compartilhamento | escape }}">
+<meta property="og:description" content="{{ g.descricao_compartilhamento | escape }}">
+<meta property="og:image" content="https://lauraisabelemoro.github.io/{{ g.imagem_compartilhamento }}">
 <meta property="og:url" content="https://lauraisabelemoro.github.io/">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -24,7 +30,7 @@
 <link rel="preload" href="assets/fonts/unbounded-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/pinyon-script-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/img/hero-captando.webp" as="image">
+<link rel="preload" href="{{ d.inicio.foto }}" as="image">
 <link rel="stylesheet" href="assets/css/style.css">
 <script>document.documentElement.classList.add("js")</script>
 </head>
@@ -45,12 +51,16 @@
     <a href="#contato" data-nav="contato">Contato</a>
   </nav>
   <div class="nav__end">
-    <a class="ico pillbox" href="https://instagram.com/lauramoro_" target="_blank" rel="noopener" aria-label="Instagram da Laura (abre em nova aba)">
+    {%- if c.instagram != blank %}
+    <a class="ico pillbox" href="{{ insta }}" target="_blank" rel="noopener" aria-label="Instagram da Laura (abre em nova aba)">
       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.2" cy="6.8" r=".8" class="f"/></svg>
     </a>
-    <a class="ico pillbox" href="https://linkedin.com/in/laura-moro-a968071a4" target="_blank" rel="noopener" aria-label="LinkedIn da Laura (abre em nova aba)">
+    {%- endif %}
+    {%- if c.linkedin != blank %}
+    <a class="ico pillbox" href="{{ c.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn da Laura (abre em nova aba)">
       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M8.2 10.5V16M8.2 7.7v.1M11.6 16v-5.5M11.6 13c0-1.6 1-2.6 2.3-2.6s2.2.9 2.2 2.6V16"/></svg>
     </a>
+    {%- endif %}
     <a class="btn btn--dark nav__cta" href="#contato">Vamos conversar</a>
     <button class="burger" type="button" aria-expanded="false" aria-controls="mmenu" aria-label="Abrir menu"><span></span><span></span></button>
   </div>
@@ -68,9 +78,9 @@
   <div class="mmenu__foot">
     <a class="btn btn--dark btn--big" href="#contato">Vamos conversar <span aria-hidden="true">→</span></a>
     <div class="mmenu__social">
-      <a href="https://instagram.com/lauramoro_" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://linkedin.com/in/laura-moro-a968071a4" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="mailto:lauramoro325@gmail.com">E-mail</a>
+      {%- if c.instagram != blank %}<a href="{{ insta }}" target="_blank" rel="noopener">Instagram</a>{% endif %}
+      {%- if c.linkedin != blank %}<a href="{{ c.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
+      {%- if c.email != blank %}<a href="mailto:{{ c.email }}">E-mail</a>{% endif %}
     </div>
   </div>
 </div>
@@ -78,37 +88,48 @@
 <main id="conteudo">
 
 <!-- ================= 1. HERO ================= -->
+{%- assign h = d.inicio %}
 <section class="hero" id="inicio" aria-labelledby="hero-titulo">
   <div class="hero__stage">
     <div class="hero__grid" aria-hidden="true"></div>
 
     <div class="hero__lock">
-      <span class="pill pill--off hero__pill">Social Media</span>
+      {%- if h.pilula != blank %}
+      <span class="pill pill--off hero__pill">{{ h.pilula | escape }}</span>
+      {%- endif %}
       <h1 id="hero-titulo" class="lockup">
-        <span class="sr-only">Laura Moro, Estrategista de Conteúdo e Creator Mobile</span>
+        <span class="sr-only">Laura Moro, {{ h.cargo | replace: ' | ', ' e ' | escape }}</span>
         <span class="lockup__row" aria-hidden="true"><span class="lockup__cap">L</span><span class="lockup__w" data-split>AURA</span></span>
         <span class="lockup__row lockup__row--2" aria-hidden="true"><span class="lockup__cap">M</span><span class="lockup__w" data-split>ORO</span></span>
       </h1>
       <div class="hero__base">
         <span class="hero__line" aria-hidden="true"></span>
-        <p class="hero__pos">Estrategista de Conteúdo | Creator Mobile</p>
-        <p class="micro hero__tag">Conteúdo para contar histórias,<br>criar conexões e deixar marcas.</p>
+        <p class="hero__pos">{{ h.cargo | escape }}</p>
+        <p class="micro hero__tag">{{ h.frase | escape | newline_to_br }}</p>
       </div>
     </div>
 
     <figure class="polaroid hero__pola">
       <span class="polaroid__back" aria-hidden="true"></span>
       <span class="polaroid__front">
-        <img src="assets/img/hero-captando.webp" width="900" height="1600" alt="Laura Moro de perfil, fotografando com câmera em um terraço com paredes de vidro" fetchpriority="high">
-        <span class="polaroid__cap">captação do dia</span>
+        <img src="{{ h.foto }}" width="900" height="1600" alt="{{ h.foto_descricao | escape }}" fetchpriority="high">
+        {%- if h.foto_legenda != blank %}
+        <span class="polaroid__cap">{{ h.foto_legenda | escape }}</span>
+        {%- endif %}
       </span>
       <img class="polaroid__clip" src="assets/img/prendedor.webp" width="300" height="260" alt="" aria-hidden="true">
-      <button class="plus plus--edge hero__play" type="button" data-video="assets/video/reel-evento.mp4" data-poster="assets/img/poster-reel-evento.webp" aria-label="Dar o play: assistir ao Reel de evento"><span aria-hidden="true">+</span></button>
+      {%- if h.video != blank %}
+      <button class="plus plus--edge hero__play" type="button" data-video="{{ h.video }}" data-poster="{{ h.video_capa }}" aria-label="Dar o play: assistir ao vídeo"><span aria-hidden="true">+</span></button>
+      {%- endif %}
     </figure>
 
     <!-- a foto "abre" em vídeo conforme a rolagem -->
     <div class="hero__reel" aria-hidden="true">
-      <video src="assets/video/reel-evento.mp4" poster="assets/img/poster-reel-evento.webp" muted loop playsinline preload="metadata"></video>
+      {%- if h.video != blank %}
+      <video src="{{ h.video }}" poster="{{ h.video_capa }}" muted loop playsinline preload="metadata"></video>
+      {%- else %}
+      <img src="{{ h.video_capa }}" alt="" style="width:100%;height:100%;object-fit:cover">
+      {%- endif %}
       <div class="hero__veil"></div>
       <p class="hero__play-txt"><span class="cap">A</span>lgumas coisas funcionam melhor<br><span class="ind">quando a gente dá o play.</span></p>
     </div>
@@ -118,15 +139,16 @@
 </section>
 
 <!-- ================= 2. MANIFESTO ================= -->
+{%- assign mf = d.manifesto %}
 <section class="band band--off arc manifesto" id="manifesto" aria-label="Manifesto">
   <div class="wrap">
-    <p class="micro micro--r rv">Toda história merece um jeito de ser contada.</p>
-    <p class="manifesto__txt" data-words><span class="cap cap--in">P</span>ara mim, criar conteúdo é uma forma de criar memórias. É registrar momentos, transformar experiências em histórias e encontrar maneiras de mostrar ao mundo quem somos, o que fazemos e o que temos para contar.</p>
+    <p class="micro micro--r rv">{{ mf.frase | escape }}</p>
+    <p class="manifesto__txt" data-words><span class="cap cap--in">{{ mf.texto | strip | slice: 0 }}</span>{{ mf.texto | strip | slice: 1, 100000 | escape }}</p>
     <div class="manifesto__foot rv">
       <ul class="pills" role="list">
-        <li class="pill pill--azul">Estratégia de Conteúdo</li>
-        <li class="pill pill--azul">Criação de Conteúdo</li>
-        <li class="pill pill--azul">Creator Mobile</li>
+        {%- for p in mf.pilulas %}
+        <li class="pill pill--azul">{{ p | escape }}</li>
+        {%- endfor %}
       </ul>
       <a class="plus" href="#servicos" aria-label="Ver serviços"><span aria-hidden="true">+</span></a>
     </div>
@@ -134,54 +156,52 @@
 </section>
 
 <!-- ================= 3. NÚMEROS ================= -->
+{%- assign nu = d.numeros %}
 <section class="band band--azul numeros" aria-labelledby="num-titulo">
   <div class="wrap numeros__in">
     <div class="numeros__head">
       <h2 id="num-titulo" class="ttl rv"><span class="nb"><span class="cap">P</span>rojetos</span><br><span class="l2">&amp; portfólio</span></h2>
+      {%- if nu.foto != blank %}
       <figure class="circle rv" data-circle>
-        <img src="assets/img/laura-captando-vidro.webp" width="900" height="1600" loading="lazy" alt="Laura fotografando com a câmera em um terraço com paredes de vidro e mesas ao fundo">
+        <img src="{{ nu.foto }}" width="900" height="1600" loading="lazy" alt="{{ nu.foto_descricao | escape }}">
       </figure>
+      {%- endif %}
     </div>
     <ul class="ncards" role="list">
+      {%- for n in nu.lista %}
       <li class="ncard rv">
-        <span class="ncard__n">+<span data-count="10">10</span></span>
-        <span class="ncard__t">marcas e projetos com atuação em conteúdo</span>
+        <span class="ncard__n">+<span data-count="{{ n.numero }}">{{ n.numero }}</span>{% if n.complemento != blank %}{% if n.complemento_pequeno %}<small>{{ n.complemento | escape }}</small>{% else %}&nbsp;{{ n.complemento | escape }}{% endif %}{% endif %}</span>
+        <span class="ncard__t">{{ n.texto | escape }}</span>
       </li>
-      <li class="ncard rv">
-        <span class="ncard__n">+<span data-count="100">100</span>&nbsp;mil</span>
-        <span class="ncard__t">visualizações orgânicas em um único Reel</span>
-      </li>
-      <li class="ncard rv">
-        <span class="ncard__n">+<span data-count="5">5</span><small>anos</small></span>
-        <span class="ncard__t">de experiência em comunicação e conteúdo</span>
-      </li>
+      {%- endfor %}
     </ul>
   </div>
 </section>
 
 <!-- ================= 4. SOBRE ================= -->
+{%- assign so = d.sobre %}
 <section class="band band--off sobre" id="sobre" aria-labelledby="sobre-titulo">
   <div class="wrap">
     <div class="sobre__top">
       <div class="cam" data-cam>
         <div class="cam__out">
-          <figure class="snap snap--1"><img src="assets/img/sobre-sorriso.webp" width="1200" height="800" loading="lazy" alt="Laura Moro sorrindo enquanto olha o celular, em um ambiente claro com mesas ao fundo"><figcaption>conexão</figcaption></figure>
-          <figure class="snap snap--2"><img src="assets/img/pov-campus-industria.webp" width="720" height="1280" loading="lazy" alt="Ponto de vista de Laura gravando com o celular, com o Campus da Indústria da Fiep na tela"><figcaption>real time</figcaption></figure>
-          <figure class="snap snap--3"><img src="assets/img/laura-perfil-camera.webp" width="900" height="1600" loading="lazy" alt="Laura de perfil, conferindo uma foto na câmera"><figcaption>captação</figcaption></figure>
+          {%- for f in so.fotos_camera limit: 3 %}
+          <figure class="snap snap--{{ forloop.index }}"><img src="{{ f.imagem }}" width="900" height="1200" loading="lazy" alt="{{ f.descricao | escape }}">{% if f.legenda != blank %}<figcaption>{{ f.legenda | escape }}</figcaption>{% endif %}</figure>
+          {%- endfor %}
         </div>
         <div class="cam__dev">
-          <img class="cam__img" src="assets/img/camera-instax.png" width="560" height="657" loading="lazy" alt="Câmera instantânea azul clara">
+          <img class="cam__img" src="{{ so.camera }}" width="560" height="657" loading="lazy" alt="Câmera instantânea azul clara">
           <button class="cam__btn" type="button" aria-label="Tirar as fotos de novo"></button>
           <span class="cam__burst" aria-hidden="true"></span>
         </div>
       </div>
       <div class="sobre__txt">
-        <p class="micro micro--r rv">Estratégia, criatividade e conteúdo<br>para transformar ideias em conexão.</p>
+        <p class="micro micro--r rv">{{ so.frase | escape | newline_to_br }}</p>
         <h2 id="sobre-titulo" class="ttl ttl--xl rv"><span class="nb"><span class="cap">S</span>obre</span><br><span class="l2">mim</span></h2>
         <div class="vline rv">
-          <p class="lead">Sou <strong>Estrategista de Conteúdo</strong> e <strong>Creator Mobile</strong>, formada em Comunicação Institucional pela UFPR e pós-graduada em Gestão de Mídias Digitais. Há mais de 5 anos atuo com <strong>estratégia, criação de conteúdo, redes sociais, vídeos, fotografia e cobertura de eventos.</strong></p>
-          <p>Gosto de estar perto do processo, da ideia à execução, transformando histórias e experiências em conteúdos que conectam pessoas e marcas.</p>
-          <p>Já passei por agência, indústria, comunicação institucional e marketing B2B, desenvolvendo conteúdo para LinkedIn, blog, e-mail marketing, landing pages e redes sociais.</p>
+          {%- for p in so.paragrafos %}
+          <p{% if forloop.first %} class="lead"{% endif %}>{{ p | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+          {%- endfor %}
         </div>
       </div>
     </div>
@@ -190,124 +210,103 @@
       <article class="bcard bcard--traj rv">
         <h3 class="bcard__h">trajetória</h3>
         <ol class="tl" role="list">
-          <li><span class="tl__d">mar 2026 — atual</span><strong>Soow Sigma</strong><span>Analista de Marketing Digital &amp; Conteúdo</span></li>
-          <li><span class="tl__d">jun 2025 — mar 2026</span><strong>Sistema Fiep</strong><span>Analista de Marketing PL</span></li>
-          <li><span class="tl__d">jul 2023 — dez 2024</span><strong>Rubber Brasil</strong><span>Produção de Conteúdo e Analista de Mídias Sociais</span></li>
-          <li><span class="tl__d">jul 2021 — jun 2023</span><strong>Cria e Conecta</strong><span>Estagiária de Criação (agência)</span></li>
+          {%- for t in so.trajetoria %}
+          <li><span class="tl__d">{{ t.periodo | escape }}</span><strong>{{ t.empresa | escape }}</strong><span>{{ t.cargo | escape }}</span></li>
+          {%- endfor %}
         </ol>
       </article>
       <article class="bcard rv">
         <h3 class="bcard__h">formação</h3>
         <ol class="tl tl--sm" role="list">
-          <li><span class="tl__d">2025 — 2026</span><strong>Pós em Planejamento de Comunicação Integrada</strong><span>Uninter</span></li>
-          <li><span class="tl__d">2024 — 2025</span><strong>Pós em Gestão de Mídias Digitais</strong><span>Uninter</span></li>
-          <li><span class="tl__d">2020 — 2023</span><strong>Comunicação Institucional</strong><span>UFPR</span></li>
+          {%- for t in so.formacao %}
+          <li><span class="tl__d">{{ t.periodo | escape }}</span><strong>{{ t.curso | escape }}</strong><span>{{ t.instituicao | escape }}</span></li>
+          {%- endfor %}
         </ol>
       </article>
       <article class="bcard rv">
         <h3 class="bcard__h">além disso</h3>
         <ul class="bul" role="list">
-          <li>Participante e finalista do Prêmio Expocom Regional Sul</li>
-          <li>Apresentação de artigo no 2º ECONPOP</li>
-          <li>Iniciação Científica sobre práticas comunicacionais de influenciadores digitais</li>
-          <li>Certificações: IA for Leaders (presencial) e Plug Social Day</li>
+          {%- for t in so.alem_disso %}
+          <li>{{ t | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>
+          {%- endfor %}
         </ul>
       </article>
       <article class="bcard rv">
         <h3 class="bcard__h">idioma</h3>
-        <p class="bcard__big">inglês</p>
-        <p>profissional completo</p>
+        <p class="bcard__big">{{ so.idioma | escape }}</p>
+        <p>{{ so.idioma_nivel | escape }}</p>
       </article>
     </div>
   </div>
 </section>
 
 <!-- ================= 5. SERVIÇOS ================= -->
+{%- assign sv = d.servicos %}
 <section class="band band--azul servicos" id="servicos" aria-labelledby="serv-titulo">
   <div class="wrap">
     <div class="shead">
       <h2 id="serv-titulo" class="ttl ttl--xl rv"><span class="nb"><span class="cap">O</span> que</span><br><span class="l2">eu faço</span></h2>
       <div class="shead__side serv__side rv">
-        <figure class="circle circle--sm"><img src="assets/img/bastidor-tripe.webp" width="900" height="1600" loading="lazy" alt="Bastidor de gravação: celular no tripé filmando uma mulher sentada à mesa"></figure>
+        {%- if sv.foto != blank %}
+        <figure class="circle circle--sm"><img src="{{ sv.foto }}" width="900" height="1600" loading="lazy" alt="{{ sv.foto_descricao | escape }}"></figure>
+        {%- endif %}
         <div>
         <p class="micro">Para quem</p>
         <ul class="pills" role="list">
-          <li class="pill pill--off">Marcas</li>
-          <li class="pill pill--off">Empresas B2B e indústria</li>
-          <li class="pill pill--off">Eventos</li>
-          <li class="pill pill--off">Projetos institucionais</li>
-          <li class="pill pill--off">Agências</li>
+          {%- for p in sv.para_quem %}
+          <li class="pill pill--off">{{ p | escape }}</li>
+          {%- endfor %}
         </ul>
         </div>
       </div>
     </div>
 
     <div class="serv">
-      <article class="serv__i rv">
-        <span class="serv__n">01</span>
-        <h3 class="serv__t">estratégia<br><span class="l2">de conteúdo</span></h3>
+      {%- for s in sv.lista %}
+      <article class="serv__i{% if s.destaque %} serv__i--hl{% endif %} rv">
+        <span class="serv__n">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+        <h3 class="serv__t">{{ s.linha_1 | escape }}{% if s.linha_2 != blank %}<br><span class="l2">{{ s.linha_2 | escape }}</span>{% endif %}</h3>
         <ul class="bul" role="list">
-          <li>Planejamento de conteúdo</li>
-          <li>Estratégia para redes sociais</li>
-          <li>Calendário editorial</li>
-          <li>Criação de pautas e roteiros</li>
-          <li>Posicionamento de conteúdo</li>
+          {%- for i in s.itens %}
+          <li>{{ i | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>
+          {%- endfor %}
         </ul>
+        {%- if s.nota != blank %}
+        <p class="serv__note">{{ s.nota | escape }}</p>
+        {%- endif %}
       </article>
-      <article class="serv__i rv">
-        <span class="serv__n">02</span>
-        <h3 class="serv__t">criação<br><span class="l2">de conteúdo</span></h3>
-        <ul class="bul" role="list">
-          <li>Conteúdo para Instagram e LinkedIn</li>
-          <li>Redação e storytelling</li>
-          <li>Roteiros para vídeos</li>
-          <li>Reels e conteúdos verticais</li>
-          <li>Conteúdo nativo para redes sociais</li>
-        </ul>
-      </article>
-      <article class="serv__i serv__i--hl rv">
-        <span class="serv__n">03</span>
-        <h3 class="serv__t">creator<br><span class="l2">mobile</span></h3>
-        <ul class="bul" role="list">
-          <li>Captação de vídeos pelo celular</li>
-          <li>Fotografia</li>
-          <li>Edição de vídeos</li>
-          <li>Cobertura de eventos</li>
-          <li>Stories e conteúdos espontâneos</li>
-          <li><strong>Conteúdo em real time</strong></li>
-        </ul>
-        <p class="serv__note">Como Creator, gosto de estar onde as coisas acontecem.</p>
-      </article>
+      {%- endfor %}
     </div>
   </div>
 </section>
 
 <!-- ================= 6. MARCAS ================= -->
+{%- assign ma = d.marcas %}
 <section class="band band--off arc marcas" id="marcas" aria-labelledby="marcas-titulo">
   <div class="wrap">
     <div class="shead">
       <h2 id="marcas-titulo" class="ttl rv"><span class="nb"><span class="cap">M</span>arcas</span><br><span class="l2">atendidas</span></h2>
       <div class="shead__side vline rv">
-        <p class="sub">Diferentes marcas, diferentes histórias.</p>
-        <p>Ao longo da minha trajetória, desenvolvi conteúdos para diferentes segmentos e objetivos, adaptando linguagem, formato e estratégia para cada projeto.</p>
+        <p class="sub">{{ ma.frase | escape }}</p>
+        <p>{{ ma.texto | escape }}</p>
       </div>
     </div>
-    <p class="micro rv">Perfis em que já atuei · toque para ver o case</p>
+    <p class="micro rv">{{ ma.aviso | escape }}</p>
     <ul class="mgrid" role="list">
-      <li class="rv"><span>Velsis Soluções</span></li>
-      <li class="rv"><a href="#case-perfis" data-brand><span>Jabuti Bar</span><span class="mgrid__go" aria-hidden="true">ver case ↓</span></a></li>
-      <li class="rv"><a href="#case-perfis" data-brand><span>Dizzy Café Concerto</span><span class="mgrid__go" aria-hidden="true">ver case ↓</span></a></li>
-      <li class="rv"><a href="#case-perfis" data-brand><span>Mafê Kopacheski</span><span class="mgrid__go" aria-hidden="true">ver case ↓</span></a></li>
-      <li class="rv"><a href="#case-congresso" data-brand><span>Congresso Nacional Moveleiro</span><span class="mgrid__go" aria-hidden="true">ver case ↓</span></a></li>
-      <li class="rv"><a href="#case-fiep" data-brand><span>Expo+ Indústria</span><span class="mgrid__go" aria-hidden="true">ver case ↓</span></a></li>
-      <li class="rv"><a href="#case-fiep" data-brand><span>Sistema Fiep</span><span class="mgrid__go" aria-hidden="true">ver case ↓</span></a></li>
-      <li class="rv"><a href="#case-soow" data-brand><span>Soow Sigma</span><span class="mgrid__go" aria-hidden="true">ver case ↓</span></a></li>
-      <li class="rv"><a href="#case-rubber" data-brand><span>Rubber Brasil</span><span class="mgrid__go" aria-hidden="true">ver case ↓</span></a></li>
+      {%- for m in ma.lista %}
+      {%- if m.case != blank %}
+      <li class="rv"><a href="#case-{{ m.case | strip }}" data-brand><span>{{ m.nome | escape }}</span><span class="mgrid__go" aria-hidden="true">ver case ↓</span></a></li>
+      {%- else %}
+      <li class="rv"><span>{{ m.nome | escape }}</span></li>
+      {%- endif %}
+      {%- endfor %}
     </ul>
   </div>
 </section>
 
 <!-- ================= 7. CASES ================= -->
+{%- assign cs = d.cases.lista %}
+{%- assign pf = d.perfis %}
 <section id="cases" aria-labelledby="cases-titulo">
 
   <!-- capítulo -->
@@ -316,300 +315,227 @@
     <div class="wrap">
       <p class="micro chapter__k rv">capítulo · cases</p>
       <h2 id="cases-titulo" class="chapter__t rv"><span class="cap">C</span>ASES</h2>
-      <p class="chapter__s rv">Diferentes marcas, diferentes histórias.</p>
+      <p class="chapter__s rv">{{ d.cases.frase | escape }}</p>
       <nav class="chapter__idx rv" aria-label="Lista de cases">
-        <a class="pill pill--off" href="#case-congresso">Congresso Moveleiro</a>
-        <a class="pill pill--off" href="#case-fiep">Sistema Fiep</a>
-        <a class="pill pill--off" href="#case-epmais">EPMAIS &amp; Prêmio</a>
-        <a class="pill pill--off" href="#case-soow">Soow Sigma</a>
-        <a class="pill pill--off" href="#case-rubber">Rubber Brasil</a>
+        {%- for k in cs %}
+        <a class="pill pill--off" href="#case-{{ k.id | strip }}">{{ k.nome_curto | escape }}</a>
+        {%- endfor %}
+        {%- if pf.lista.size > 0 %}
         <a class="pill pill--off" href="#case-perfis">Outros perfis</a>
+        {%- endif %}
       </nav>
     </div>
   </div>
+{% assign faixa = 0 %}
+{%- for k in cs %}
+  {%- assign prev_i = forloop.index0 | minus: 1 %}
+  {%- assign prev = nil %}
+  {%- if forloop.first == false %}{% assign prev = cs[prev_i] %}{% endif %}
+  {%- assign next = cs[forloop.index] %}
+  {%- assign num = forloop.index %}{% if num < 10 %}{% assign num = '0' | append: forloop.index %}{% endif %}
+  {%- assign mod = faixa | modulo: 2 %}
+  {%- if mod == 0 %}{% assign fundo = 'band--off' %}{% else %}{% assign fundo = 'band--azul' %}{% endif %}
 
-  <!-- 01 Congresso -->
-  <article class="band band--off case" id="case-congresso" aria-labelledby="c1">
-    <div class="wrap case__g">
-      <div class="case__txt">
-        <span class="case__n rv">01</span>
-        <h3 id="c1" class="case__t rv">CONGRESSO NACIONAL<br>MOVELEIRO 2025</h3>
-        <p class="sub rv">Comunicação, conteúdo e cobertura de um grande evento.</p>
-        <p class="rv">Atuação na comunicação do Congresso Nacional Moveleiro 2025, desde o planejamento e produção de conteúdo até a cobertura durante o evento.</p>
-        <div class="more rv">
-          <button class="more__btn" type="button" aria-expanded="false" aria-controls="m1"><span class="plus" aria-hidden="true"><span>+</span></span>O que fiz</button>
-          <div class="more__body" id="m1" hidden>
-            <ul class="bul bul--2" role="list">
-              <li>Planejamento de conteúdo</li>
-              <li>Gestão das redes sociais</li>
-              <li>Produção de textos e materiais de divulgação</li>
-              <li>Cobertura em tempo real</li>
-              <li>Captação de fotos e vídeos</li>
-              <li>Produção audiovisual</li>
-              <li>Conteúdo para pré, durante e pós-evento</li>
-              <li>Design das peças para as redes sociais</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="collage collage--a">
-        <figure class="phone rv"><img src="assets/img/print-congresso-grid.webp" width="600" height="1301" loading="lazy" alt="Print do feed do Instagram @congresso_moveleiro com posts verdes da 12ª edição do Congresso Nacional Moveleiro"></figure>
-        <figure class="ph ph--1 rv"><img src="assets/img/story-congresso-palco.webp" width="720" height="1280" loading="lazy" alt="Cenário verde do 12º Congresso Nacional Moveleiro com poltronas no palco"></figure>
-        <figure class="ph ph--2 rv">
-          <img src="assets/img/congresso-espaco.webp" width="700" height="935" loading="lazy" alt="Pessoa em frente ao painel de patrocinadores do 12º Congresso Nacional Moveleiro">
-          <button class="plus plus--edge" type="button" data-lightbox="assets/img/story-congresso-painel.webp" data-alt="Story de cobertura de painel no Congresso Nacional Moveleiro" aria-label="Ver story da cobertura do Congresso"><span aria-hidden="true">+</span></button>
-        </figure>
-      </div>
-    </div>
-  </article>
-
-  <!-- 02 Fiep -->
-  <article class="band band--azul case" id="case-fiep" aria-labelledby="c2">
-    <div class="wrap case__g case__g--rev">
-      <div class="case__txt">
-        <span class="case__n rv">02</span>
-        <h3 id="c2" class="case__t rv">SISTEMA FIEP</h3>
-        <p class="rv">Durante minha atuação no Sistema Fiep, participei do planejamento, produção e cobertura de diferentes pautas, projetos e eventos.</p>
-        <p class="micro rv">Entre eles</p>
-        <ul class="pills rv" role="list">
-          <li class="pill pill--off">Festival SESI de Robótica</li>
-          <li class="pill pill--off">SESI ODS</li>
-          <li class="pill pill--off">EPMAIS</li>
-          <li class="pill pill--off">Prêmio Sistema Fiep de Jornalismo</li>
-          <li class="pill pill--off">Rodada de Negócios Multissetorial da Fiep</li>
-          <li class="pill pill--off">Semana de Valorização da Indústria de Alimentos e Bebidas</li>
-          <li class="pill pill--off">EJA do Sesi PR</li>
-          <li class="pill pill--off">Visitas e pautas com empresas e indústrias</li>
-        </ul>
-        <div class="more rv">
-          <button class="more__btn" type="button" aria-expanded="false" aria-controls="m2"><span class="plus" aria-hidden="true"><span>+</span></span>Na prática</button>
-          <div class="more__body" id="m2" hidden>
-            <ul class="bul bul--2" role="list">
-              <li>Planejamento de pautas</li>
-              <li>Captação de conteúdo pelo celular</li>
-              <li>Fotografia</li>
-              <li>Vídeos para redes sociais</li>
-              <li>Cobertura de Stories</li>
-              <li>Produção de Reels</li>
-              <li>Acompanhamento de pautas</li>
-              <li>Entrevistas e depoimentos</li>
-              <li>Conteúdo em real time</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="collage collage--b">
-        <figure class="post rv">
-          <img src="assets/img/fiep-post-expo.webp" width="700" height="862" loading="lazy" alt="Post da Expo Mais Indústria 2026: 3 coisas que aumentam a produtividade da sua indústria em 2026">
-          <figcaption class="pill pill--off">Publicações Expo Mais Indústria</figcaption>
-        </figure>
-        <figure class="post post--2 rv">
-          <img src="assets/img/fiep-post-legislacao.webp" width="700" height="845" loading="lazy" alt="Post do Sistema Fiep: O ano vira. A legislação também. Cartilha sobre a Reforma Tributária">
-          <figcaption class="pill pill--off">Publicações Fiep</figcaption>
-        </figure>
-      </div>
-    </div>
-  </article>
-
-  <!-- 03 + 04 EPMAIS e Prêmio -->
-  <article class="band band--off case" id="case-epmais" aria-label="EPMAIS e Prêmio Sistema Fiep de Jornalismo">
+  {%- if k.formato == 'celular_ao_lado' %}
+  {%- if prev == nil or prev.formato != 'celular_ao_lado' %}
+  <article class="band {{ fundo }} case" id="case-{{ k.id | strip }}" aria-label="{{ k.nome_curto | escape }}">
     <div class="wrap duo">
-      <div class="duo__i">
+  {%- endif %}
+      <div class="duo__i"{% if prev and prev.formato == 'celular_ao_lado' %} id="case-{{ k.id | strip }}"{% endif %}>
+        {%- if k.celular_video != blank %}
         <figure class="phone phone--v rv">
-          <video class="autoplay" src="assets/video/story-epmais.mp4" poster="assets/img/poster-story-epmais.webp" muted loop playsinline preload="none" aria-label="Story de abertura do 2º EPMAIS no Campus da Indústria"></video>
+          <video class="autoplay" src="{{ k.celular_video }}" poster="{{ k.celular }}" muted loop playsinline preload="none" aria-label="{{ k.celular_descricao | escape }}"></video>
         </figure>
+        {%- else %}
+        <figure class="phone rv"><img src="{{ k.celular }}" width="720" height="1280" loading="lazy" alt="{{ k.celular_descricao | escape }}"></figure>
+        {%- endif %}
         <div>
-          <span class="case__n rv">03</span>
-          <h3 class="case__t rv">EPMAIS</h3>
-          <p class="sub rv">Planejamento, divulgação e cobertura.</p>
-          <p class="rv">Atuação na comunicação do EPMAIS, participando do planejamento e desenvolvimento dos conteúdos de divulgação e da cobertura do evento. Do conteúdo que apresenta o evento ao público aos registros produzidos durante a experiência.</p>
+          <span class="case__n rv">{{ num }}</span>
+          <h3 class="case__t rv">{{ k.titulo | strip | escape | newline_to_br }}</h3>
+          {%- if k.subtitulo != blank %}
+          <p class="sub rv">{{ k.subtitulo | escape }}</p>
+          {%- endif %}
+          <p class="rv">{{ k.texto | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+          {%- if k.itens.size > 0 %}
           <div class="more rv">
-            <button class="more__btn" type="button" aria-expanded="false" aria-controls="m3"><span class="plus" aria-hidden="true"><span>+</span></span>Entregas</button>
-            <div class="more__body" id="m3" hidden>
-              <ul class="bul" role="list">
-                <li>Planejamento de conteúdo</li>
-                <li>Produção de posts</li>
-                <li>Roteiros e textos</li>
-                <li>Divulgação</li>
-                <li>Cobertura de Stories</li>
-                <li>Captação de fotos e vídeos</li>
-                <li>Conteúdo em tempo real</li>
+            <button class="more__btn" type="button" aria-expanded="false" aria-controls="m{{ forloop.index }}"><span class="plus" aria-hidden="true"><span>+</span></span>{{ k.botao | default: 'Entregas' | escape }}</button>
+            <div class="more__body" id="m{{ forloop.index }}" hidden>
+              <ul class="bul{% if k.itens_em_duas_colunas %} bul--2{% endif %}" role="list">
+                {%- for i in k.itens %}
+                <li>{{ i | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>
+                {%- endfor %}
               </ul>
             </div>
           </div>
+          {%- endif %}
         </div>
       </div>
-      <div class="duo__i">
-        <figure class="phone rv"><img src="assets/img/story-premio-jornalismo.webp" width="720" height="1280" loading="lazy" alt="Story com o celular mostrando a galeria de fotos diante do palco do 10º Prêmio Sistema Fiep de Jornalismo"></figure>
-        <div>
-          <span class="case__n rv">04</span>
-          <h3 class="case__t rv">PRÊMIO SISTEMA<br>FIEP DE JORNALISMO</h3>
-          <p class="sub rv">Comunicação em tempo real.</p>
-          <p class="rv">Cobertura de Stories durante o Prêmio Sistema Fiep de Jornalismo, registrando os principais momentos da premiação e transformando a experiência do evento em conteúdo para as redes sociais.</p>
-        </div>
-      </div>
+  {%- if next == nil or next.formato != 'celular_ao_lado' %}
     </div>
   </article>
+  {%- assign faixa = faixa | plus: 1 %}
+  {%- endif %}
 
-  <!-- 05 Soow -->
-  <article class="band band--azul case" id="case-soow" aria-labelledby="c5">
-    <div class="wrap case__g">
+  {%- else %}
+  <article class="band {{ fundo }} case" id="case-{{ k.id | strip }}" aria-labelledby="c{{ forloop.index }}">
+    <div class="wrap case__g{% if k.texto_do_lado == 'direita' %} case__g--rev{% endif %}">
       <div class="case__txt">
-        <span class="case__n rv">05</span>
-        <h3 id="c5" class="case__t rv">SOOW SIGMA</h3>
-        <p class="sub rv">Conteúdo para uma marca de tecnologia e cibersegurança.</p>
-        <p class="rv">Atuação no planejamento e produção de conteúdo para uma empresa B2B de tecnologia e cibersegurança, com foco em fortalecer a presença digital e traduzir temas técnicos para diferentes públicos.</p>
+        <span class="case__n rv">{{ num }}</span>
+        <h3 id="c{{ forloop.index }}" class="case__t rv">{{ k.titulo | strip | escape | newline_to_br }}</h3>
+        {%- if k.subtitulo != blank %}
+        <p class="sub rv">{{ k.subtitulo | escape }}</p>
+        {%- endif %}
+        <p class="rv">{{ k.texto | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+        {%- if k.pilulas.size > 0 %}
+        {%- if k.pilulas_titulo != blank %}
+        <p class="micro rv">{{ k.pilulas_titulo | escape }}</p>
+        {%- endif %}
+        <ul class="pills rv" role="list">
+          {%- for p in k.pilulas %}
+          <li class="pill pill--off">{{ p | escape }}</li>
+          {%- endfor %}
+        </ul>
+        {%- endif %}
+        {%- if k.itens.size > 0 %}
         <div class="more rv">
-          <button class="more__btn" type="button" aria-expanded="false" aria-controls="m5"><span class="plus" aria-hidden="true"><span>+</span></span>Conteúdos</button>
-          <div class="more__body" id="m5" hidden>
-            <ul class="bul bul--2" role="list">
-              <li>LinkedIn e Newsletters</li>
-              <li>Blog</li>
-              <li>E-mail marketing</li>
-              <li>Landing pages</li>
-              <li>Redes sociais</li>
-              <li>Materiais de comunicação</li>
-              <li>Campanhas de marketing</li>
+          <button class="more__btn" type="button" aria-expanded="false" aria-controls="m{{ forloop.index }}"><span class="plus" aria-hidden="true"><span>+</span></span>{{ k.botao | default: 'O que fiz' | escape }}</button>
+          <div class="more__body" id="m{{ forloop.index }}" hidden>
+            <ul class="bul{% if k.itens_em_duas_colunas %} bul--2{% endif %}" role="list">
+              {%- for i in k.itens %}
+              <li>{{ i | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>
+              {%- endfor %}
             </ul>
           </div>
         </div>
+        {%- endif %}
       </div>
-      <div class="collage collage--c">
-        <figure class="phone rv"><img src="assets/img/print-soow.webp" width="520" height="1126" loading="lazy" alt="Print do feed do Instagram da Soow Sigma com posts em azul e preto sobre tecnologia e cibersegurança"></figure>
-        <figure class="ph ph--3 rv"><img src="assets/img/outro-video-1.webp" width="400" height="711" loading="lazy" alt="Frame de vídeo com duas pessoas no espaço da Soow Sigma"></figure>
+      {%- if k.formato == 'posts' %}
+      <div class="collage collage--b">
+        {%- for p in k.posts limit: 2 %}
+        <figure class="post{% if forloop.index == 2 %} post--2{% endif %} rv">
+          <img src="{{ p.imagem }}" width="700" height="862" loading="lazy" alt="{{ p.descricao | escape }}">
+          {%- if p.legenda != blank %}
+          <figcaption class="pill pill--off">{{ p.legenda | escape }}</figcaption>
+          {%- endif %}
+        </figure>
+        {%- endfor %}
       </div>
+      {%- else %}
+      <div class="collage {% if k.fotos.size >= 2 %}collage--a{% else %}collage--c{% endif %}">
+        {%- if k.celular_video != blank %}
+        <figure class="phone phone--v rv"><video class="autoplay" src="{{ k.celular_video }}" poster="{{ k.celular }}" muted loop playsinline preload="none" aria-label="{{ k.celular_descricao | escape }}"></video></figure>
+        {%- elsif k.celular != blank %}
+        <figure class="phone rv"><img src="{{ k.celular }}" width="600" height="1301" loading="lazy" alt="{{ k.celular_descricao | escape }}"></figure>
+        {%- endif %}
+        {%- for f in k.fotos limit: 2 %}
+        {%- if k.fotos.size >= 2 %}{% assign phc = 'ph--' | append: forloop.index %}{% else %}{% assign phc = 'ph--3' %}{% endif %}
+        <figure class="ph {{ phc }} rv">
+          <img src="{{ f.imagem }}" width="700" height="935" loading="lazy" alt="{{ f.descricao | escape }}">
+          {%- if f.ampliar != blank %}
+          <button class="plus plus--edge" type="button" data-lightbox="{{ f.ampliar }}" data-alt="{{ f.descricao | escape }}" aria-label="Ver mais deste case"><span aria-hidden="true">+</span></button>
+          {%- endif %}
+        </figure>
+        {%- endfor %}
+      </div>
+      {%- endif %}
     </div>
   </article>
+  {%- assign faixa = faixa | plus: 1 %}
+  {%- endif %}
+{%- endfor %}
 
-  <!-- 06 Rubber -->
-  <article class="band band--off case" id="case-rubber" aria-labelledby="c6">
-    <div class="wrap case__g case__g--rev">
-      <div class="case__txt">
-        <span class="case__n rv">06</span>
-        <h3 id="c6" class="case__t rv">RUBBER BRASIL</h3>
-        <p class="sub rv">Construção de playgrounds infantis e aplicação de pisos emborrachados monolíticos EPDM.</p>
-        <p class="rv">Atuação na comunicação digital da marca, com foco em gestão de redes sociais, planejamento e produção de conteúdo, fotografia e produção audiovisual.</p>
-        <div class="more rv">
-          <button class="more__btn" type="button" aria-expanded="false" aria-controls="m6"><span class="plus" aria-hidden="true"><span>+</span></span>Minha atuação</button>
-          <div class="more__body" id="m6" hidden>
-            <ul class="bul" role="list">
-              <li>Planejamento e gestão das redes sociais</li>
-              <li>Produção de conteúdo para diferentes plataformas</li>
-              <li>Captação e edição de vídeos</li>
-              <li>Fotografia de playgrounds e projetos</li>
-              <li>Produção de vídeos testemunhais e criativos para campanhas</li>
-              <li>Análise de métricas e acompanhamento de resultados</li>
-              <li>Suporte em campanhas online</li>
-              <li>Apoio à comunicação interna e endomarketing</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="collage collage--c">
-        <figure class="phone rv"><img src="assets/img/print-rubber.webp" width="520" height="1126" loading="lazy" alt="Print do feed do Instagram @rubberbrasil com fotos coloridas de playgrounds"></figure>
-      </div>
-    </div>
-  </article>
-
+  {%- if pf.lista.size > 0 %}
+  {%- assign mod = faixa | modulo: 2 %}
   <!-- Outros perfis -->
-  <article class="band band--azul case perfis" id="case-perfis" aria-labelledby="c7">
+  <article class="band {% if mod == 0 %}band--off{% else %}band--azul{% endif %} case perfis" id="case-perfis" aria-labelledby="c-perfis">
     <div class="wrap">
       <div class="shead">
-        <h3 id="c7" class="case__t rv">OUTROS PERFIS</h3>
-        <p class="shead__side rv">Cada perfil com sua própria história e o seu jeito de ser contada.</p>
+        <h3 id="c-perfis" class="case__t rv">{{ pf.titulo | escape }}</h3>
+        <p class="shead__side rv">{{ pf.frase | escape }}</p>
       </div>
       <ul class="perfis__row" role="list">
-        <li class="rv"><figure class="phone"><img src="assets/img/print-jabuti.webp" width="600" height="1301" loading="lazy" alt="Print do feed do Instagram @jabutibar com fotos de pratos e drinks"></figure><p class="perfis__n">Jabuti Bar</p></li>
-        <li class="rv"><figure class="phone"><img src="assets/img/print-dizzy.webp" width="600" height="1301" loading="lazy" alt="Print do feed do Instagram @dizzycafeconcerto com capas de Reels de agenda e shows"></figure><p class="perfis__n">Dizzy Café Concerto</p></li>
-        <li class="rv"><figure class="phone"><img src="assets/img/print-mafe.webp" width="600" height="1301" loading="lazy" alt="Print do feed do Instagram @mafekopacheski com posts em tons claros"></figure><p class="perfis__n">Mafê Kopacheski</p></li>
-        <li class="rv"><figure class="phone"><img src="assets/img/story-captacao-jabuti.webp" width="720" height="1280" loading="lazy" alt="Story com o texto 'Captação de ontem pro @jabutibar' mostrando a galeria com um prato fotografado"></figure><p class="perfis__n">Bastidor · Jabuti Bar</p></li>
+        {%- for p in pf.lista %}
+        <li class="rv"><figure class="phone"><img src="{{ p.imagem }}" width="600" height="1301" loading="lazy" alt="{{ p.descricao | escape }}"></figure><p class="perfis__n">{{ p.nome | escape }}</p></li>
+        {%- endfor %}
       </ul>
     </div>
   </article>
+  {%- endif %}
 </section>
 
 <!-- ================= 8. CONTEÚDO EM MOVIMENTO + BASTIDORES ================= -->
+{%- assign vd = d.videos %}
 <section class="band band--off arc movimento" id="movimento" aria-labelledby="mov-titulo">
   <div class="wrap">
     <div class="shead">
       <h2 id="mov-titulo" class="ttl rv"><span class="nb"><span class="cap">C</span>onteúdo</span><br><span class="l2">em movimento</span></h2>
       <div class="shead__side vline rv">
-        <p class="sub">Algumas coisas funcionam melhor quando a gente dá o play.</p>
-        <p>Como <strong>Creator</strong>, gosto de estar onde as coisas acontecem. Capto, roteirizo e edito conteúdos pensados para a linguagem das redes, do vídeo mais produzido ao conteúdo espontâneo de um evento em <strong>real time</strong>.</p>
+        <p class="sub">{{ vd.frase | escape }}</p>
+        <p>{{ vd.texto | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
       </div>
     </div>
 
     <div class="vids" role="list">
-      <article class="vcard vcard--feat rv" role="listitem">
+      {%- for v in vd.lista %}
+      <article class="vcard{% if v.destaque %} vcard--feat{% endif %} rv" role="listitem">
+        {%- if v.video != blank %}
+        <button class="vcard__m" type="button" data-video="{{ v.video }}" data-poster="{{ v.capa }}" aria-label="Assistir: {{ v.capa_descricao | default: v.titulo | escape }}">
+          <img src="{{ v.capa }}" width="540" height="960" loading="lazy" alt="">
+          {%- if v.selo != blank %}<span class="vcard__badge">{{ v.selo | escape }}</span>{% endif %}
+          <span class="plus plus--play" aria-hidden="true"><span>+</span></span>
+        </button>
+        {%- else %}
         <div class="vcard__m">
-          <img src="assets/img/reel-102mil.webp" width="540" height="960" loading="lazy" alt="Capa de Reel com o texto 'Esse é' sobre uma rua à noite">
-          <span class="vcard__badge">+102 mil</span>
+          <img src="{{ v.capa }}" width="540" height="960" loading="lazy" alt="{{ v.capa_descricao | escape }}">
+          {%- if v.selo != blank %}
+          <span class="vcard__badge">{{ v.selo | escape }}</span>
+          {%- endif %}
         </div>
-        <h3 class="vcard__t">+102 MIL VISUALIZAÇÕES</h3>
-        <p>Um dos meus Reels alcançou mais de 102 mil visualizações de forma orgânica. <span class="ph-txt">[INSERIR LINK DO REEL]</span></p>
+        {%- endif %}
+        <h3 class="vcard__t">{{ v.titulo | escape }}</h3>
+        {%- if v.texto != blank %}
+        <p>{{ v.texto | markdownify | remove: '<p>' | remove: '</p>' | strip | replace: '[INSERIR', '<span class="ph-txt">[INSERIR' | replace: ']', ']</span>' }}</p>
+        {%- endif %}
       </article>
-      <article class="vcard rv" role="listitem">
-        <button class="vcard__m" type="button" data-video="assets/video/reel-evento.mp4" data-poster="assets/img/poster-reel-evento.webp" aria-label="Assistir: Reel de evento">
-          <img src="assets/img/poster-reel-evento.webp" width="540" height="960" loading="lazy" alt="">
-          <span class="plus plus--play" aria-hidden="true"><span>+</span></span>
-        </button>
-        <h3 class="vcard__t">REEL DE EVENTO</h3>
-        <p><span class="ph-txt">[INSERIR NOME DO PROJETO E CONTEXTO]</span></p>
-      </article>
-      <article class="vcard rv" role="listitem">
-        <button class="vcard__m" type="button" data-video="assets/video/story-epmais.mp4" data-poster="assets/img/poster-story-epmais.webp" aria-label="Assistir: Stories do 2º EPMAIS">
-          <img src="assets/img/poster-story-epmais.webp" width="540" height="960" loading="lazy" alt="">
-          <span class="plus plus--play" aria-hidden="true"><span>+</span></span>
-        </button>
-        <h3 class="vcard__t">STORIES · 2º EPMAIS</h3>
-        <p>Abertura do evento em real time, direto do Campus da Indústria.</p>
-      </article>
-      <article class="vcard rv" role="listitem">
-        <button class="vcard__m" type="button" data-video="assets/video/story-padaria.mp4" data-poster="assets/img/poster-story-padaria.webp" aria-label="Assistir: captação na Padaria América">
-          <img src="assets/img/poster-story-padaria.webp" width="540" height="960" loading="lazy" alt="">
-          <span class="plus plus--play" aria-hidden="true"><span>+</span></span>
-        </button>
-        <h3 class="vcard__t">CAPTAÇÃO DO DIA</h3>
-        <p>Padaria América.</p>
-      </article>
-      <article class="vcard rv" role="listitem">
-        <div class="vcard__m"><img src="assets/img/senai-na-rua.webp" width="360" height="640" loading="lazy" alt="Capa da série Senai na Rua com o título sobre um outdoor"></div>
-        <h3 class="vcard__t">SENAI NA RUA</h3>
-        <p>Entrevista para a série “Senai na Rua”, com produção de conteúdo e abordagem para vídeo.</p>
-      </article>
+      {%- endfor %}
     </div>
     <p class="micro vids__hint" aria-hidden="true">arraste para o lado →</p>
 
+    {%- if vd.outros.size > 0 %}
     <div class="outros">
       <h3 class="ttl ttl--sm rv"><span class="nb"><span class="cap">O</span>utros</span> vídeos</h3>
       <ul class="outros__row" role="list">
-        <li class="rv"><button type="button" class="thumb" data-lightbox="assets/img/outro-video-3.webp" data-alt="Frame de vídeo com entrevistada em camiseta do Senai" aria-label="Ampliar frame: vídeo Senai"><img src="assets/img/outro-video-3.webp" width="400" height="711" loading="lazy" alt="Frame de vídeo com entrevistada em camiseta do Senai, com o nome Camila Zanoncini na tela"></button></li>
-        <li class="rv"><button type="button" class="thumb" data-lightbox="assets/img/outro-video-5.webp" data-alt="Frame de vídeo institucional" aria-label="Ampliar frame: vídeo institucional"><img src="assets/img/outro-video-5.webp" width="400" height="711" loading="lazy" alt="Frame de vídeo com mulher falando sentada à mesa, legenda 'eu faço parte do time financeiro'"></button></li>
-        <li class="rv"><button type="button" class="thumb" data-lightbox="assets/img/outro-video-8.webp" data-alt="Frame de entrevista em evento" aria-label="Ampliar frame: entrevista em evento"><img src="assets/img/outro-video-8.webp" width="400" height="711" loading="lazy" alt="Frame de entrevista com Marcos Dybas da Natividade, vice-presidente do Sistema Fiep"></button></li>
-        <li class="rv"><button type="button" class="thumb" data-lightbox="assets/img/outro-video-4.webp" data-alt="Frame de vídeo de ambiente" aria-label="Ampliar frame: vídeo de ambiente"><img src="assets/img/outro-video-4.webp" width="400" height="711" loading="lazy" alt="Frame de vídeo de uma mesa posta com arranjos em tons laranja, diante de janelas amplas"></button></li>
-        <li class="rv"><button type="button" class="thumb" data-lightbox="assets/img/outro-video-7.webp" data-alt="Frame de vídeo A essência da Casa Conceito" aria-label="Ampliar frame: Casa Conceito"><img src="assets/img/outro-video-7.webp" width="400" height="711" loading="lazy" alt="Frame de vídeo com o texto 'A essência da Casa Conceito' sobre uma bancada"></button></li>
+        {%- for o in vd.outros %}
+        <li class="rv"><button type="button" class="thumb" data-lightbox="{{ o.imagem }}" data-alt="{{ o.descricao | escape }}" aria-label="Ampliar: {{ o.descricao | escape }}"><img src="{{ o.imagem }}" width="400" height="711" loading="lazy" alt="{{ o.descricao | escape }}"></button></li>
+        {%- endfor %}
       </ul>
-      <p class="micro"><span class="ph-txt">[INSERIR LINKS DOS VÍDEOS COMPLETOS]</span></p>
+      {%- if vd.outros_nota != blank %}
+      <p class="micro">{{ vd.outros_nota | markdownify | remove: '<p>' | remove: '</p>' | strip | replace: '[INSERIR', '<span class="ph-txt">[INSERIR' | replace: ']', ']</span>' }}</p>
+      {%- endif %}
     </div>
+    {%- endif %}
   </div>
 </section>
 
+{%- assign ba = d.bastidores %}
 <section class="band band--azul bast" aria-labelledby="bast-titulo">
   <div class="wrap bast__g">
     <div class="bast__txt">
       <h2 id="bast-titulo" class="ttl rv"><span class="nb"><span class="cap">B</span>astidores</span></h2>
-      <p class="sub rv">Conteúdo também acontece no mundo real.</p>
-      <p class="rv">Minha experiência com eventos me levou a desenvolver um olhar de Creator Mobile: identificar o que merece virar conteúdo, captar o momento certo e transformar a experiência em Stories, Reels e outros formatos em tempo real.</p>
+      <p class="sub rv">{{ ba.frase | escape }}</p>
+      <p class="rv">{{ ba.texto | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
       <ul class="pills rv" role="list">
-        <li class="pill pill--off">Captação</li><li class="pill pill--off">Eventos</li><li class="pill pill--off">Gravações</li><li class="pill pill--off">Fotografia</li><li class="pill pill--off">Produção</li>
+        {%- for p in ba.pilulas %}<li class="pill pill--off">{{ p | escape }}</li>{% endfor %}
       </ul>
     </div>
     <div class="bast__photos">
-      <figure class="rv"><img src="assets/img/bastidor-tripe.webp" width="900" height="1600" loading="lazy" alt="Bastidor de gravação: celular no tripé filmando uma mulher sentada à mesa de uma sala de reunião"></figure>
-      <figure class="rv"><img src="assets/img/story-padaria.webp" width="720" height="1280" loading="lazy" alt="Celular na mão mostrando a galeria de fotos sobre uma mesa de café, com o texto 'captação do dia'">
-        <button class="plus plus--edge" type="button" data-video="assets/video/story-padaria.mp4" data-poster="assets/img/poster-story-padaria.webp" aria-label="Assistir ao vídeo da captação na Padaria América"><span aria-hidden="true">+</span></button>
+      {%- for f in ba.fotos limit: 3 %}
+      <figure class="rv"><img src="{{ f.imagem }}" width="900" height="1600" loading="lazy" alt="{{ f.descricao | escape }}">
+        {%- if f.video != blank %}
+        <button class="plus plus--edge" type="button" data-video="{{ f.video }}" data-poster="{{ f.imagem }}" aria-label="Assistir ao vídeo"><span aria-hidden="true">+</span></button>
+        {%- endif %}
       </figure>
-      <figure class="rv"><img src="assets/img/laura-bastidor-camera.webp" width="900" height="1600" loading="lazy" alt="Laura ajustando a câmera em um espaço de evento com paredes de vidro"></figure>
+      {%- endfor %}
     </div>
   </div>
 </section>
@@ -619,13 +545,12 @@
   <div class="wrap proc">
     <div class="proc__head">
       <h2 id="proc-titulo" class="ttl ttl--xl rv"><span class="nb"><span class="cap">P</span>rocesso</span><br><span class="l2">criativo</span></h2>
-      <p class="proc__sub vline rv">Gosto de estar perto do processo, da ideia à execução.</p>
+      <p class="proc__sub vline rv">{{ d.processo.frase | escape }}</p>
     </div>
     <ol class="steps" role="list">
-      <li class="step rv"><span class="step__n">1.</span><span class="step__t">Briefing &amp; Alinhamento</span></li>
-      <li class="step rv"><span class="step__n">2.</span><span class="step__t">Estratégia &amp; Planejamento</span></li>
-      <li class="step rv"><span class="step__n">3.</span><span class="step__t">Criação &amp; Produção</span></li>
-      <li class="step rv"><span class="step__n">4.</span><span class="step__t">Publicação &amp; Análise</span></li>
+      {%- for e in d.processo.etapas %}
+      <li class="step rv"><span class="step__n">{{ forloop.index }}.</span><span class="step__t">{{ e | escape }}</span></li>
+      {%- endfor %}
     </ol>
   </div>
 </section>
@@ -635,15 +560,9 @@
   <div class="wrap ferr__g">
     <h2 id="ferr-titulo" class="ttl rv"><span class="nb"><span class="cap">F</span>erramentas</span></h2>
     <ul class="pills pills--lg" role="list">
-      <li class="pill pill--off rv">Instagram</li>
-      <li class="pill pill--off rv">Meta Business Suite</li>
-      <li class="pill pill--off rv">Canva</li>
-      <li class="pill pill--off rv">LinkedIn</li>
-      <li class="pill pill--off rv">Google Analytics</li>
-      <li class="pill pill--off rv">Google Workspace</li>
-      <li class="pill pill--off rv">CapCut</li>
-      <li class="pill pill--off rv">WordPress</li>
-      <li class="pill pill--off rv">Ferramentas de IA</li>
+      {%- for f in d.ferramentas %}
+      <li class="pill pill--off rv">{{ f | escape }}</li>
+      {%- endfor %}
     </ul>
   </div>
 </section>
@@ -656,24 +575,33 @@
       <figure class="polaroid cont__pola rv">
         <span class="polaroid__back" aria-hidden="true"></span>
         <span class="polaroid__front">
-          <img src="assets/img/cta-retrato.webp" width="900" height="1350" loading="lazy" alt="Retrato de Laura Moro sorrindo, de camiseta branca, em fundo claro">
+          <img src="{{ c.foto }}" width="900" height="1350" loading="lazy" alt="{{ c.foto_descricao | escape }}">
         </span>
         <img class="polaroid__clip" src="assets/img/prendedor.webp" width="300" height="260" alt="" aria-hidden="true">
       </figure>
     </div>
-    <p class="cont__lead rv">Se você tem uma ideia, projeto ou marca que precisa de conteúdo, vamos conversar.</p>
+    <p class="cont__lead rv">{{ c.frase | escape }}</p>
 
     <ul class="ccards" role="list">
-      <li class="rv"><a class="ccard" href="mailto:lauramoro325@gmail.com"><span class="micro">E-mail</span><span class="ccard__v">lauramoro325<wbr>@gmail.com</span><span class="ccard__go" aria-hidden="true">↗</span></a></li>
-      <li class="rv"><a class="ccard" href="https://linkedin.com/in/laura-moro-a968071a4" target="_blank" rel="noopener"><span class="micro">LinkedIn</span><span class="ccard__v">Laura Moro</span><span class="ccard__go" aria-hidden="true">↗</span></a></li>
-      <li class="rv"><a class="ccard" href="https://instagram.com/lauramoro_" target="_blank" rel="noopener"><span class="micro">Instagram</span><span class="ccard__v">@lauramoro_</span><span class="ccard__go" aria-hidden="true">↗</span></a></li>
-      <li data-whatsapp hidden><a class="ccard" href="#" target="_blank" rel="noopener"><span class="micro">WhatsApp</span><span class="ccard__v" data-whatsapp-label></span><span class="ccard__go" aria-hidden="true">↗</span></a></li>
+      {%- if c.email != blank %}
+      {%- assign em = c.email | split: '@' %}
+      <li class="rv"><a class="ccard" href="mailto:{{ c.email }}"><span class="micro">E-mail</span><span class="ccard__v">{{ em[0] | escape }}<wbr>@{{ em[1] | escape }}</span><span class="ccard__go" aria-hidden="true">↗</span></a></li>
+      {%- endif %}
+      {%- if c.linkedin != blank %}
+      <li class="rv"><a class="ccard" href="{{ c.linkedin }}" target="_blank" rel="noopener"><span class="micro">LinkedIn</span><span class="ccard__v">{{ c.linkedin_nome | escape }}</span><span class="ccard__go" aria-hidden="true">↗</span></a></li>
+      {%- endif %}
+      {%- if c.instagram != blank %}
+      <li class="rv"><a class="ccard" href="{{ insta }}" target="_blank" rel="noopener"><span class="micro">Instagram</span><span class="ccard__v">@{{ c.instagram | escape }}</span><span class="ccard__go" aria-hidden="true">↗</span></a></li>
+      {%- endif %}
+      {%- if c.whatsapp != blank %}
+      <li class="rv"><a class="ccard" href="https://wa.me/{{ c.whatsapp }}" target="_blank" rel="noopener"><span class="micro">WhatsApp</span><span class="ccard__v">Chamar no WhatsApp</span><span class="ccard__go" aria-hidden="true">↗</span></a></li>
+      {%- endif %}
     </ul>
 
     <div class="cont__form rv">
       <div class="cont__form-side">
         <h3 class="ttl ttl--sm"><span class="nb"><span class="cap">C</span>onta</span> pra mim</h3>
-        <p>Prefere escrever por aqui? Preencha e a mensagem chega pronta no seu e-mail para enviar.</p>
+        <p>{{ c.formulario_texto | escape }}</p>
       </div>
       <form class="form" id="form" novalidate>
         <fieldset class="form__set">
@@ -707,7 +635,7 @@
           <p class="field__err" id="e-msg" hidden>Escreve pelo menos uma frase sobre o projeto.</p>
         </div>
         <button class="btn btn--dark btn--big" type="submit">Enviar mensagem <span aria-hidden="true">→</span></button>
-        <p class="form__ok" role="status" hidden>Abrimos seu e-mail com a mensagem pronta. É só enviar. Se nada abriu, escreva para <a href="mailto:lauramoro325@gmail.com">lauramoro325@gmail.com</a>.</p>
+        <p class="form__ok" role="status" hidden>Abrimos seu e-mail com a mensagem pronta. É só enviar. Se nada abriu, escreva para <a href="mailto:{{ c.email }}">{{ c.email | escape }}</a>.</p>
       </form>
     </div>
   </div>
@@ -715,12 +643,13 @@
 </main>
 
 <!-- ================= 12. FOOTER ================= -->
+{%- assign ro = d.rodape %}
 <footer class="band band--azul foot">
   <div class="wrap">
     <div class="foot__top">
       <div class="foot__brand">
-        <p class="micro">Estrategista de Conteúdo | Creator Mobile</p>
-        <p class="foot__tag">Conteúdo para contar histórias, criar conexões e deixar marcas.</p>
+        <p class="micro">{{ ro.cargo | escape }}</p>
+        <p class="foot__tag">{{ ro.frase | escape }}</p>
         <a class="btn btn--dark" href="#contato">Vamos conversar</a>
       </div>
       <nav class="foot__col" aria-label="Rodapé">
@@ -729,20 +658,30 @@
       </nav>
       <div class="foot__col">
         <p class="micro">Serviços</p>
-        <a href="#servicos">Estratégia de Conteúdo</a><a href="#servicos">Criação de Conteúdo</a><a href="#servicos">Creator Mobile</a>
+        {%- for s in sv.lista %}<a href="#servicos">{{ s.nome | escape }}</a>{% endfor %}
       </div>
       <div class="foot__col">
         <p class="micro">Contato</p>
-        <a href="mailto:lauramoro325@gmail.com">lauramoro325@gmail.com</a>
-        <a href="https://linkedin.com/in/laura-moro-a968071a4" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://instagram.com/lauramoro_" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://linktr.ee/laura.moro" target="_blank" rel="noopener">Linktree</a>
-        <a href="http://lattes.cnpq.br/7117428088453613" target="_blank" rel="noopener">Currículo Lattes</a>
+        {%- if c.email != blank %}
+        <a href="mailto:{{ c.email }}">{{ c.email | escape }}</a>
+        {%- endif %}
+        {%- if c.linkedin != blank %}
+        <a href="{{ c.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+        {%- endif %}
+        {%- if c.instagram != blank %}
+        <a href="{{ insta }}" target="_blank" rel="noopener">Instagram</a>
+        {%- endif %}
+        {%- if ro.linktree != blank %}
+        <a href="{{ ro.linktree }}" target="_blank" rel="noopener">Linktree</a>
+        {%- endif %}
+        {%- if ro.lattes != blank %}
+        <a href="{{ ro.lattes }}" target="_blank" rel="noopener">Currículo Lattes</a>
+        {%- endif %}
       </div>
     </div>
     <p class="foot__lock" aria-hidden="true"><span class="cap">L</span>AURA <span class="cap">M</span>ORO</p>
     <div class="foot__bot">
-      <p>Curitiba · Paraná</p>
+      <p>{{ ro.cidade | escape }}</p>
       <p>© <span data-year>2026</span> Laura Moro</p>
       <a href="#inicio">Voltar ao topo <span aria-hidden="true">↑</span></a>
     </div>
@@ -756,6 +695,7 @@
   <div class="modal__body"></div>
 </div>
 
+<script>window.SITE_CONFIG = { email: {{ c.email | jsonify }} };</script>
 <script src="assets/js/main.js" defer></script>
 </body>
 </html>

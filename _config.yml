@@ -1,0 +1,7 @@
+title: Laura Moro
+markdown: kramdown
+kramdown:
+  input: GFM
+exclude:
+  - .pages.yml
+  - README.md

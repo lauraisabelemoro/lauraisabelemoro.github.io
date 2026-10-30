@@ -1,0 +1,293 @@
+media:
+  - name: imagens
+    label: Fotos
+    input: assets/img
+    output: assets/img
+    categories: [image]
+  - name: videos
+    label: Vídeos
+    input: assets/video
+    output: assets/video
+    extensions: [mp4, webm, mov]
+
+content:
+  - name: site
+    label: Conteúdo do site
+    description: Todos os textos, fotos e listas do site. Mude o que quiser e clique em Salvar. O site atualiza em 1 a 2 minutos.
+    type: file
+    path: _data/site.yml
+    format: yaml
+    fields:
+
+      - name: geral
+        label: Google e compartilhamento
+        description: Como o site aparece no Google e quando alguém manda o link no WhatsApp ou nas redes.
+        type: object
+        fields:
+          - { name: titulo, label: Título no Google, type: string, description: "Aparece na aba do navegador e no Google. Ideal: até 60 letras." }
+          - { name: descricao, label: Descrição no Google, type: text, description: "Resumo que aparece embaixo do título no Google. Ideal: até 155 letras." }
+          - { name: titulo_compartilhamento, label: Título ao compartilhar o link, type: string }
+          - { name: descricao_compartilhamento, label: Descrição ao compartilhar o link, type: text }
+          - { name: imagem_compartilhamento, label: Imagem ao compartilhar o link, type: image, description: "Foto que aparece quando mandam o link do site. Formato deitado (1200 x 630) fica melhor.", options: { media: imagens } }
+
+      - name: inicio
+        label: 1. Abertura
+        description: A primeira tela do site, com o nome LAURA MORO e a polaroid.
+        type: object
+        fields:
+          - { name: pilula, label: Etiqueta acima do nome, type: string, description: "Ex.: Social Media" }
+          - { name: cargo, label: Cargo, type: string, description: "Aparece embaixo do nome." }
+          - { name: frase, label: Frase pequena, type: text, description: "Aperte Enter para quebrar a linha onde quiser." }
+          - { name: foto, label: Foto da polaroid, type: image, description: "Foto em pé (vertical) funciona melhor.", options: { media: imagens } }
+          - { name: foto_descricao, label: Descrição da foto, type: string, description: "Descreva a foto em uma frase (para quem não enxerga e para o Google)." }
+          - { name: foto_legenda, label: Legenda escrita na polaroid, type: string, description: "Texto em letra cursiva na borda da foto. Deixe vazio para não mostrar." }
+          - { name: video, label: Vídeo que abre ao rolar a página, type: file, description: "Vídeo vertical em MP4, de preferência curto e leve (até 10 MB).", options: { media: videos } }
+          - { name: video_capa, label: Capa do vídeo, type: image, description: "Imagem que aparece enquanto o vídeo carrega.", options: { media: imagens } }
+
+      - name: manifesto
+        label: 2. Manifesto
+        type: object
+        fields:
+          - { name: frase, label: Frase pequena no canto, type: string }
+          - { name: texto, label: Texto grande, type: text, description: "A primeira letra aparece automaticamente em letra cursiva." }
+          - { name: pilulas, label: Etiquetas, type: string, list: true }
+
+      - name: numeros
+        label: 3. Números
+        description: Use só números oficiais e confirmados.
+        type: object
+        fields:
+          - { name: foto, label: Foto redonda, type: image, options: { media: imagens } }
+          - { name: foto_descricao, label: Descrição da foto, type: string }
+          - name: lista
+            label: Números
+            type: object
+            list: { collapsible: { collapsed: true, summary: "+{numero} {complemento} — {texto}" } }
+            fields:
+              - { name: numero, label: Número, type: number, description: "Só o número. O sinal + aparece sozinho." }
+              - { name: complemento, label: Complemento, type: string, description: "Ex.: mil, anos. Deixe vazio se não tiver." }
+              - { name: complemento_pequeno, label: Complemento em letra pequena, type: boolean, description: "Ligado: o complemento fica pequeno ao lado do número (como em +5 anos)." }
+              - { name: texto, label: Texto explicativo, type: string }
+
+      - name: sobre
+        label: 4. Sobre mim
+        type: object
+        fields:
+          - { name: frase, label: Frase pequena no canto, type: text, description: "Aperte Enter para quebrar a linha." }
+          - { name: paragrafos, label: Parágrafos, type: text, list: true, description: "O primeiro parágrafo aparece maior. Para negrito, coloque a palavra entre dois asteriscos: **assim**." }
+          - name: fotos_camera
+            label: Fotos que saem da câmera
+            description: "São sempre 3 fotos. Fotos quadradas ou em pé ficam melhores."
+            type: object
+            list: { min: 3, max: 3, collapsible: { collapsed: true, summary: "Foto {index}: {legenda}" } }
+            fields:
+              - { name: imagem, label: Foto, type: image, options: { media: imagens } }
+              - { name: descricao, label: Descrição da foto, type: string }
+              - { name: legenda, label: Legenda escrita na foto, type: string, description: "Uma ou duas palavras." }
+          - { name: camera, label: Foto da câmera, type: image, description: "Câmera de frente, com fundo transparente (PNG).", options: { media: imagens } }
+          - name: trajetoria
+            label: Trajetória
+            description: "Do mais recente para o mais antigo."
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{empresa} ({periodo})" } }
+            fields:
+              - { name: periodo, label: Período, type: string, description: "Ex.: mar 2026 — atual" }
+              - { name: empresa, label: Empresa, type: string }
+              - { name: cargo, label: Cargo, type: string }
+          - name: formacao
+            label: Formação
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{curso}" } }
+            fields:
+              - { name: periodo, label: Período, type: string }
+              - { name: curso, label: Curso, type: string }
+              - { name: instituicao, label: Instituição, type: string }
+          - { name: alem_disso, label: "Além disso (prêmios, certificações)", type: string, list: true }
+          - { name: idioma, label: Idioma, type: string }
+          - { name: idioma_nivel, label: Nível do idioma, type: string }
+
+      - name: servicos
+        label: 5. O que eu faço
+        type: object
+        fields:
+          - { name: foto, label: Foto redonda, type: image, options: { media: imagens } }
+          - { name: foto_descricao, label: Descrição da foto, type: string }
+          - { name: para_quem, label: Para quem, type: string, list: true }
+          - name: lista
+            label: Serviços
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{nome}" } }
+            fields:
+              - { name: nome, label: Nome do serviço, type: string, description: "Usado no rodapé. Ex.: Estratégia de Conteúdo" }
+              - { name: linha_1, label: Título — primeira linha, type: string, description: "Em letra minúscula. Ex.: estratégia" }
+              - { name: linha_2, label: Título — segunda linha, type: string, description: "Ex.: de conteúdo" }
+              - { name: destaque, label: Card em destaque (cinza escuro), type: boolean }
+              - { name: itens, label: O que inclui, type: string, list: true, description: "Para negrito: **assim**." }
+              - { name: nota, label: Frase em letra cursiva no fim do card, type: string, description: "Opcional." }
+
+      - name: marcas
+        label: 6. Marcas atendidas
+        type: object
+        fields:
+          - { name: frase, label: Frase em destaque, type: string }
+          - { name: texto, label: Texto, type: text }
+          - { name: aviso, label: Texto pequeno acima da grade, type: string }
+          - name: lista
+            label: Marcas
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{nome}" } }
+            fields:
+              - { name: nome, label: Nome da marca, type: string }
+              - { name: case, label: Case ligado a esta marca, type: string, description: "O 'endereço' do case (ex.: fiep, soow, perfis). Ao clicar na marca, o site leva até ele. Deixe vazio se a marca não tiver case." }
+
+      - name: cases
+        label: 7. Cases
+        type: object
+        fields:
+          - { name: frase, label: Frase da abertura dos cases, type: string }
+          - name: lista
+            label: Cases
+            description: "A ordem aqui é a ordem no site. Os números (01, 02...) e as cores de fundo se ajustam sozinhos."
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{index}. {nome_curto}" } }
+            fields:
+              - { name: id, label: Endereço do case, type: string, description: "Uma palavra, sem espaço nem acento (ex.: fiep). Usado nos links das marcas.", pattern: { regex: "^[a-z0-9-]+$", message: "Use só letras minúsculas sem acento, números e hífen." } }
+              - { name: nome_curto, label: Nome curto, type: string, description: "Aparece nos botões da abertura dos cases." }
+              - name: formato
+                label: Formato do case
+                type: select
+                description: "Colagem: celular + até 2 fotos. Posts: 2 posts lado a lado. Celular ao lado: celular pequeno ao lado do texto (dois seguidos ficam lado a lado)."
+                options:
+                  values:
+                    - { value: colagem, label: Colagem (celular + fotos) }
+                    - { value: posts, label: Posts lado a lado }
+                    - { value: celular_ao_lado, label: Celular ao lado do texto }
+              - name: texto_do_lado
+                label: Lado do texto
+                type: select
+                description: "Só para Colagem e Posts. Alternar os lados deixa a página mais dinâmica."
+                options:
+                  values:
+                    - { value: esquerda, label: Texto à esquerda }
+                    - { value: direita, label: Texto à direita }
+              - { name: titulo, label: Título, type: text, description: "Em CAIXA ALTA. Aperte Enter para quebrar a linha." }
+              - { name: subtitulo, label: Subtítulo em negrito, type: string, description: "Uma frase. Opcional." }
+              - { name: texto, label: Texto, type: text }
+              - { name: pilulas_titulo, label: Título das etiquetas, type: string, description: "Ex.: Entre eles. Opcional." }
+              - { name: pilulas, label: Etiquetas, type: string, list: true, description: "Opcional." }
+              - { name: botao, label: Texto do botão +, type: string, description: "Ex.: O que fiz, Entregas." }
+              - { name: itens, label: Lista que abre no botão +, type: string, list: true, description: "Deixe vazio para não mostrar o botão." }
+              - { name: itens_em_duas_colunas, label: Lista em duas colunas, type: boolean, description: "Bom para listas com itens curtos." }
+              - { name: celular, label: Imagem dentro do celular, type: image, description: "Print do feed ou story (em pé). Se tiver vídeo, vira a capa dele.", options: { media: imagens } }
+              - { name: celular_video, label: Vídeo dentro do celular, type: file, description: "Opcional. Toca sozinho, sem som.", options: { media: videos } }
+              - { name: celular_descricao, label: Descrição do que aparece no celular, type: string }
+              - name: fotos
+                label: Fotos da colagem
+                description: "Só para o formato Colagem. Até 2 fotos."
+                type: object
+                list: { max: 2, collapsible: { collapsed: true, summary: "Foto {index}" } }
+                fields:
+                  - { name: imagem, label: Foto, type: image, options: { media: imagens } }
+                  - { name: descricao, label: Descrição da foto, type: string }
+                  - { name: ampliar, label: Imagem extra (botão +), type: image, description: "Opcional. Abre em tela cheia ao clicar no +.", options: { media: imagens } }
+              - name: posts
+                label: Posts
+                description: "Só para o formato Posts. Até 2."
+                type: object
+                list: { max: 2, collapsible: { collapsed: true, summary: "{legenda}" } }
+                fields:
+                  - { name: imagem, label: Imagem do post, type: image, options: { media: imagens } }
+                  - { name: descricao, label: Descrição do post, type: string }
+                  - { name: legenda, label: Etiqueta embaixo, type: string }
+
+      - name: perfis
+        label: 7b. Outros perfis
+        type: object
+        fields:
+          - { name: titulo, label: Título, type: string }
+          - { name: frase, label: Frase, type: string }
+          - name: lista
+            label: Perfis
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{nome}" } }
+            fields:
+              - { name: nome, label: Nome, type: string }
+              - { name: imagem, label: Print (em pé), type: image, options: { media: imagens } }
+              - { name: descricao, label: Descrição do print, type: string }
+
+      - name: videos
+        label: 8. Conteúdo em movimento
+        type: object
+        fields:
+          - { name: frase, label: Frase em destaque, type: string }
+          - { name: texto, label: Texto, type: text, description: "Para negrito: **assim**." }
+          - name: lista
+            label: Vídeos
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{titulo}" } }
+            fields:
+              - { name: titulo, label: Título, type: string, description: "Em CAIXA ALTA." }
+              - { name: texto, label: Texto, type: text, description: "Para pôr um link: [texto do link](https://endereço)." }
+              - { name: capa, label: Capa (em pé), type: image, options: { media: imagens } }
+              - { name: capa_descricao, label: Descrição da capa, type: string }
+              - { name: video, label: Vídeo, type: file, description: "Opcional. Se tiver, a capa vira um botão que abre o vídeo.", options: { media: videos } }
+              - { name: selo, label: Selo na capa, type: string, description: "Opcional. Ex.: +102 mil" }
+              - { name: destaque, label: Card maior, type: boolean }
+          - name: outros
+            label: Outros vídeos (miniaturas)
+            type: object
+            list: { collapsible: { collapsed: true, summary: "Miniatura {index}" } }
+            fields:
+              - { name: imagem, label: Imagem, type: image, options: { media: imagens } }
+              - { name: descricao, label: Descrição, type: string }
+          - { name: outros_nota, label: Texto abaixo das miniaturas, type: text, description: "Opcional. Para link: [texto](https://endereço)." }
+
+      - name: bastidores
+        label: 8b. Bastidores
+        type: object
+        fields:
+          - { name: frase, label: Frase em destaque, type: string }
+          - { name: texto, label: Texto, type: text }
+          - { name: pilulas, label: Etiquetas, type: string, list: true }
+          - name: fotos
+            label: Fotos
+            description: "Até 3 fotos em pé."
+            type: object
+            list: { max: 3, collapsible: { collapsed: true, summary: "Foto {index}" } }
+            fields:
+              - { name: imagem, label: Foto, type: image, options: { media: imagens } }
+              - { name: descricao, label: Descrição da foto, type: string }
+              - { name: video, label: Vídeo (botão +), type: file, description: "Opcional.", options: { media: videos } }
+
+      - name: processo
+        label: 9. Processo criativo
+        type: object
+        fields:
+          - { name: frase, label: Frase ao lado do título, type: string }
+          - { name: etapas, label: Etapas, type: string, list: true, description: "Os números 1. 2. 3. aparecem sozinhos." }
+
+      - { name: ferramentas, label: 10. Ferramentas, type: string, list: true }
+
+      - name: contato
+        label: 11. Contato
+        type: object
+        fields:
+          - { name: frase, label: Frase de convite, type: text }
+          - { name: email, label: E-mail, type: string, description: "Também é para onde vai a mensagem do formulário." }
+          - { name: linkedin, label: Link do LinkedIn, type: string, description: "Endereço completo, começando com https://" }
+          - { name: linkedin_nome, label: Nome mostrado no card do LinkedIn, type: string }
+          - { name: instagram, label: Usuário do Instagram, type: string, description: "Sem o @. Ex.: lauramoro_" }
+          - { name: whatsapp, label: WhatsApp, type: string, description: "Só números, com 55 + DDD. Ex.: 5541999999999. Deixe vazio para não mostrar.", pattern: { regex: "^(55\\d{10,11})?$", message: "Use só números: 55 + DDD + número." } }
+          - { name: formulario_texto, label: Texto ao lado do formulário, type: text }
+          - { name: foto, label: Foto da polaroid, type: image, options: { media: imagens } }
+          - { name: foto_descricao, label: Descrição da foto, type: string }
+
+      - name: rodape
+        label: 12. Rodapé
+        type: object
+        fields:
+          - { name: cargo, label: Cargo, type: string }
+          - { name: frase, label: Frase, type: string }
+          - { name: linktree, label: Link do Linktree, type: string, description: "Deixe vazio para não mostrar." }
+          - { name: lattes, label: Link do Currículo Lattes, type: string, description: "Deixe vazio para não mostrar." }
+          - { name: cidade, label: Cidade, type: string }
