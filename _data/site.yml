@@ -1,460 +1,456 @@
 geral:
-  titulo: "Laura Moro | Estrategista de Conteúdo e Creator Mobile em Curitiba"
-  descricao: "Conteúdo para contar histórias, criar conexões e deixar marcas. Estratégia de conteúdo, criação e Creator Mobile para marcas, empresas e eventos em Curitiba."
-  titulo_compartilhamento: "Laura Moro | Estrategista de Conteúdo e Creator Mobile"
-  descricao_compartilhamento: "Conteúdo para contar histórias, criar conexões e deixar marcas."
-  imagem_compartilhamento: "assets/img/og-laura-moro.jpg"
-
+  titulo: Laura Moro | Estrategista de Conteúdo e Creator Mobile em Curitiba
+  descricao: Conteúdo para contar histórias, criar conexões e deixar marcas.
+    Estratégia de conteúdo, criação e Creator Mobile para marcas, empresas e
+    eventos em Curitiba.
+  titulo_compartilhamento: Laura Moro | Estrategista de Conteúdo e Creator Mobile
+  descricao_compartilhamento: Conteúdo para contar histórias, criar conexões e deixar marcas.
+  imagem_compartilhamento: assets/img/og-laura-moro.jpg
 inicio:
-  pilula: "Social Media"
-  cargo: "Estrategista de Conteúdo | Creator Mobile"
+  pilula: Social Media
+  cargo: Estrategista de Conteúdo | Creator Mobile
   frase: |-
     Conteúdo para contar histórias,
     criar conexões e deixar marcas.
-  foto: "assets/img/hero-captando.webp"
-  foto_descricao: "Laura Moro de perfil, fotografando com câmera em um terraço com paredes de vidro"
-  foto_legenda: "captação do dia"
-  video: "assets/video/reel-evento.mp4"
-  video_capa: "assets/img/poster-reel-evento.webp"
-
+  foto: assets/img/hero-captando.webp
+  foto_descricao: Laura Moro de perfil, fotografando com câmera em um terraço com
+    paredes de vidro
+  foto_legenda: captação do dia
+  video: assets/video/reel-evento.mp4
+  video_capa: assets/img/poster-reel-evento.webp
 manifesto:
-  frase: "Toda história merece um jeito de ser contada."
-  texto: "Para mim, criar conteúdo é uma forma de criar memórias. É registrar momentos, transformar experiências em histórias e encontrar maneiras de mostrar ao mundo quem somos, o que fazemos e o que temos para contar."
+  frase: Toda história merece um jeito de ser contada.
+  texto: "Para mim, criar conteúdo é criar memórias: transformar momentos e
+    experiências em histórias que merecem ser contadas."
   pilulas:
-    - "Estratégia de Conteúdo"
-    - "Criação de Conteúdo"
-    - "Creator Mobile"
-
+    - Estratégia de Conteúdo
+    - Criação de Conteúdo
+    - Creator Mobile
 numeros:
-  foto: "assets/img/laura-captando-vidro.webp"
-  foto_descricao: "Laura fotografando com a câmera em um terraço com paredes de vidro e mesas ao fundo"
+  foto: assets/img/laura-captando-vidro.webp
+  foto_descricao: Laura fotografando com a câmera em um terraço com paredes de
+    vidro e mesas ao fundo
   lista:
     - numero: 10
-      complemento: ""
       complemento_pequeno: false
-      texto: "marcas e projetos com atuação em conteúdo"
+      texto: marcas e projetos com atuação em conteúdo
     - numero: 100
-      complemento: "mil"
+      complemento: mil
       complemento_pequeno: false
-      texto: "visualizações orgânicas em um único Reel"
+      texto: visualizações orgânicas em um único Reel
     - numero: 5
-      complemento: "anos"
+      complemento: anos
       complemento_pequeno: true
-      texto: "de experiência em comunicação e conteúdo"
-
+      texto: de experiência em comunicação e conteúdo
 sobre:
   frase: |-
     Estratégia, criatividade e conteúdo
     para transformar ideias em conexão.
   paragrafos:
-    - "Sou **Estrategista de Conteúdo** e **Creator Mobile**, formada em Comunicação Institucional pela UFPR e pós-graduada em Gestão de Mídias Digitais. Há mais de 5 anos atuo com **estratégia, criação de conteúdo, redes sociais, vídeos, fotografia e cobertura de eventos.**"
-    - "Gosto de estar perto do processo, da ideia à execução, transformando histórias e experiências em conteúdos que conectam pessoas e marcas."
-    - "Já passei por agência, indústria, comunicação institucional e marketing B2B, desenvolvendo conteúdo para LinkedIn, blog, e-mail marketing, landing pages e redes sociais."
+    - Sou **Estrategista de Conteúdo** e **Creator Mobile**, formada em
+      Comunicação Institucional pela UFPR e pós-graduada em Gestão de Mídias
+      Digitais. Há mais de 5 anos atuo com **estratégia, criação de conteúdo,
+      redes sociais, vídeos, fotografia e cobertura de eventos.**
+    - Gosto de estar perto do processo, da ideia à execução, transformando
+      histórias e experiências em conteúdos que conectam pessoas e marcas.
+    - Já passei por agência, indústria, comunicação institucional e marketing
+      B2B, desenvolvendo conteúdo para LinkedIn, blog, e-mail marketing, landing
+      pages e redes sociais.
   fotos_camera:
-    - imagem: "assets/img/sobre-sorriso.webp"
-      descricao: "Laura Moro sorrindo enquanto olha o celular, em um ambiente claro com mesas ao fundo"
-      legenda: "conexão"
-    - imagem: "assets/img/pov-campus-industria.webp"
-      descricao: "Ponto de vista de Laura gravando com o celular, com o Campus da Indústria da Fiep na tela"
-      legenda: "real time"
-    - imagem: "assets/img/laura-perfil-camera.webp"
-      descricao: "Laura de perfil, conferindo uma foto na câmera"
-      legenda: "captação"
-  camera: "assets/img/camera-instax.png"
+    - imagem: assets/img/sobre-sorriso.webp
+      descricao: Laura Moro sorrindo enquanto olha o celular, em um ambiente claro com
+        mesas ao fundo
+      legenda: conexão
+    - imagem: assets/img/pov-campus-industria.webp
+      descricao: Ponto de vista de Laura gravando com o celular, com o Campus da
+        Indústria da Fiep na tela
+      legenda: real time
+    - imagem: assets/img/laura-perfil-camera.webp
+      descricao: Laura de perfil, conferindo uma foto na câmera
+      legenda: captação
+  camera: assets/img/camera-instax.png
   trajetoria:
-    - periodo: "mar 2026 — atual"
-      empresa: "Soow Sigma"
-      cargo: "Analista de Marketing Digital & Conteúdo"
-    - periodo: "jun 2025 — mar 2026"
-      empresa: "Sistema Fiep"
-      cargo: "Analista de Marketing PL"
-    - periodo: "jul 2023 — dez 2024"
-      empresa: "Rubber Brasil"
-      cargo: "Produção de Conteúdo e Analista de Mídias Sociais"
-    - periodo: "jul 2021 — jun 2023"
-      empresa: "Cria e Conecta"
-      cargo: "Estagiária de Criação (agência)"
+    - periodo: mar 2026 — atual
+      empresa: Soow Sigma
+      cargo: Analista de Marketing Digital & Conteúdo
+    - periodo: jun 2025 — mar 2026
+      empresa: Sistema Fiep
+      cargo: Analista de Marketing PL
+    - periodo: jul 2023 — dez 2024
+      empresa: Rubber Brasil
+      cargo: Produção de Conteúdo e Analista de Mídias Sociais
+    - periodo: jul 2021 — jun 2023
+      empresa: Cria e Conecta
+      cargo: Estagiária de Criação (agência)
   formacao:
-    - periodo: "2025 — 2026"
-      curso: "Pós em Planejamento de Comunicação Integrada"
-      instituicao: "Uninter"
-    - periodo: "2024 — 2025"
-      curso: "Pós em Gestão de Mídias Digitais"
-      instituicao: "Uninter"
-    - periodo: "2020 — 2023"
-      curso: "Comunicação Institucional"
-      instituicao: "UFPR"
+    - periodo: 2025 — 2026
+      curso: Pós em Planejamento de Comunicação Integrada
+      instituicao: Uninter
+    - periodo: 2024 — 2025
+      curso: Pós em Gestão de Mídias Digitais
+      instituicao: Uninter
+    - periodo: 2020 — 2023
+      curso: Comunicação Institucional
+      instituicao: UFPR
   alem_disso:
-    - "Participante e finalista do Prêmio Expocom Regional Sul"
-    - "Apresentação de artigo no 2º ECONPOP"
-    - "Iniciação Científica sobre práticas comunicacionais de influenciadores digitais"
+    - Participante e finalista do Prêmio Expocom Regional Sul
+    - Apresentação de artigo no 2º ECONPOP
+    - Iniciação Científica sobre práticas comunicacionais de influenciadores
+      digitais
     - "Certificações: IA for Leaders (presencial) e Plug Social Day"
-  idioma: "inglês"
-  idioma_nivel: "profissional completo"
-
+  idioma: inglês
+  idioma_nivel: profissional completo
 servicos:
-  foto: "assets/img/bastidor-tripe.webp"
+  foto: assets/img/bastidor-tripe.webp
   foto_descricao: "Bastidor de gravação: celular no tripé filmando uma mulher sentada à mesa"
   para_quem:
-    - "Marcas"
-    - "Empresas B2B e indústria"
-    - "Eventos"
-    - "Projetos institucionais"
-    - "Agências"
+    - Marcas
+    - Empresas B2B e indústria
+    - Eventos
+    - Projetos institucionais
+    - Agências
   lista:
-    - nome: "Estratégia de Conteúdo"
-      linha_1: "estratégia"
-      linha_2: "de conteúdo"
+    - nome: Estratégia de Conteúdo
+      linha_1: estratégia
+      linha_2: de conteúdo
       destaque: false
       itens:
-        - "Planejamento de conteúdo"
-        - "Estratégia para redes sociais"
-        - "Calendário editorial"
-        - "Criação de pautas e roteiros"
-        - "Posicionamento de conteúdo"
-      nota: ""
-    - nome: "Criação de Conteúdo"
-      linha_1: "criação"
-      linha_2: "de conteúdo"
+        - Planejamento de conteúdo
+        - Estratégia para redes sociais
+        - Calendário editorial
+        - Criação de pautas e roteiros
+        - Posicionamento de conteúdo
+    - nome: Criação de Conteúdo
+      linha_1: criação
+      linha_2: de conteúdo
       destaque: false
       itens:
-        - "Conteúdo para Instagram e LinkedIn"
-        - "Redação e storytelling"
-        - "Roteiros para vídeos"
-        - "Reels e conteúdos verticais"
-        - "Conteúdo nativo para redes sociais"
-      nota: ""
-    - nome: "Creator Mobile"
-      linha_1: "creator"
-      linha_2: "mobile"
+        - Conteúdo para Instagram e LinkedIn
+        - Redação e storytelling
+        - Roteiros para vídeos
+        - Reels e conteúdos verticais
+        - Conteúdo nativo para redes sociais
+    - nome: Creator Mobile
+      linha_1: creator
+      linha_2: mobile
       destaque: true
       itens:
-        - "Captação de vídeos pelo celular"
-        - "Fotografia"
-        - "Edição de vídeos"
-        - "Cobertura de eventos"
-        - "Stories e conteúdos espontâneos"
+        - Captação de vídeos pelo celular
+        - Fotografia
+        - Edição de vídeos
+        - Cobertura de eventos
+        - Stories e conteúdos espontâneos
         - "**Conteúdo em real time**"
-      nota: "Como Creator, gosto de estar onde as coisas acontecem."
-
+      nota: Como Creator, gosto de estar onde as coisas acontecem.
 marcas:
-  frase: "Diferentes marcas, diferentes histórias."
-  texto: "Ao longo da minha trajetória, desenvolvi conteúdos para diferentes segmentos e objetivos, adaptando linguagem, formato e estratégia para cada projeto."
-  aviso: "Perfis em que já atuei · toque para ver o case"
+  frase: Diferentes marcas, diferentes histórias.
+  texto: Ao longo da minha trajetória, desenvolvi conteúdos para diferentes
+    segmentos e objetivos, adaptando linguagem, formato e estratégia para cada
+    projeto.
+  aviso: Perfis em que já atuei · toque para ver o case
   lista:
-    - nome: "Velsis Soluções"
-      case: ""
-    - nome: "Jabuti Bar"
-      case: "perfis"
-    - nome: "Dizzy Café Concerto"
-      case: "perfis"
-    - nome: "Mafê Kopacheski"
-      case: "perfis"
-    - nome: "Congresso Nacional Moveleiro"
-      case: "congresso"
-    - nome: "Expo+ Indústria"
-      case: "fiep"
-    - nome: "Sistema Fiep"
-      case: "fiep"
-    - nome: "Soow Sigma"
-      case: "soow"
-    - nome: "Rubber Brasil"
-      case: "rubber"
-
+    - nome: Velsis Soluções
+    - nome: Jabuti Bar
+      case: perfis
+    - nome: Dizzy Café Concerto
+      case: perfis
+    - nome: Mafê Kopacheski
+      case: perfis
+    - nome: Congresso Nacional Moveleiro
+      case: congresso
+    - nome: Expo+ Indústria
+      case: fiep
+    - nome: Sistema Fiep
+      case: fiep
+    - nome: Soow Sigma
+      case: soow
+    - nome: Rubber Brasil
+      case: rubber
 cases:
-  frase: "Diferentes marcas, diferentes histórias."
+  frase: Diferentes marcas, diferentes histórias.
   lista:
-    - id: "congresso"
-      nome_curto: "Congresso Moveleiro"
-      formato: "colagem"
-      texto_do_lado: "esquerda"
+    - id: congresso
+      nome_curto: Congresso Moveleiro
+      formato: colagem
+      texto_do_lado: esquerda
       titulo: |-
         CONGRESSO NACIONAL
         MOVELEIRO 2025
-      subtitulo: "Comunicação, conteúdo e cobertura de um grande evento."
-      texto: "Atuação na comunicação do Congresso Nacional Moveleiro 2025, desde o planejamento e produção de conteúdo até a cobertura durante o evento."
-      pilulas_titulo: ""
-      pilulas: []
-      botao: "O que fiz"
-      itens_em_duas_colunas: true
+      subtitulo: Comunicação, conteúdo e cobertura de um grande evento.
+      texto: Atuação na comunicação do Congresso Nacional Moveleiro 2025, desde o
+        planejamento e produção de conteúdo até a cobertura durante o evento.
+      botao: O que fiz
       itens:
-        - "Planejamento de conteúdo"
-        - "Gestão das redes sociais"
-        - "Produção de textos e materiais de divulgação"
-        - "Cobertura em tempo real"
-        - "Captação de fotos e vídeos"
-        - "Produção audiovisual"
-        - "Conteúdo para pré, durante e pós-evento"
-        - "Design das peças para as redes sociais"
-      celular: "assets/img/print-congresso-grid.webp"
-      celular_video: ""
-      celular_descricao: "Print do feed do Instagram @congresso_moveleiro com posts verdes da 12ª edição do Congresso Nacional Moveleiro"
+        - Planejamento de conteúdo
+        - Gestão das redes sociais
+        - Produção de textos e materiais de divulgação
+        - Cobertura em tempo real
+        - Captação de fotos e vídeos
+        - Produção audiovisual
+        - Conteúdo para pré, durante e pós-evento
+        - Design das peças para as redes sociais
+      itens_em_duas_colunas: true
+      celular: assets/img/print-congresso-grid.webp
+      celular_descricao: Print do feed do Instagram @congresso_moveleiro com posts
+        verdes da 12ª edição do Congresso Nacional Moveleiro
       fotos:
-        - imagem: "assets/img/story-congresso-palco.webp"
-          descricao: "Cenário verde do 12º Congresso Nacional Moveleiro com poltronas no palco"
-          ampliar: ""
-        - imagem: "assets/img/congresso-espaco.webp"
-          descricao: "Pessoa em frente ao painel de patrocinadores do 12º Congresso Nacional Moveleiro"
-          ampliar: "assets/img/story-congresso-painel.webp"
-      posts: []
-    - id: "fiep"
-      nome_curto: "Sistema Fiep"
-      formato: "posts"
-      texto_do_lado: "direita"
-      titulo: "SISTEMA FIEP"
-      subtitulo: ""
-      texto: "Durante minha atuação no Sistema Fiep, participei do planejamento, produção e cobertura de diferentes pautas, projetos e eventos."
-      pilulas_titulo: "Entre eles"
+        - imagem: assets/img/story-congresso-palco.webp
+          descricao: Cenário verde do 12º Congresso Nacional Moveleiro com poltronas no
+            palco
+        - imagem: assets/img/congresso-espaco.webp
+          descricao: Pessoa em frente ao painel de patrocinadores do 12º Congresso
+            Nacional Moveleiro
+          ampliar: assets/img/story-congresso-painel.webp
+    - id: fiep
+      nome_curto: Sistema Fiep
+      formato: posts
+      texto_do_lado: direita
+      titulo: SISTEMA FIEP
+      texto: Durante minha atuação no Sistema Fiep, participei do planejamento,
+        produção e cobertura de diferentes pautas, projetos e eventos.
+      pilulas_titulo: Entre eles
       pilulas:
-        - "Festival SESI de Robótica"
-        - "SESI ODS"
-        - "EPMAIS"
-        - "Prêmio Sistema Fiep de Jornalismo"
-        - "Rodada de Negócios Multissetorial da Fiep"
-        - "Semana de Valorização da Indústria de Alimentos e Bebidas"
-        - "EJA do Sesi PR"
-        - "Visitas e pautas com empresas e indústrias"
-      botao: "Na prática"
+        - Festival SESI de Robótica
+        - SESI ODS
+        - EPMAIS
+        - Prêmio Sistema Fiep de Jornalismo
+        - Rodada de Negócios Multissetorial da Fiep
+        - Semana de Valorização da Indústria de Alimentos e Bebidas
+        - EJA do Sesi PR
+        - Visitas e pautas com empresas e indústrias
+      botao: Na prática
+      itens:
+        - Planejamento de pautas
+        - Captação de conteúdo pelo celular
+        - Fotografia
+        - Vídeos para redes sociais
+        - Cobertura de Stories
+        - Produção de Reels
+        - Acompanhamento de pautas
+        - Entrevistas e depoimentos
+        - Conteúdo em real time
       itens_em_duas_colunas: true
-      itens:
-        - "Planejamento de pautas"
-        - "Captação de conteúdo pelo celular"
-        - "Fotografia"
-        - "Vídeos para redes sociais"
-        - "Cobertura de Stories"
-        - "Produção de Reels"
-        - "Acompanhamento de pautas"
-        - "Entrevistas e depoimentos"
-        - "Conteúdo em real time"
-      celular: ""
-      celular_video: ""
-      celular_descricao: ""
-      fotos: []
       posts:
-        - imagem: "assets/img/fiep-post-expo.webp"
-          descricao: "Post da Expo Mais Indústria 2026: 3 coisas que aumentam a produtividade da sua indústria em 2026"
-          legenda: "Publicações Expo Mais Indústria"
-        - imagem: "assets/img/fiep-post-legislacao.webp"
-          descricao: "Post do Sistema Fiep: O ano vira. A legislação também. Cartilha sobre a Reforma Tributária"
-          legenda: "Publicações Fiep"
-    - id: "epmais"
-      nome_curto: "EPMAIS"
-      formato: "celular_ao_lado"
-      texto_do_lado: "direita"
-      titulo: "EPMAIS"
-      subtitulo: "Planejamento, divulgação e cobertura."
-      texto: "Atuação na comunicação do EPMAIS, participando do planejamento e desenvolvimento dos conteúdos de divulgação e da cobertura do evento. Do conteúdo que apresenta o evento ao público aos registros produzidos durante a experiência."
-      pilulas_titulo: ""
-      pilulas: []
-      botao: "Entregas"
-      itens_em_duas_colunas: false
+        - imagem: assets/img/fiep-post-expo.webp
+          descricao: "Post da Expo Mais Indústria 2026: 3 coisas que aumentam a
+            produtividade da sua indústria em 2026"
+          legenda: Publicações Expo Mais Indústria
+        - imagem: assets/img/fiep-post-legislacao.webp
+          descricao: "Post do Sistema Fiep: O ano vira. A legislação também. Cartilha
+            sobre a Reforma Tributária"
+          legenda: Publicações Fiep
+    - id: epmais
+      nome_curto: EPMAIS
+      formato: celular_ao_lado
+      texto_do_lado: direita
+      titulo: EPMAIS
+      subtitulo: Planejamento, divulgação e cobertura.
+      texto: Atuação na comunicação do EPMAIS, participando do planejamento e
+        desenvolvimento dos conteúdos de divulgação e da cobertura do evento. Do
+        conteúdo que apresenta o evento ao público aos registros produzidos
+        durante a experiência.
+      botao: Entregas
       itens:
-        - "Planejamento de conteúdo"
-        - "Produção de posts"
-        - "Roteiros e textos"
-        - "Divulgação"
-        - "Cobertura de Stories"
-        - "Captação de fotos e vídeos"
-        - "Conteúdo em tempo real"
-      celular: "assets/img/poster-story-epmais.webp"
-      celular_video: "assets/video/story-epmais.mp4"
-      celular_descricao: "Story de abertura do 2º EPMAIS no Campus da Indústria"
-      fotos: []
-      posts: []
-    - id: "premio"
-      nome_curto: "Prêmio de Jornalismo"
-      formato: "celular_ao_lado"
-      texto_do_lado: "direita"
+        - Planejamento de conteúdo
+        - Produção de posts
+        - Roteiros e textos
+        - Divulgação
+        - Cobertura de Stories
+        - Captação de fotos e vídeos
+        - Conteúdo em tempo real
+      itens_em_duas_colunas: false
+      celular: assets/img/poster-story-epmais.webp
+      celular_video: assets/video/story-epmais.mp4
+      celular_descricao: Story de abertura do 2º EPMAIS no Campus da Indústria
+    - id: premio
+      nome_curto: Prêmio de Jornalismo
+      formato: celular_ao_lado
+      texto_do_lado: direita
       titulo: |-
         PRÊMIO SISTEMA
         FIEP DE JORNALISMO
-      subtitulo: "Comunicação em tempo real."
-      texto: "Cobertura de Stories durante o Prêmio Sistema Fiep de Jornalismo, registrando os principais momentos da premiação e transformando a experiência do evento em conteúdo para as redes sociais."
-      pilulas_titulo: ""
-      pilulas: []
-      botao: ""
+      subtitulo: Comunicação em tempo real.
+      texto: Cobertura de Stories durante o Prêmio Sistema Fiep de Jornalismo,
+        registrando os principais momentos da premiação e transformando a
+        experiência do evento em conteúdo para as redes sociais.
       itens_em_duas_colunas: false
-      itens: []
-      celular: "assets/img/story-premio-jornalismo.webp"
-      celular_video: ""
-      celular_descricao: "Story com o celular mostrando a galeria de fotos diante do palco do 10º Prêmio Sistema Fiep de Jornalismo"
-      fotos: []
-      posts: []
-    - id: "soow"
-      nome_curto: "Soow Sigma"
-      formato: "colagem"
-      texto_do_lado: "esquerda"
-      titulo: "SOOW SIGMA"
-      subtitulo: "Conteúdo para uma marca de tecnologia e cibersegurança."
-      texto: "Atuação no planejamento e produção de conteúdo para uma empresa B2B de tecnologia e cibersegurança, com foco em fortalecer a presença digital e traduzir temas técnicos para diferentes públicos."
-      pilulas_titulo: ""
-      pilulas: []
-      botao: "Conteúdos"
+      celular: assets/img/story-premio-jornalismo.webp
+      celular_descricao: Story com o celular mostrando a galeria de fotos diante do
+        palco do 10º Prêmio Sistema Fiep de Jornalismo
+    - id: soow
+      nome_curto: Soow Sigma
+      formato: colagem
+      texto_do_lado: esquerda
+      titulo: SOOW SIGMA
+      subtitulo: Conteúdo para uma marca de tecnologia e cibersegurança.
+      texto: Atuação no planejamento e produção de conteúdo para uma empresa B2B de
+        tecnologia e cibersegurança, com foco em fortalecer a presença digital e
+        traduzir temas técnicos para diferentes públicos.
+      botao: Conteúdos
+      itens:
+        - LinkedIn e Newsletters
+        - Blog
+        - E-mail marketing
+        - Landing pages
+        - Redes sociais
+        - Materiais de comunicação
+        - Campanhas de marketing
       itens_em_duas_colunas: true
-      itens:
-        - "LinkedIn e Newsletters"
-        - "Blog"
-        - "E-mail marketing"
-        - "Landing pages"
-        - "Redes sociais"
-        - "Materiais de comunicação"
-        - "Campanhas de marketing"
-      celular: "assets/img/print-soow.webp"
-      celular_video: ""
-      celular_descricao: "Print do feed do Instagram da Soow Sigma com posts em azul e preto sobre tecnologia e cibersegurança"
+      celular: assets/img/print-soow.webp
+      celular_descricao: Print do feed do Instagram da Soow Sigma com posts em azul e
+        preto sobre tecnologia e cibersegurança
       fotos:
-        - imagem: "assets/img/outro-video-1.webp"
-          descricao: "Frame de vídeo com duas pessoas no espaço da Soow Sigma"
-          ampliar: ""
-      posts: []
-    - id: "rubber"
-      nome_curto: "Rubber Brasil"
-      formato: "colagem"
-      texto_do_lado: "direita"
-      titulo: "RUBBER BRASIL"
-      subtitulo: "Construção de playgrounds infantis e aplicação de pisos emborrachados monolíticos EPDM."
-      texto: "Atuação na comunicação digital da marca, com foco em gestão de redes sociais, planejamento e produção de conteúdo, fotografia e produção audiovisual."
-      pilulas_titulo: ""
-      pilulas: []
-      botao: "Minha atuação"
-      itens_em_duas_colunas: false
+        - imagem: assets/img/outro-video-1.webp
+          descricao: Frame de vídeo com duas pessoas no espaço da Soow Sigma
+    - id: rubber
+      nome_curto: Rubber Brasil
+      formato: colagem
+      texto_do_lado: direita
+      titulo: RUBBER BRASIL
+      subtitulo: Construção de playgrounds infantis e aplicação de pisos emborrachados
+        monolíticos EPDM.
+      texto: Atuação na comunicação digital da marca, com foco em gestão de redes
+        sociais, planejamento e produção de conteúdo, fotografia e produção
+        audiovisual.
+      botao: Minha atuação
       itens:
-        - "Planejamento e gestão das redes sociais"
-        - "Produção de conteúdo para diferentes plataformas"
-        - "Captação e edição de vídeos"
-        - "Fotografia de playgrounds e projetos"
-        - "Produção de vídeos testemunhais e criativos para campanhas"
-        - "Análise de métricas e acompanhamento de resultados"
-        - "Suporte em campanhas online"
-        - "Apoio à comunicação interna e endomarketing"
-      celular: "assets/img/print-rubber.webp"
-      celular_video: ""
-      celular_descricao: "Print do feed do Instagram @rubberbrasil com fotos coloridas de playgrounds"
-      fotos: []
-      posts: []
-
+        - Planejamento e gestão das redes sociais
+        - Produção de conteúdo para diferentes plataformas
+        - Captação e edição de vídeos
+        - Fotografia de playgrounds e projetos
+        - Produção de vídeos testemunhais e criativos para campanhas
+        - Análise de métricas e acompanhamento de resultados
+        - Suporte em campanhas online
+        - Apoio à comunicação interna e endomarketing
+      itens_em_duas_colunas: false
+      celular: assets/img/print-rubber.webp
+      celular_descricao: Print do feed do Instagram @rubberbrasil com fotos coloridas
+        de playgrounds
 perfis:
-  titulo: "OUTROS PERFIS"
-  frase: "Cada perfil com sua própria história e o seu jeito de ser contada."
+  titulo: OUTROS PERFIS
+  frase: Cada perfil com sua própria história e o seu jeito de ser contada.
   lista:
-    - nome: "Jabuti Bar"
-      imagem: "assets/img/print-jabuti.webp"
-      descricao: "Print do feed do Instagram @jabutibar com fotos de pratos e drinks"
-    - nome: "Dizzy Café Concerto"
-      imagem: "assets/img/print-dizzy.webp"
-      descricao: "Print do feed do Instagram @dizzycafeconcerto com capas de Reels de agenda e shows"
-    - nome: "Mafê Kopacheski"
-      imagem: "assets/img/print-mafe.webp"
-      descricao: "Print do feed do Instagram @mafekopacheski com posts em tons claros"
-    - nome: "Bastidor · Jabuti Bar"
-      imagem: "assets/img/story-captacao-jabuti.webp"
-      descricao: "Story com o texto 'Captação de ontem pro @jabutibar' mostrando a galeria com um prato fotografado"
-
+    - nome: Jabuti Bar
+      imagem: assets/img/print-jabuti.webp
+      descricao: Print do feed do Instagram @jabutibar com fotos de pratos e drinks
+    - nome: Dizzy Café Concerto
+      imagem: assets/img/print-dizzy.webp
+      descricao: Print do feed do Instagram @dizzycafeconcerto com capas de Reels de
+        agenda e shows
+    - nome: Mafê Kopacheski
+      imagem: assets/img/print-mafe.webp
+      descricao: Print do feed do Instagram @mafekopacheski com posts em tons claros
+    - nome: Bastidor · Jabuti Bar
+      imagem: assets/img/story-captacao-jabuti.webp
+      descricao: Story com o texto 'Captação de ontem pro @jabutibar' mostrando a
+        galeria com um prato fotografado
 videos:
-  frase: "Algumas coisas funcionam melhor quando a gente dá o play."
-  texto: "Como **Creator**, gosto de estar onde as coisas acontecem. Capto, roteirizo e edito conteúdos pensados para a linguagem das redes, do vídeo mais produzido ao conteúdo espontâneo de um evento em **real time**."
+  frase: Algumas coisas funcionam melhor quando a gente dá o play.
+  texto: Como **Creator**, gosto de estar onde as coisas acontecem. Capto,
+    roteirizo e edito conteúdos pensados para a linguagem das redes, do vídeo
+    mais produzido ao conteúdo espontâneo de um evento em **real time**.
   lista:
-    - titulo: "+102 MIL VISUALIZAÇÕES"
-      texto: "Um dos meus Reels alcançou mais de 102 mil visualizações de forma orgânica. [INSERIR LINK DO REEL]"
-      capa: "assets/img/reel-102mil.webp"
-      capa_descricao: "Capa de Reel com o texto 'Esse é' sobre uma rua à noite"
-      video: ""
-      selo: "+102 mil"
+    - titulo: +102 MIL VISUALIZAÇÕES
+      texto: Um dos meus Reels alcançou mais de 102 mil visualizações de forma
+        orgânica. [INSERIR LINK DO REEL]
+      capa: assets/img/reel-102mil.webp
+      capa_descricao: Capa de Reel com o texto 'Esse é' sobre uma rua à noite
+      selo: +102 mil
       destaque: true
-    - titulo: "REEL DE EVENTO"
+    - titulo: REEL DE EVENTO
       texto: "[INSERIR NOME DO PROJETO E CONTEXTO]"
-      capa: "assets/img/poster-reel-evento.webp"
-      capa_descricao: "Reel de evento"
-      video: "assets/video/reel-evento.mp4"
-      selo: ""
+      capa: assets/img/poster-reel-evento.webp
+      capa_descricao: Reel de evento
+      video: assets/video/reel-evento.mp4
       destaque: false
-    - titulo: "STORIES · 2º EPMAIS"
-      texto: "Abertura do evento em real time, direto do Campus da Indústria."
-      capa: "assets/img/poster-story-epmais.webp"
-      capa_descricao: "Stories do 2º EPMAIS"
-      video: "assets/video/story-epmais.mp4"
-      selo: ""
+    - titulo: STORIES · 2º EPMAIS
+      texto: Abertura do evento em real time, direto do Campus da Indústria.
+      capa: assets/img/poster-story-epmais.webp
+      capa_descricao: Stories do 2º EPMAIS
+      video: assets/video/story-epmais.mp4
       destaque: false
-    - titulo: "CAPTAÇÃO DO DIA"
-      texto: "Padaria América."
-      capa: "assets/img/poster-story-padaria.webp"
-      capa_descricao: "captação na Padaria América"
-      video: "assets/video/story-padaria.mp4"
-      selo: ""
+    - titulo: CAPTAÇÃO DO DIA
+      texto: Padaria América.
+      capa: assets/img/poster-story-padaria.webp
+      capa_descricao: captação na Padaria América
+      video: assets/video/story-padaria.mp4
       destaque: false
-    - titulo: "SENAI NA RUA"
-      texto: "Entrevista para a série “Senai na Rua”, com produção de conteúdo e abordagem para vídeo."
-      capa: "assets/img/senai-na-rua.webp"
-      capa_descricao: "Capa da série Senai na Rua com o título sobre um outdoor"
-      video: ""
-      selo: ""
+    - titulo: SENAI NA RUA
+      texto: Entrevista para a série “Senai na Rua”, com produção de conteúdo e
+        abordagem para vídeo.
+      capa: assets/img/senai-na-rua.webp
+      capa_descricao: Capa da série Senai na Rua com o título sobre um outdoor
       destaque: false
   outros:
-    - imagem: "assets/img/outro-video-3.webp"
-      descricao: "Frame de vídeo com entrevistada em camiseta do Senai, com o nome Camila Zanoncini na tela"
-    - imagem: "assets/img/outro-video-5.webp"
-      descricao: "Frame de vídeo com mulher falando sentada à mesa, legenda 'eu faço parte do time financeiro'"
-    - imagem: "assets/img/outro-video-8.webp"
-      descricao: "Frame de entrevista com Marcos Dybas da Natividade, vice-presidente do Sistema Fiep"
-    - imagem: "assets/img/outro-video-4.webp"
-      descricao: "Frame de vídeo de uma mesa posta com arranjos em tons laranja, diante de janelas amplas"
-    - imagem: "assets/img/outro-video-7.webp"
-      descricao: "Frame de vídeo com o texto 'A essência da Casa Conceito' sobre uma bancada"
+    - imagem: assets/img/outro-video-3.webp
+      descricao: Frame de vídeo com entrevistada em camiseta do Senai, com o nome
+        Camila Zanoncini na tela
+    - imagem: assets/img/outro-video-5.webp
+      descricao: Frame de vídeo com mulher falando sentada à mesa, legenda 'eu faço
+        parte do time financeiro'
+    - imagem: assets/img/outro-video-8.webp
+      descricao: Frame de entrevista com Marcos Dybas da Natividade, vice-presidente
+        do Sistema Fiep
+    - imagem: assets/img/outro-video-4.webp
+      descricao: Frame de vídeo de uma mesa posta com arranjos em tons laranja, diante
+        de janelas amplas
+    - imagem: assets/img/outro-video-7.webp
+      descricao: Frame de vídeo com o texto 'A essência da Casa Conceito' sobre uma
+        bancada
   outros_nota: "[INSERIR LINKS DOS VÍDEOS COMPLETOS]"
-
 bastidores:
-  frase: "Conteúdo também acontece no mundo real."
-  texto: "Minha experiência com eventos me levou a desenvolver um olhar de Creator Mobile: identificar o que merece virar conteúdo, captar o momento certo e transformar a experiência em Stories, Reels e outros formatos em tempo real."
+  frase: Conteúdo também acontece no mundo real.
+  texto: "Minha experiência com eventos me levou a desenvolver um olhar de Creator
+    Mobile: identificar o que merece virar conteúdo, captar o momento certo e
+    transformar a experiência em Stories, Reels e outros formatos em tempo
+    real."
   pilulas:
-    - "Captação"
-    - "Eventos"
-    - "Gravações"
-    - "Fotografia"
-    - "Produção"
+    - Captação
+    - Eventos
+    - Gravações
+    - Fotografia
+    - Produção
   fotos:
-    - imagem: "assets/img/bastidor-tripe.webp"
-      descricao: "Bastidor de gravação: celular no tripé filmando uma mulher sentada à mesa de uma sala de reunião"
-      video: ""
-    - imagem: "assets/img/story-padaria.webp"
-      descricao: "Celular na mão mostrando a galeria de fotos sobre uma mesa de café, com o texto 'captação do dia'"
-      video: "assets/video/story-padaria.mp4"
-    - imagem: "assets/img/laura-bastidor-camera.webp"
-      descricao: "Laura ajustando a câmera em um espaço de evento com paredes de vidro"
-      video: ""
-
+    - imagem: assets/img/bastidor-tripe.webp
+      descricao: "Bastidor de gravação: celular no tripé filmando uma mulher sentada à
+        mesa de uma sala de reunião"
+    - imagem: assets/img/story-padaria.webp
+      descricao: Celular na mão mostrando a galeria de fotos sobre uma mesa de café,
+        com o texto 'captação do dia'
+      video: assets/video/story-padaria.mp4
+    - imagem: assets/img/laura-bastidor-camera.webp
+      descricao: Laura ajustando a câmera em um espaço de evento com paredes de vidro
 processo:
-  frase: "Gosto de estar perto do processo, da ideia à execução."
+  frase: Gosto de estar perto do processo, da ideia à execução.
   etapas:
-    - "Briefing & Alinhamento"
-    - "Estratégia & Planejamento"
-    - "Criação & Produção"
-    - "Publicação & Análise"
-
+    - Briefing & Alinhamento
+    - Estratégia & Planejamento
+    - Criação & Produção
+    - Publicação & Análise
 ferramentas:
-  - "Instagram"
-  - "Meta Business Suite"
-  - "Canva"
-  - "LinkedIn"
-  - "Google Analytics"
-  - "Google Workspace"
-  - "CapCut"
-  - "WordPress"
-  - "Ferramentas de IA"
-
+  - Instagram
+  - Meta Business Suite
+  - Canva
+  - LinkedIn
+  - Google Analytics
+  - Google Workspace
+  - CapCut
+  - WordPress
+  - Ferramentas de IA
 contato:
-  frase: "Se você tem uma ideia, projeto ou marca que precisa de conteúdo, vamos conversar."
-  email: "lauramoro325@gmail.com"
-  linkedin: "https://linkedin.com/in/laura-moro-a968071a4"
-  linkedin_nome: "Laura Moro"
-  instagram: "lauramoro_"
-  whatsapp: ""
-  formulario_texto: "Prefere escrever por aqui? Preencha e a mensagem chega pronta no seu e-mail para enviar."
-  foto: "assets/img/cta-retrato.webp"
-  foto_descricao: "Retrato de Laura Moro sorrindo, de camiseta branca, em fundo claro"
-
+  frase: Se você tem uma ideia, projeto ou marca que precisa de conteúdo, vamos
+    conversar.
+  email: lauramoro325@gmail.com
+  linkedin: https://linkedin.com/in/laura-moro-a968071a4
+  linkedin_nome: Laura Moro
+  instagram: lauramoro_
+  formulario_texto: Prefere escrever por aqui? Preencha e a mensagem chega pronta
+    no seu e-mail para enviar.
+  foto: assets/img/cta-retrato.webp
+  foto_descricao: Retrato de Laura Moro sorrindo, de camiseta branca, em fundo claro
 rodape:
-  cargo: "Estrategista de Conteúdo | Creator Mobile"
-  frase: "Conteúdo para contar histórias, criar conexões e deixar marcas."
-  linktree: "https://linktr.ee/laura.moro"
-  lattes: "http://lattes.cnpq.br/7117428088453613"
-  cidade: "Curitiba · Paraná"
+  cargo: Estrategista de Conteúdo | Creator Mobile
+  frase: Conteúdo para contar histórias, criar conexões e deixar marcas.
+  linktree: https://linktr.ee/laura.moro
+  lattes: http://lattes.cnpq.br/7117428088453613
+  cidade: Curitiba · Paraná
