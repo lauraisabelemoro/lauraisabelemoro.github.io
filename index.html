@@ -51,12 +51,12 @@
     <a href="#contato" data-nav="contato">Contato</a>
   </nav>
   <div class="nav__end">
-    {%- if c.instagram != blank %}
+    {%- if c.instagram.size > 0 %}
     <a class="ico pillbox" href="{{ insta }}" target="_blank" rel="noopener" aria-label="Instagram da Laura (abre em nova aba)">
       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.2" cy="6.8" r=".8" class="f"/></svg>
     </a>
     {%- endif %}
-    {%- if c.linkedin != blank %}
+    {%- if c.linkedin.size > 0 %}
     <a class="ico pillbox" href="{{ c.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn da Laura (abre em nova aba)">
       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M8.2 10.5V16M8.2 7.7v.1M11.6 16v-5.5M11.6 13c0-1.6 1-2.6 2.3-2.6s2.2.9 2.2 2.6V16"/></svg>
     </a>
@@ -78,9 +78,9 @@
   <div class="mmenu__foot">
     <a class="btn btn--dark btn--big" href="#contato">Vamos conversar <span aria-hidden="true">→</span></a>
     <div class="mmenu__social">
-      {%- if c.instagram != blank %}<a href="{{ insta }}" target="_blank" rel="noopener">Instagram</a>{% endif %}
-      {%- if c.linkedin != blank %}<a href="{{ c.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
-      {%- if c.email != blank %}<a href="mailto:{{ c.email }}">E-mail</a>{% endif %}
+      {%- if c.instagram.size > 0 %}<a href="{{ insta }}" target="_blank" rel="noopener">Instagram</a>{% endif %}
+      {%- if c.linkedin.size > 0 %}<a href="{{ c.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
+      {%- if c.email.size > 0 %}<a href="mailto:{{ c.email }}">E-mail</a>{% endif %}
     </div>
   </div>
 </div>
@@ -94,7 +94,7 @@
     <div class="hero__grid" aria-hidden="true"></div>
 
     <div class="hero__lock">
-      {%- if h.pilula != blank %}
+      {%- if h.pilula.size > 0 %}
       <span class="pill pill--off hero__pill">{{ h.pilula | escape }}</span>
       {%- endif %}
       <h1 id="hero-titulo" class="lockup">
@@ -113,19 +113,19 @@
       <span class="polaroid__back" aria-hidden="true"></span>
       <span class="polaroid__front">
         <img src="{{ h.foto }}" width="900" height="1600" alt="{{ h.foto_descricao | escape }}" fetchpriority="high">
-        {%- if h.foto_legenda != blank %}
+        {%- if h.foto_legenda.size > 0 %}
         <span class="polaroid__cap">{{ h.foto_legenda | escape }}</span>
         {%- endif %}
       </span>
       <img class="polaroid__clip" src="assets/img/prendedor.webp" width="300" height="260" alt="" aria-hidden="true">
-      {%- if h.video != blank %}
+      {%- if h.video.size > 0 %}
       <button class="plus plus--edge hero__play" type="button" data-video="{{ h.video }}" data-poster="{{ h.video_capa }}" aria-label="Dar o play: assistir ao vídeo"><span aria-hidden="true">+</span></button>
       {%- endif %}
     </figure>
 
     <!-- a foto "abre" em vídeo conforme a rolagem -->
     <div class="hero__reel" aria-hidden="true">
-      {%- if h.video != blank %}
+      {%- if h.video.size > 0 %}
       <video src="{{ h.video }}" poster="{{ h.video_capa }}" muted loop playsinline preload="metadata"></video>
       {%- else %}
       <img src="{{ h.video_capa }}" alt="" style="width:100%;height:100%;object-fit:cover">
@@ -161,7 +161,7 @@
   <div class="wrap numeros__in">
     <div class="numeros__head">
       <h2 id="num-titulo" class="ttl rv"><span class="nb"><span class="cap">P</span>rojetos</span><br><span class="l2">&amp; portfólio</span></h2>
-      {%- if nu.foto != blank %}
+      {%- if nu.foto.size > 0 %}
       <figure class="circle rv" data-circle>
         <img src="{{ nu.foto }}" width="900" height="1600" loading="lazy" alt="{{ nu.foto_descricao | escape }}">
       </figure>
@@ -170,7 +170,7 @@
     <ul class="ncards" role="list">
       {%- for n in nu.lista %}
       <li class="ncard rv">
-        <span class="ncard__n">+<span data-count="{{ n.numero }}">{{ n.numero }}</span>{% if n.complemento != blank %}{% if n.complemento_pequeno %}<small>{{ n.complemento | escape }}</small>{% else %}&nbsp;{{ n.complemento | escape }}{% endif %}{% endif %}</span>
+        <span class="ncard__n">+<span data-count="{{ n.numero }}">{{ n.numero }}</span>{% if n.complemento.size > 0 %}{% if n.complemento_pequeno %}<small>{{ n.complemento | escape }}</small>{% else %}&nbsp;{{ n.complemento | escape }}{% endif %}{% endif %}</span>
         <span class="ncard__t">{{ n.texto | escape }}</span>
       </li>
       {%- endfor %}
@@ -186,7 +186,7 @@
       <div class="cam" data-cam>
         <div class="cam__out">
           {%- for f in so.fotos_camera limit: 3 %}
-          <figure class="snap snap--{{ forloop.index }}"><img src="{{ f.imagem }}" width="900" height="1200" loading="lazy" alt="{{ f.descricao | escape }}">{% if f.legenda != blank %}<figcaption>{{ f.legenda | escape }}</figcaption>{% endif %}</figure>
+          <figure class="snap snap--{{ forloop.index }}"><img src="{{ f.imagem }}" width="900" height="1200" loading="lazy" alt="{{ f.descricao | escape }}">{% if f.legenda.size > 0 %}<figcaption>{{ f.legenda | escape }}</figcaption>{% endif %}</figure>
           {%- endfor %}
         </div>
         <div class="cam__dev">
@@ -247,7 +247,7 @@
     <div class="shead">
       <h2 id="serv-titulo" class="ttl ttl--xl rv"><span class="nb"><span class="cap">O</span> que</span><br><span class="l2">eu faço</span></h2>
       <div class="shead__side serv__side rv">
-        {%- if sv.foto != blank %}
+        {%- if sv.foto.size > 0 %}
         <figure class="circle circle--sm"><img src="{{ sv.foto }}" width="900" height="1600" loading="lazy" alt="{{ sv.foto_descricao | escape }}"></figure>
         {%- endif %}
         <div>
@@ -265,13 +265,13 @@
       {%- for s in sv.lista %}
       <article class="serv__i{% if s.destaque %} serv__i--hl{% endif %} rv">
         <span class="serv__n">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
-        <h3 class="serv__t">{{ s.linha_1 | escape }}{% if s.linha_2 != blank %}<br><span class="l2">{{ s.linha_2 | escape }}</span>{% endif %}</h3>
+        <h3 class="serv__t">{{ s.linha_1 | escape }}{% if s.linha_2.size > 0 %}<br><span class="l2">{{ s.linha_2 | escape }}</span>{% endif %}</h3>
         <ul class="bul" role="list">
           {%- for i in s.itens %}
           <li>{{ i | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>
           {%- endfor %}
         </ul>
-        {%- if s.nota != blank %}
+        {%- if s.nota.size > 0 %}
         <p class="serv__note">{{ s.nota | escape }}</p>
         {%- endif %}
       </article>
@@ -294,7 +294,7 @@
     <p class="micro rv">{{ ma.aviso | escape }}</p>
     <ul class="mgrid" role="list">
       {%- for m in ma.lista %}
-      {%- if m.case != blank %}
+      {%- if m.case.size > 0 %}
       <li class="rv"><a href="#case-{{ m.case | strip }}" data-brand><span>{{ m.nome | escape }}</span><span class="mgrid__go" aria-hidden="true">ver case ↓</span></a></li>
       {%- else %}
       <li class="rv"><span>{{ m.nome | escape }}</span></li>
@@ -342,7 +342,7 @@
     <div class="wrap duo">
   {%- endif %}
       <div class="duo__i"{% if prev and prev.formato == 'celular_ao_lado' %} id="case-{{ k.id | strip }}"{% endif %}>
-        {%- if k.celular_video != blank %}
+        {%- if k.celular_video.size > 0 %}
         <figure class="phone phone--v rv">
           <video class="autoplay" src="{{ k.celular_video }}" poster="{{ k.celular }}" muted loop playsinline preload="none" aria-label="{{ k.celular_descricao | escape }}"></video>
         </figure>
@@ -352,7 +352,7 @@
         <div>
           <span class="case__n rv">{{ num }}</span>
           <h3 class="case__t rv">{{ k.titulo | strip | escape | newline_to_br }}</h3>
-          {%- if k.subtitulo != blank %}
+          {%- if k.subtitulo.size > 0 %}
           <p class="sub rv">{{ k.subtitulo | escape }}</p>
           {%- endif %}
           <p class="rv">{{ k.texto | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
@@ -382,12 +382,12 @@
       <div class="case__txt">
         <span class="case__n rv">{{ num }}</span>
         <h3 id="c{{ forloop.index }}" class="case__t rv">{{ k.titulo | strip | escape | newline_to_br }}</h3>
-        {%- if k.subtitulo != blank %}
+        {%- if k.subtitulo.size > 0 %}
         <p class="sub rv">{{ k.subtitulo | escape }}</p>
         {%- endif %}
         <p class="rv">{{ k.texto | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
         {%- if k.pilulas.size > 0 %}
-        {%- if k.pilulas_titulo != blank %}
+        {%- if k.pilulas_titulo.size > 0 %}
         <p class="micro rv">{{ k.pilulas_titulo | escape }}</p>
         {%- endif %}
         <ul class="pills rv" role="list">
@@ -414,7 +414,7 @@
         {%- for p in k.posts limit: 2 %}
         <figure class="post{% if forloop.index == 2 %} post--2{% endif %} rv">
           <img src="{{ p.imagem }}" width="700" height="862" loading="lazy" alt="{{ p.descricao | escape }}">
-          {%- if p.legenda != blank %}
+          {%- if p.legenda.size > 0 %}
           <figcaption class="pill pill--off">{{ p.legenda | escape }}</figcaption>
           {%- endif %}
         </figure>
@@ -422,16 +422,16 @@
       </div>
       {%- else %}
       <div class="collage {% if k.fotos.size >= 2 %}collage--a{% else %}collage--c{% endif %}">
-        {%- if k.celular_video != blank %}
+        {%- if k.celular_video.size > 0 %}
         <figure class="phone phone--v rv"><video class="autoplay" src="{{ k.celular_video }}" poster="{{ k.celular }}" muted loop playsinline preload="none" aria-label="{{ k.celular_descricao | escape }}"></video></figure>
-        {%- elsif k.celular != blank %}
+        {%- elsif k.celular.size > 0 %}
         <figure class="phone rv"><img src="{{ k.celular }}" width="600" height="1301" loading="lazy" alt="{{ k.celular_descricao | escape }}"></figure>
         {%- endif %}
         {%- for f in k.fotos limit: 2 %}
         {%- if k.fotos.size >= 2 %}{% assign phc = 'ph--' | append: forloop.index %}{% else %}{% assign phc = 'ph--3' %}{% endif %}
         <figure class="ph {{ phc }} rv">
           <img src="{{ f.imagem }}" width="700" height="935" loading="lazy" alt="{{ f.descricao | escape }}">
-          {%- if f.ampliar != blank %}
+          {%- if f.ampliar.size > 0 %}
           <button class="plus plus--edge" type="button" data-lightbox="{{ f.ampliar }}" data-alt="{{ f.descricao | escape }}" aria-label="Ver mais deste case"><span aria-hidden="true">+</span></button>
           {%- endif %}
         </figure>
@@ -478,22 +478,22 @@
     <div class="vids" role="list">
       {%- for v in vd.lista %}
       <article class="vcard{% if v.destaque %} vcard--feat{% endif %} rv" role="listitem">
-        {%- if v.video != blank %}
+        {%- if v.video.size > 0 %}
         <button class="vcard__m" type="button" data-video="{{ v.video }}" data-poster="{{ v.capa }}" aria-label="Assistir: {{ v.capa_descricao | default: v.titulo | escape }}">
           <img src="{{ v.capa }}" width="540" height="960" loading="lazy" alt="">
-          {%- if v.selo != blank %}<span class="vcard__badge">{{ v.selo | escape }}</span>{% endif %}
+          {%- if v.selo.size > 0 %}<span class="vcard__badge">{{ v.selo | escape }}</span>{% endif %}
           <span class="plus plus--play" aria-hidden="true"><span>+</span></span>
         </button>
         {%- else %}
         <div class="vcard__m">
           <img src="{{ v.capa }}" width="540" height="960" loading="lazy" alt="{{ v.capa_descricao | escape }}">
-          {%- if v.selo != blank %}
+          {%- if v.selo.size > 0 %}
           <span class="vcard__badge">{{ v.selo | escape }}</span>
           {%- endif %}
         </div>
         {%- endif %}
         <h3 class="vcard__t">{{ v.titulo | escape }}</h3>
-        {%- if v.texto != blank %}
+        {%- if v.texto.size > 0 %}
         <p>{{ v.texto | markdownify | remove: '<p>' | remove: '</p>' | strip | replace: '[INSERIR', '<span class="ph-txt">[INSERIR' | replace: ']', ']</span>' }}</p>
         {%- endif %}
       </article>
@@ -509,7 +509,7 @@
         <li class="rv"><button type="button" class="thumb" data-lightbox="{{ o.imagem }}" data-alt="{{ o.descricao | escape }}" aria-label="Ampliar: {{ o.descricao | escape }}"><img src="{{ o.imagem }}" width="400" height="711" loading="lazy" alt="{{ o.descricao | escape }}"></button></li>
         {%- endfor %}
       </ul>
-      {%- if vd.outros_nota != blank %}
+      {%- if vd.outros_nota.size > 0 %}
       <p class="micro">{{ vd.outros_nota | markdownify | remove: '<p>' | remove: '</p>' | strip | replace: '[INSERIR', '<span class="ph-txt">[INSERIR' | replace: ']', ']</span>' }}</p>
       {%- endif %}
     </div>
@@ -531,7 +531,7 @@
     <div class="bast__photos">
       {%- for f in ba.fotos limit: 3 %}
       <figure class="rv"><img src="{{ f.imagem }}" width="900" height="1600" loading="lazy" alt="{{ f.descricao | escape }}">
-        {%- if f.video != blank %}
+        {%- if f.video.size > 0 %}
         <button class="plus plus--edge" type="button" data-video="{{ f.video }}" data-poster="{{ f.imagem }}" aria-label="Assistir ao vídeo"><span aria-hidden="true">+</span></button>
         {%- endif %}
       </figure>
@@ -583,17 +583,17 @@
     <p class="cont__lead rv">{{ c.frase | escape }}</p>
 
     <ul class="ccards" role="list">
-      {%- if c.email != blank %}
+      {%- if c.email.size > 0 %}
       {%- assign em = c.email | split: '@' %}
       <li class="rv"><a class="ccard" href="mailto:{{ c.email }}"><span class="micro">E-mail</span><span class="ccard__v">{{ em[0] | escape }}<wbr>@{{ em[1] | escape }}</span><span class="ccard__go" aria-hidden="true">↗</span></a></li>
       {%- endif %}
-      {%- if c.linkedin != blank %}
+      {%- if c.linkedin.size > 0 %}
       <li class="rv"><a class="ccard" href="{{ c.linkedin }}" target="_blank" rel="noopener"><span class="micro">LinkedIn</span><span class="ccard__v">{{ c.linkedin_nome | escape }}</span><span class="ccard__go" aria-hidden="true">↗</span></a></li>
       {%- endif %}
-      {%- if c.instagram != blank %}
+      {%- if c.instagram.size > 0 %}
       <li class="rv"><a class="ccard" href="{{ insta }}" target="_blank" rel="noopener"><span class="micro">Instagram</span><span class="ccard__v">@{{ c.instagram | escape }}</span><span class="ccard__go" aria-hidden="true">↗</span></a></li>
       {%- endif %}
-      {%- if c.whatsapp != blank %}
+      {%- if c.whatsapp.size > 0 %}
       <li class="rv"><a class="ccard" href="https://wa.me/{{ c.whatsapp }}" target="_blank" rel="noopener"><span class="micro">WhatsApp</span><span class="ccard__v">Chamar no WhatsApp</span><span class="ccard__go" aria-hidden="true">↗</span></a></li>
       {%- endif %}
     </ul>
@@ -662,19 +662,19 @@
       </div>
       <div class="foot__col">
         <p class="micro">Contato</p>
-        {%- if c.email != blank %}
+        {%- if c.email.size > 0 %}
         <a href="mailto:{{ c.email }}">{{ c.email | escape }}</a>
         {%- endif %}
-        {%- if c.linkedin != blank %}
+        {%- if c.linkedin.size > 0 %}
         <a href="{{ c.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
         {%- endif %}
-        {%- if c.instagram != blank %}
+        {%- if c.instagram.size > 0 %}
         <a href="{{ insta }}" target="_blank" rel="noopener">Instagram</a>
         {%- endif %}
-        {%- if ro.linktree != blank %}
+        {%- if ro.linktree.size > 0 %}
         <a href="{{ ro.linktree }}" target="_blank" rel="noopener">Linktree</a>
         {%- endif %}
-        {%- if ro.lattes != blank %}
+        {%- if ro.lattes.size > 0 %}
         <a href="{{ ro.lattes }}" target="_blank" rel="noopener">Currículo Lattes</a>
         {%- endif %}
       </div>
