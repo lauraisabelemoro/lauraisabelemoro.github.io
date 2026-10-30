@@ -1,0 +1,778 @@
+# Configuração do painel (Sveltia CMS). Os campos espelham _data/site.yml.
+backend:
+  name: github
+  repo: lauraisabelemoro/lauraisabelemoro.github.io
+  branch: main
+  commit_messages:
+    update: "Painel: atualiza {{path}}"
+    uploadMedia: "Painel: envia {{path}}"
+    deleteMedia: "Painel: apaga {{path}}"
+site_url: https://lauraisabelemoro.github.io
+display_url: https://lauraisabelemoro.github.io
+logo_url: /favicon.ico
+media_folder: assets/img
+public_folder: assets/img
+editor:
+  preview: false
+collections:
+  - name: site
+    label: Conteúdo do site
+    description: Todos os textos, fotos e listas do site. Mude o que quiser e clique em Salvar. O site atualiza em 1 a 2 minutos.
+    files:
+      - name: conteudo
+        label: Conteúdo do site
+        file: _data/site.yml
+        format: yaml
+        fields:
+          - name: geral
+            label: Google e compartilhamento
+            hint: Como o site aparece no Google e quando alguém manda o link no WhatsApp ou nas redes.
+            widget: object
+            fields:
+              - name: titulo
+                label: Título no Google
+                hint: "Aparece na aba do navegador e no Google. Ideal: até 60 letras."
+                required: false
+                widget: string
+              - name: descricao
+                label: Descrição no Google
+                hint: "Resumo que aparece embaixo do título no Google. Ideal: até 155 letras."
+                required: false
+                widget: text
+              - name: titulo_compartilhamento
+                label: Título ao compartilhar o link
+                required: false
+                widget: string
+              - name: descricao_compartilhamento
+                label: Descrição ao compartilhar o link
+                required: false
+                widget: text
+              - name: imagem_compartilhamento
+                label: Imagem ao compartilhar o link
+                hint: Foto que aparece quando mandam o link do site. Formato deitado (1200 x 630) fica melhor.
+                required: false
+                widget: image
+            collapsed: true
+          - name: inicio
+            label: 1. Abertura
+            hint: A primeira tela do site, com o nome LAURA MORO e a polaroid.
+            widget: object
+            fields:
+              - name: pilula
+                label: Etiqueta acima do nome
+                hint: "Ex.: Social Media"
+                required: false
+                widget: string
+              - name: cargo
+                label: Cargo
+                hint: Aparece embaixo do nome.
+                required: false
+                widget: string
+              - name: frase
+                label: Frase pequena
+                hint: Aperte Enter para quebrar a linha onde quiser.
+                required: false
+                widget: text
+              - name: foto
+                label: Foto da polaroid
+                hint: Foto em pé (vertical) funciona melhor.
+                required: false
+                widget: image
+              - name: foto_descricao
+                label: Descrição da foto
+                hint: Descreva a foto em uma frase (para quem não enxerga e para o Google).
+                required: false
+                widget: string
+              - name: foto_legenda
+                label: Legenda escrita na polaroid
+                hint: Texto em letra cursiva na borda da foto. Deixe vazio para não mostrar.
+                required: false
+                widget: string
+              - name: video
+                label: Vídeo que abre ao rolar a página
+                hint: Vídeo vertical em MP4, de preferência curto e leve (até 10 MB).
+                required: false
+                widget: file
+                media_folder: /assets/video
+                public_folder: assets/video
+              - name: video_capa
+                label: Capa do vídeo
+                hint: Imagem que aparece enquanto o vídeo carrega.
+                required: false
+                widget: image
+            collapsed: true
+          - name: manifesto
+            label: 2. Manifesto
+            widget: object
+            fields:
+              - name: frase
+                label: Frase pequena no canto
+                required: false
+                widget: string
+              - name: texto
+                label: Texto grande
+                hint: A primeira letra aparece automaticamente em letra cursiva.
+                required: false
+                widget: text
+              - name: pilulas
+                label: Etiquetas
+                required: false
+                widget: list
+                field:
+                  name: item
+                  label: Etiquetas
+                  widget: string
+            collapsed: true
+          - name: numeros
+            label: 3. Números
+            hint: Use só números oficiais e confirmados.
+            widget: object
+            fields:
+              - name: foto
+                label: Foto redonda
+                required: false
+                widget: image
+              - name: foto_descricao
+                label: Descrição da foto
+                required: false
+                widget: string
+              - name: lista
+                label: Números
+                required: false
+                widget: list
+                fields:
+                  - name: numero
+                    label: Número
+                    hint: Só o número. O sinal + aparece sozinho.
+                    required: false
+                    widget: number
+                    value_type: int
+                  - name: complemento
+                    label: Complemento
+                    hint: "Ex.: mil, anos. Deixe vazio se não tiver."
+                    required: false
+                    widget: string
+                  - name: complemento_pequeno
+                    label: Complemento em letra pequena
+                    hint: "Ligado: o complemento fica pequeno ao lado do número (como em +5 anos)."
+                    required: false
+                    widget: boolean
+                    default: false
+                  - name: texto
+                    label: Texto explicativo
+                    required: false
+                    widget: string
+                collapsed: true
+                summary: +{{fields.numero}} {{fields.complemento}} — {{fields.texto}}
+            collapsed: true
+          - name: sobre
+            label: 4. Sobre mim
+            widget: object
+            fields:
+              - name: frase
+                label: Frase pequena no canto
+                hint: Aperte Enter para quebrar a linha.
+                required: false
+                widget: text
+              - name: paragrafos
+                label: Parágrafos
+                hint: "O primeiro parágrafo aparece maior. Para negrito, coloque a palavra entre dois asteriscos: **assim**."
+                required: false
+                widget: list
+                field:
+                  name: item
+                  label: Parágrafos
+                  widget: text
+              - name: fotos_camera
+                label: Fotos que saem da câmera
+                hint: São sempre 3 fotos. Fotos quadradas ou em pé ficam melhores.
+                required: false
+                widget: list
+                min: 3
+                max: 3
+                fields:
+                  - name: imagem
+                    label: Foto
+                    required: false
+                    widget: image
+                  - name: descricao
+                    label: Descrição da foto
+                    required: false
+                    widget: string
+                  - name: legenda
+                    label: Legenda escrita na foto
+                    hint: Uma ou duas palavras.
+                    required: false
+                    widget: string
+                collapsed: true
+                summary: "Foto {{index}}: {{fields.legenda}}"
+              - name: camera
+                label: Foto da câmera
+                hint: Câmera de frente, com fundo transparente (PNG).
+                required: false
+                widget: image
+              - name: trajetoria
+                label: Trajetória
+                hint: Do mais recente para o mais antigo.
+                required: false
+                widget: list
+                fields:
+                  - name: periodo
+                    label: Período
+                    hint: "Ex.: mar 2026 — atual"
+                    required: false
+                    widget: string
+                  - name: empresa
+                    label: Empresa
+                    required: false
+                    widget: string
+                  - name: cargo
+                    label: Cargo
+                    required: false
+                    widget: string
+                collapsed: true
+                summary: "{{fields.empresa}} ({{fields.periodo}})"
+              - name: formacao
+                label: Formação
+                required: false
+                widget: list
+                fields:
+                  - name: periodo
+                    label: Período
+                    required: false
+                    widget: string
+                  - name: curso
+                    label: Curso
+                    required: false
+                    widget: string
+                  - name: instituicao
+                    label: Instituição
+                    required: false
+                    widget: string
+                collapsed: true
+                summary: "{{fields.curso}}"
+              - name: alem_disso
+                label: Além disso (prêmios, certificações)
+                required: false
+                widget: list
+                field:
+                  name: item
+                  label: Além disso (prêmios, certificações)
+                  widget: string
+              - name: idioma
+                label: Idioma
+                required: false
+                widget: string
+              - name: idioma_nivel
+                label: Nível do idioma
+                required: false
+                widget: string
+            collapsed: true
+          - name: servicos
+            label: 5. O que eu faço
+            widget: object
+            fields:
+              - name: foto
+                label: Foto redonda
+                required: false
+                widget: image
+              - name: foto_descricao
+                label: Descrição da foto
+                required: false
+                widget: string
+              - name: para_quem
+                label: Para quem
+                required: false
+                widget: list
+                field:
+                  name: item
+                  label: Para quem
+                  widget: string
+              - name: lista
+                label: Serviços
+                required: false
+                widget: list
+                fields:
+                  - name: nome
+                    label: Nome do serviço
+                    hint: "Usado no rodapé. Ex.: Estratégia de Conteúdo"
+                    required: false
+                    widget: string
+                  - name: linha_1
+                    label: Título — primeira linha
+                    hint: "Em letra minúscula. Ex.: estratégia"
+                    required: false
+                    widget: string
+                  - name: linha_2
+                    label: Título — segunda linha
+                    hint: "Ex.: de conteúdo"
+                    required: false
+                    widget: string
+                  - name: destaque
+                    label: Card em destaque (cinza escuro)
+                    required: false
+                    widget: boolean
+                    default: false
+                  - name: itens
+                    label: O que inclui
+                    hint: "Para negrito: **assim**."
+                    required: false
+                    widget: list
+                    field:
+                      name: item
+                      label: O que inclui
+                      widget: string
+                  - name: nota
+                    label: Frase em letra cursiva no fim do card
+                    hint: Opcional.
+                    required: false
+                    widget: string
+                collapsed: true
+                summary: "{{fields.nome}}"
+            collapsed: true
+          - name: marcas
+            label: 6. Marcas atendidas
+            widget: object
+            fields:
+              - name: frase
+                label: Frase em destaque
+                required: false
+                widget: string
+              - name: texto
+                label: Texto
+                required: false
+                widget: text
+              - name: aviso
+                label: Texto pequeno acima da grade
+                required: false
+                widget: string
+              - name: lista
+                label: Marcas
+                required: false
+                widget: list
+                fields:
+                  - name: nome
+                    label: Nome da marca
+                    required: false
+                    widget: string
+                  - name: case
+                    label: Case ligado a esta marca
+                    hint: "O 'endereço' do case (ex.: fiep, soow, perfis). Ao clicar na marca, o site leva até ele. Deixe vazio se a marca não tiver case."
+                    required: false
+                    widget: string
+                collapsed: true
+                summary: "{{fields.nome}}"
+            collapsed: true
+          - name: cases
+            label: 7. Cases
+            widget: object
+            fields:
+              - name: frase
+                label: Frase da abertura dos cases
+                required: false
+                widget: string
+              - name: lista
+                label: Cases
+                hint: A ordem aqui é a ordem no site. Os números (01, 02...) e as cores de fundo se ajustam sozinhos.
+                required: false
+                widget: list
+                fields:
+                  - name: id
+                    label: Endereço do case
+                    hint: "Uma palavra, sem espaço nem acento (ex.: fiep). Usado nos links das marcas."
+                    required: false
+                    widget: string
+                    pattern:
+                      - ^[a-z0-9-]+$
+                      - Use só letras minúsculas sem acento, números e hífen.
+                  - name: nome_curto
+                    label: Nome curto
+                    hint: Aparece nos botões da abertura dos cases.
+                    required: false
+                    widget: string
+                  - name: formato
+                    label: Formato do case
+                    hint: "Colagem: celular + até 2 fotos. Posts: 2 posts lado a lado. Celular ao lado: celular pequeno ao lado do texto (dois seguidos ficam lado a lado)."
+                    required: false
+                    widget: select
+                    options:
+                      - label: Colagem (celular + fotos)
+                        value: colagem
+                      - label: Posts lado a lado
+                        value: posts
+                      - label: Celular ao lado do texto
+                        value: celular_ao_lado
+                  - name: texto_do_lado
+                    label: Lado do texto
+                    hint: Só para Colagem e Posts. Alternar os lados deixa a página mais dinâmica.
+                    required: false
+                    widget: select
+                    options:
+                      - label: Texto à esquerda
+                        value: esquerda
+                      - label: Texto à direita
+                        value: direita
+                  - name: titulo
+                    label: Título
+                    hint: Em CAIXA ALTA. Aperte Enter para quebrar a linha.
+                    required: false
+                    widget: text
+                  - name: subtitulo
+                    label: Subtítulo em negrito
+                    hint: Uma frase. Opcional.
+                    required: false
+                    widget: string
+                  - name: texto
+                    label: Texto
+                    required: false
+                    widget: text
+                  - name: pilulas_titulo
+                    label: Título das etiquetas
+                    hint: "Ex.: Entre eles. Opcional."
+                    required: false
+                    widget: string
+                  - name: pilulas
+                    label: Etiquetas
+                    hint: Opcional.
+                    required: false
+                    widget: list
+                    field:
+                      name: item
+                      label: Etiquetas
+                      widget: string
+                  - name: botao
+                    label: Texto do botão +
+                    hint: "Ex.: O que fiz, Entregas."
+                    required: false
+                    widget: string
+                  - name: itens
+                    label: Lista que abre no botão +
+                    hint: Deixe vazio para não mostrar o botão.
+                    required: false
+                    widget: list
+                    field:
+                      name: item
+                      label: Lista que abre no botão +
+                      widget: string
+                  - name: itens_em_duas_colunas
+                    label: Lista em duas colunas
+                    hint: Bom para listas com itens curtos.
+                    required: false
+                    widget: boolean
+                    default: false
+                  - name: celular
+                    label: Imagem dentro do celular
+                    hint: Print do feed ou story (em pé). Se tiver vídeo, vira a capa dele.
+                    required: false
+                    widget: image
+                  - name: celular_video
+                    label: Vídeo dentro do celular
+                    hint: Opcional. Toca sozinho, sem som.
+                    required: false
+                    widget: file
+                    media_folder: /assets/video
+                    public_folder: assets/video
+                  - name: celular_descricao
+                    label: Descrição do que aparece no celular
+                    required: false
+                    widget: string
+                  - name: fotos
+                    label: Fotos da colagem
+                    hint: Só para o formato Colagem. Até 2 fotos.
+                    required: false
+                    widget: list
+                    max: 2
+                    fields:
+                      - name: imagem
+                        label: Foto
+                        required: false
+                        widget: image
+                      - name: descricao
+                        label: Descrição da foto
+                        required: false
+                        widget: string
+                      - name: ampliar
+                        label: Imagem extra (botão +)
+                        hint: Opcional. Abre em tela cheia ao clicar no +.
+                        required: false
+                        widget: image
+                    collapsed: true
+                    summary: Foto {{index}}
+                  - name: posts
+                    label: Posts
+                    hint: Só para o formato Posts. Até 2.
+                    required: false
+                    widget: list
+                    max: 2
+                    fields:
+                      - name: imagem
+                        label: Imagem do post
+                        required: false
+                        widget: image
+                      - name: descricao
+                        label: Descrição do post
+                        required: false
+                        widget: string
+                      - name: legenda
+                        label: Etiqueta embaixo
+                        required: false
+                        widget: string
+                    collapsed: true
+                    summary: "{{fields.legenda}}"
+                collapsed: true
+                summary: "{{index}}. {{fields.nome_curto}}"
+            collapsed: true
+          - name: perfis
+            label: 7b. Outros perfis
+            widget: object
+            fields:
+              - name: titulo
+                label: Título
+                required: false
+                widget: string
+              - name: frase
+                label: Frase
+                required: false
+                widget: string
+              - name: lista
+                label: Perfis
+                required: false
+                widget: list
+                fields:
+                  - name: nome
+                    label: Nome
+                    required: false
+                    widget: string
+                  - name: imagem
+                    label: Print (em pé)
+                    required: false
+                    widget: image
+                  - name: descricao
+                    label: Descrição do print
+                    required: false
+                    widget: string
+                collapsed: true
+                summary: "{{fields.nome}}"
+            collapsed: true
+          - name: videos
+            label: 8. Conteúdo em movimento
+            widget: object
+            fields:
+              - name: frase
+                label: Frase em destaque
+                required: false
+                widget: string
+              - name: texto
+                label: Texto
+                hint: "Para negrito: **assim**."
+                required: false
+                widget: text
+              - name: lista
+                label: Vídeos
+                required: false
+                widget: list
+                fields:
+                  - name: titulo
+                    label: Título
+                    hint: Em CAIXA ALTA.
+                    required: false
+                    widget: string
+                  - name: texto
+                    label: Texto
+                    hint: "Para pôr um link: [texto do link](https://endereço)."
+                    required: false
+                    widget: text
+                  - name: capa
+                    label: Capa (em pé)
+                    required: false
+                    widget: image
+                  - name: capa_descricao
+                    label: Descrição da capa
+                    required: false
+                    widget: string
+                  - name: video
+                    label: Vídeo
+                    hint: Opcional. Se tiver, a capa vira um botão que abre o vídeo.
+                    required: false
+                    widget: file
+                    media_folder: /assets/video
+                    public_folder: assets/video
+                  - name: selo
+                    label: Selo na capa
+                    hint: "Opcional. Ex.: +102 mil"
+                    required: false
+                    widget: string
+                  - name: destaque
+                    label: Card maior
+                    required: false
+                    widget: boolean
+                    default: false
+                collapsed: true
+                summary: "{{fields.titulo}}"
+              - name: outros
+                label: Outros vídeos (miniaturas)
+                required: false
+                widget: list
+                fields:
+                  - name: imagem
+                    label: Imagem
+                    required: false
+                    widget: image
+                  - name: descricao
+                    label: Descrição
+                    required: false
+                    widget: string
+                collapsed: true
+                summary: Miniatura {{index}}
+              - name: outros_nota
+                label: Texto abaixo das miniaturas
+                hint: "Opcional. Para link: [texto](https://endereço)."
+                required: false
+                widget: text
+            collapsed: true
+          - name: bastidores
+            label: 8b. Bastidores
+            widget: object
+            fields:
+              - name: frase
+                label: Frase em destaque
+                required: false
+                widget: string
+              - name: texto
+                label: Texto
+                required: false
+                widget: text
+              - name: pilulas
+                label: Etiquetas
+                required: false
+                widget: list
+                field:
+                  name: item
+                  label: Etiquetas
+                  widget: string
+              - name: fotos
+                label: Fotos
+                hint: Até 3 fotos em pé.
+                required: false
+                widget: list
+                max: 3
+                fields:
+                  - name: imagem
+                    label: Foto
+                    required: false
+                    widget: image
+                  - name: descricao
+                    label: Descrição da foto
+                    required: false
+                    widget: string
+                  - name: video
+                    label: Vídeo (botão +)
+                    hint: Opcional.
+                    required: false
+                    widget: file
+                    media_folder: /assets/video
+                    public_folder: assets/video
+                collapsed: true
+                summary: Foto {{index}}
+            collapsed: true
+          - name: processo
+            label: 9. Processo criativo
+            widget: object
+            fields:
+              - name: frase
+                label: Frase ao lado do título
+                required: false
+                widget: string
+              - name: etapas
+                label: Etapas
+                hint: Os números 1. 2. 3. aparecem sozinhos.
+                required: false
+                widget: list
+                field:
+                  name: item
+                  label: Etapas
+                  widget: string
+            collapsed: true
+          - name: ferramentas
+            label: 10. Ferramentas
+            required: false
+            widget: list
+            field:
+              name: item
+              label: 10. Ferramentas
+              widget: string
+          - name: contato
+            label: 11. Contato
+            widget: object
+            fields:
+              - name: frase
+                label: Frase de convite
+                required: false
+                widget: text
+              - name: email
+                label: E-mail
+                hint: Também é para onde vai a mensagem do formulário.
+                required: false
+                widget: string
+              - name: linkedin
+                label: Link do LinkedIn
+                hint: Endereço completo, começando com https://
+                required: false
+                widget: string
+              - name: linkedin_nome
+                label: Nome mostrado no card do LinkedIn
+                required: false
+                widget: string
+              - name: instagram
+                label: Usuário do Instagram
+                hint: "Sem o @. Ex.: lauramoro_"
+                required: false
+                widget: string
+              - name: whatsapp
+                label: WhatsApp
+                hint: "Só números, com 55 + DDD. Ex.: 5541999999999. Deixe vazio para não mostrar."
+                required: false
+                widget: string
+                pattern:
+                  - ^(55\d{10,11})?$
+                  - "Use só números: 55 + DDD + número."
+              - name: formulario_texto
+                label: Texto ao lado do formulário
+                required: false
+                widget: text
+              - name: foto
+                label: Foto da polaroid
+                required: false
+                widget: image
+              - name: foto_descricao
+                label: Descrição da foto
+                required: false
+                widget: string
+            collapsed: true
+          - name: rodape
+            label: 12. Rodapé
+            widget: object
+            fields:
+              - name: cargo
+                label: Cargo
+                required: false
+                widget: string
+              - name: frase
+                label: Frase
+                required: false
+                widget: string
+              - name: linktree
+                label: Link do Linktree
+                hint: Deixe vazio para não mostrar.
+                required: false
+                widget: string
+              - name: lattes
+                label: Link do Currículo Lattes
+                hint: Deixe vazio para não mostrar.
+                required: false
+                widget: string
+              - name: cidade
+                label: Cidade
+                required: false
+                widget: string
+            collapsed: true
