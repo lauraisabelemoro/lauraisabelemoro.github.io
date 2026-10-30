@@ -24,44 +24,41 @@
 <link rel="preload" href="assets/fonts/unbounded-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/pinyon-script-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/img/vf-captacao-l.webp" as="image" media="(min-width: 760px)">
-<link rel="preload" href="assets/img/vf-captacao-p.webp" as="image" media="(max-width: 759px)">
+<link rel="preload" href="assets/img/hero-captando.webp" as="image">
 <link rel="stylesheet" href="assets/css/style.css">
 <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
-<!-- ============ MENU ============ -->
-<header class="nav" id="topo">
-  <div class="nav__in">
-    <a class="nav__logo" href="#inicio" aria-label="Laura Moro, voltar ao início">
-      <span class="cap">L</span>aura <span class="cap">M</span>oro
+<!-- ================= MENU ================= -->
+<header class="nav" id="nav">
+  <a class="nav__logo pillbox" href="#inicio" aria-label="Laura Moro, voltar ao início">
+    <span class="cap">L</span>aura <span class="cap">M</span>oro
+  </a>
+  <nav class="nav__links pillbox" aria-label="Principal">
+    <span class="nav__ind" aria-hidden="true"></span>
+    <a href="#sobre" data-nav="sobre">Sobre</a>
+    <a href="#servicos" data-nav="servicos">Serviços</a>
+    <a href="#cases" data-nav="cases">Cases</a>
+    <a href="#processo" data-nav="processo">Processo</a>
+    <a href="#contato" data-nav="contato">Contato</a>
+  </nav>
+  <div class="nav__end">
+    <a class="ico pillbox" href="https://instagram.com/lauramoro_" target="_blank" rel="noopener" aria-label="Instagram da Laura (abre em nova aba)">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.2" cy="6.8" r=".8" class="f"/></svg>
     </a>
-    <nav class="nav__links" aria-label="Principal">
-      <a href="#sobre">Sobre</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#cases">Cases</a>
-      <a href="#processo">Processo</a>
-      <a href="#contato">Contato</a>
-    </nav>
-    <div class="nav__end">
-      <a class="nav__ico" href="https://instagram.com/lauramoro_" target="_blank" rel="noopener" aria-label="Instagram da Laura (abre em nova aba)">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".9" class="fill"/></svg>
-      </a>
-      <a class="nav__ico" href="https://linkedin.com/in/laura-moro-a968071a4" target="_blank" rel="noopener" aria-label="LinkedIn da Laura (abre em nova aba)">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V16M8 7.6v.1M11.5 16v-5.5M11.5 13c0-1.6 1-2.6 2.3-2.6s2.2.9 2.2 2.6V16"/></svg>
-      </a>
-      <a class="btn btn--dark nav__cta" href="#contato">Vamos conversar</a>
-      <button class="nav__burger" type="button" aria-expanded="false" aria-controls="menu-mobile" aria-label="Abrir menu">
-        <span></span><span></span>
-      </button>
-    </div>
+    <a class="ico pillbox" href="https://linkedin.com/in/laura-moro-a968071a4" target="_blank" rel="noopener" aria-label="LinkedIn da Laura (abre em nova aba)">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M8.2 10.5V16M8.2 7.7v.1M11.6 16v-5.5M11.6 13c0-1.6 1-2.6 2.3-2.6s2.2.9 2.2 2.6V16"/></svg>
+    </a>
+    <a class="btn btn--dark nav__cta" href="#contato">Vamos conversar</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="mmenu" aria-label="Abrir menu"><span></span><span></span></button>
   </div>
 </header>
 
-<div class="mmenu" id="menu-mobile" hidden>
-  <nav aria-label="Menu mobile">
+<div class="mmenu" id="mmenu" hidden>
+  <div class="mmenu__grid" aria-hidden="true"></div>
+  <nav aria-label="Menu do celular">
     <a href="#sobre"><span class="mmenu__n">01</span><span class="cap">S</span>obre</a>
     <a href="#servicos"><span class="mmenu__n">02</span><span class="cap">S</span>erviços</a>
     <a href="#cases"><span class="mmenu__n">03</span><span class="cap">C</span>ases</a>
@@ -69,172 +66,170 @@
     <a href="#contato"><span class="mmenu__n">05</span><span class="cap">C</span>ontato</a>
   </nav>
   <div class="mmenu__foot">
-    <a class="btn btn--dark" href="#contato">Vamos conversar</a>
+    <a class="btn btn--dark btn--big" href="#contato">Vamos conversar <span aria-hidden="true">→</span></a>
     <div class="mmenu__social">
       <a href="https://instagram.com/lauramoro_" target="_blank" rel="noopener">Instagram</a>
       <a href="https://linkedin.com/in/laura-moro-a968071a4" target="_blank" rel="noopener">LinkedIn</a>
       <a href="mailto:lauramoro325@gmail.com">E-mail</a>
     </div>
-    <p class="micro">Conteúdo para contar histórias, criar conexões e deixar marcas.</p>
   </div>
 </div>
 
 <main id="conteudo">
 
-<!-- ============ 1. HERO — visor da câmera ============ -->
-<section class="band band--azul hero" id="inicio" aria-labelledby="hero-titulo">
-  <div class="hero__grid" aria-hidden="true"></div>
-  <div class="hero__wrap">
-    <div class="vf" data-vf>
-      <div class="vf__scenes">
-      <figure class="vf__scene is-on" data-label="captação" data-fl="44,38" data-fp="42,30">
-        <picture class="vf__base"><source media="(max-width: 759px)" srcset="assets/img/vf-captacao-p.webp"><img src="assets/img/vf-captacao-l.webp" width="1920" height="1080" alt="Laura Moro de perfil, fotografando com câmera em um terraço com paredes de vidro" fetchpriority="high"></picture>
-        <picture class="vf__color" aria-hidden="true"><source media="(max-width: 759px)" srcset="assets/img/vf-captacao-p.webp"><img src="assets/img/vf-captacao-l.webp" width="1920" height="1080" alt="" fetchpriority="high"></picture>
-      </figure>
-      <figure class="vf__scene" data-label="bastidores" data-fl="47,47" data-fp="45,52">
-        <picture class="vf__base"><source media="(max-width: 759px)" srcset="assets/img/vf-bastidor-p.webp"><img src="assets/img/vf-bastidor-l.webp" width="1920" height="1080" alt="Bastidor de gravação: celular no tripé filmando uma mulher sentada à mesa de uma sala de reunião" loading="lazy"></picture>
-        <picture class="vf__color" aria-hidden="true"><source media="(max-width: 759px)" srcset="assets/img/vf-bastidor-p.webp"><img src="assets/img/vf-bastidor-l.webp" width="1920" height="1080" alt="" loading="lazy"></picture>
-      </figure>
-      <figure class="vf__scene" data-label="estar onde acontece" data-fl="28,48" data-fp="36,50">
-        <picture class="vf__base"><source media="(max-width: 759px)" srcset="assets/img/vf-camera-p.webp"><img src="assets/img/vf-camera-l.webp" width="1920" height="1080" alt="Laura conferindo a câmera nas mãos, em um espaço de evento com paredes de vidro" loading="lazy"></picture>
-        <picture class="vf__color" aria-hidden="true"><source media="(max-width: 759px)" srcset="assets/img/vf-camera-p.webp"><img src="assets/img/vf-camera-l.webp" width="1920" height="1080" alt="" loading="lazy"></picture>
-      </figure>
-      <figure class="vf__scene" data-label="conexão" data-fl="70,40" data-fp="58,38">
-        <picture class="vf__base"><source media="(max-width: 759px)" srcset="assets/img/vf-sorriso-p.webp"><img src="assets/img/vf-sorriso-l.webp" width="1800" height="1200" alt="Laura Moro sorrindo enquanto olha o celular, em um ambiente claro com mesas ao fundo" loading="lazy"></picture>
-        <picture class="vf__color" aria-hidden="true"><source media="(max-width: 759px)" srcset="assets/img/vf-sorriso-p.webp"><img src="assets/img/vf-sorriso-l.webp" width="1800" height="1200" alt="" loading="lazy"></picture>
-      </figure>
-      </div>
-      <div class="vf__veil" aria-hidden="true"></div>
-      <div class="vf__flash" aria-hidden="true"></div>
-      <span class="vf__c vf__c--tl" aria-hidden="true"></span><span class="vf__c vf__c--tr" aria-hidden="true"></span><span class="vf__c vf__c--bl" aria-hidden="true"></span><span class="vf__c vf__c--br" aria-hidden="true"></span>
-      <div class="vf__focus" aria-hidden="true"><span class="vf__sun"></span></div>
+<!-- ================= 1. HERO ================= -->
+<section class="hero" id="inicio" aria-labelledby="hero-titulo">
+  <div class="hero__stage">
+    <div class="hero__grid" aria-hidden="true"></div>
 
-      <p class="vf__tag" aria-live="polite"><span data-vf-label>captação</span></p>
-
-      <div class="vf__lock">
-        <h1 id="hero-titulo" class="lockup">
-          <span class="sr-only">Laura Moro, Estrategista de Conteúdo e Creator Mobile</span>
-          <span class="lockup__row lockup__row--1" aria-hidden="true"><span class="lockup__cap">L</span><span class="lockup__word" data-split>AURA</span></span>
-          <span class="lockup__row lockup__row--2" aria-hidden="true"><span class="lockup__cap">M</span><span class="lockup__word" data-split>ORO</span></span>
-        </h1>
-        <span class="pill pill--off vf__pill">Social Media</span>
-      </div>
-
-      <div class="vf__ctrl">
-        <button class="vf__shutter" type="button" aria-label="Capturar: trocar a cena"><span></span></button>
-        <button class="vf__thumb" type="button" aria-label="Voltar para a cena anterior" disabled><img alt="" width="46" height="46"></button>
+    <div class="hero__lock">
+      <span class="pill pill--off hero__pill">Social Media</span>
+      <h1 id="hero-titulo" class="lockup">
+        <span class="sr-only">Laura Moro, Estrategista de Conteúdo e Creator Mobile</span>
+        <span class="lockup__row" aria-hidden="true"><span class="lockup__cap">L</span><span class="lockup__w" data-split>AURA</span></span>
+        <span class="lockup__row lockup__row--2" aria-hidden="true"><span class="lockup__cap">M</span><span class="lockup__w" data-split>ORO</span></span>
+      </h1>
+      <div class="hero__base">
+        <span class="hero__line" aria-hidden="true"></span>
+        <p class="hero__pos">Estrategista de Conteúdo | Creator Mobile</p>
+        <p class="micro hero__tag">Conteúdo para contar histórias,<br>criar conexões e deixar marcas.</p>
       </div>
     </div>
 
-    <div class="hero__base">
-      <p class="hero__pos">Estrategista de Conteúdo<br><span class="ind">| Creator Mobile</span></p>
-      <p class="micro hero__tag">Conteúdo para contar histórias,<br>criar conexões e deixar marcas.</p>
-      <a class="btn btn--line hero__go" href="#cases">Ver cases <span aria-hidden="true">↓</span></a>
+    <figure class="polaroid hero__pola">
+      <span class="polaroid__back" aria-hidden="true"></span>
+      <span class="polaroid__front">
+        <img src="assets/img/hero-captando.webp" width="900" height="1600" alt="Laura Moro de perfil, fotografando com câmera em um terraço com paredes de vidro" fetchpriority="high">
+        <span class="polaroid__cap">captação do dia</span>
+      </span>
+      <img class="polaroid__clip" src="assets/img/prendedor.webp" width="300" height="260" alt="" aria-hidden="true">
+      <button class="plus plus--edge hero__play" type="button" data-video="assets/video/reel-evento.mp4" data-poster="assets/img/poster-reel-evento.webp" aria-label="Dar o play: assistir ao Reel de evento"><span aria-hidden="true">+</span></button>
+    </figure>
+
+    <!-- a foto "abre" em vídeo conforme a rolagem -->
+    <div class="hero__reel" aria-hidden="true">
+      <video src="assets/video/reel-evento.mp4" poster="assets/img/poster-reel-evento.webp" muted loop playsinline preload="metadata"></video>
+      <div class="hero__veil"></div>
+      <p class="hero__play-txt"><span class="cap">A</span>lgumas coisas funcionam melhor<br><span class="ind">quando a gente dá o play.</span></p>
     </div>
+
+    <a class="hero__cue" href="#manifesto"><span class="hero__cue-line" aria-hidden="true"></span><span>role para dar o play</span></a>
   </div>
 </section>
 
-<!-- ============ 2. MANIFESTO ============ -->
-<section class="band band--off manifesto" aria-label="Manifesto">
-  <div class="wrap manifesto__in">
-    <p class="micro manifesto__kick rv">Toda história merece um jeito de ser contada.</p>
-    <p class="manifesto__txt" data-words><span class="cap cap--inline">P</span>ara mim, criar conteúdo é uma forma de criar memórias. É registrar momentos, transformar experiências em histórias e encontrar maneiras de mostrar ao mundo quem somos, o que fazemos e o que temos para contar.</p>
+<!-- ================= 2. MANIFESTO ================= -->
+<section class="band band--off arc manifesto" id="manifesto" aria-label="Manifesto">
+  <div class="wrap">
+    <p class="micro micro--r rv">Toda história merece um jeito de ser contada.</p>
+    <p class="manifesto__txt" data-words><span class="cap cap--in">P</span>ara mim, criar conteúdo é uma forma de criar memórias. É registrar momentos, transformar experiências em histórias e encontrar maneiras de mostrar ao mundo quem somos, o que fazemos e o que temos para contar.</p>
     <div class="manifesto__foot rv">
-      <span class="pill pill--azul">Estratégia de Conteúdo</span>
-      <span class="pill pill--azul">Criação de Conteúdo</span>
-      <span class="pill pill--azul">Creator Mobile</span>
+      <ul class="pills" role="list">
+        <li class="pill pill--azul">Estratégia de Conteúdo</li>
+        <li class="pill pill--azul">Criação de Conteúdo</li>
+        <li class="pill pill--azul">Creator Mobile</li>
+      </ul>
       <a class="plus" href="#servicos" aria-label="Ver serviços"><span aria-hidden="true">+</span></a>
     </div>
   </div>
 </section>
 
-<!-- ============ 3. NÚMEROS ============ -->
-<section class="band band--azul numeros" aria-labelledby="numeros-titulo">
+<!-- ================= 3. NÚMEROS ================= -->
+<section class="band band--azul numeros" aria-labelledby="num-titulo">
   <div class="wrap numeros__in">
-    <h2 id="numeros-titulo" class="ttl rv"><span class="nb"><span class="cap">P</span>rojetos</span><br><span class="l2">&amp; portfólio</span></h2>
-    <ul class="numeros__cards" role="list">
+    <div class="numeros__head">
+      <h2 id="num-titulo" class="ttl rv"><span class="nb"><span class="cap">P</span>rojetos</span><br><span class="l2">&amp; portfólio</span></h2>
+      <figure class="circle rv" data-circle>
+        <img src="assets/img/laura-captando-vidro.webp" width="900" height="1600" loading="lazy" alt="Laura fotografando com a câmera em um terraço com paredes de vidro e mesas ao fundo">
+      </figure>
+    </div>
+    <ul class="ncards" role="list">
       <li class="ncard rv">
-        <span class="ncard__n"><span>+</span><span data-count="10">10</span></span>
+        <span class="ncard__n">+<span data-count="10">10</span></span>
         <span class="ncard__t">marcas e projetos com atuação em conteúdo</span>
       </li>
       <li class="ncard rv">
-        <span class="ncard__n"><span>+</span><span data-count="100">100</span><span>&nbsp;mil</span></span>
+        <span class="ncard__n">+<span data-count="100">100</span>&nbsp;mil</span>
         <span class="ncard__t">visualizações orgânicas em um único Reel</span>
       </li>
       <li class="ncard rv">
-        <span class="ncard__n"><span>+</span><span data-count="5">5</span><span class="ncard__u">anos</span></span>
+        <span class="ncard__n">+<span data-count="5">5</span><small>anos</small></span>
         <span class="ncard__t">de experiência em comunicação e conteúdo</span>
       </li>
     </ul>
-    <figure class="numeros__img rv">
-      <img src="assets/img/story-premio-jornalismo.webp" width="720" height="1280" loading="lazy" alt="Mão segurando o celular com a galeria de fotos aberta, em frente ao palco iluminado em azul do 10º Prêmio Sistema Fiep de Jornalismo">
-    </figure>
   </div>
 </section>
 
-<!-- ============ 4. SOBRE ============ -->
+<!-- ================= 4. SOBRE ================= -->
 <section class="band band--off sobre" id="sobre" aria-labelledby="sobre-titulo">
   <div class="wrap">
-    <p class="micro micro--r rv">Estratégia, criatividade e conteúdo<br>para transformar ideias em conexão.</p>
     <div class="sobre__top">
-      <div class="sobre__left">
-        <h2 id="sobre-titulo" class="ttl rv"><span class="nb"><span class="cap">S</span>obre</span> mim</h2>
-        <div class="sobre__fotos">
-          <figure class="sfoto rv">
-            <img src="assets/img/pov-campus-industria.webp" width="720" height="1280" loading="lazy" alt="Ponto de vista de Laura gravando com o celular na mão, com a fachada do Campus da Indústria da Fiep na tela">
-            <button class="plus plus--edge" type="button" data-lightbox="assets/img/pov-campus-industria.webp" data-alt="Gravação com o celular no Campus da Indústria" aria-label="Ampliar foto: gravação com o celular"><span aria-hidden="true">+</span></button>
-          </figure>
-          <figure class="sfoto sfoto--b rv">
-            <img src="assets/img/sobre-sorriso.webp" width="1200" height="800" loading="lazy" alt="Laura Moro sorrindo enquanto olha o celular, em um ambiente claro com mesas ao fundo">
-            <button class="plus plus--edge" type="button" data-lightbox="assets/img/sobre-sorriso.webp" data-alt="Laura Moro sorrindo olhando o celular" aria-label="Ampliar foto: Laura sorrindo"><span aria-hidden="true">+</span></button>
-          </figure>
+      <div class="cam" data-cam>
+        <div class="cam__out">
+          <figure class="snap snap--1"><img src="assets/img/sobre-sorriso.webp" width="1200" height="800" loading="lazy" alt="Laura Moro sorrindo enquanto olha o celular, em um ambiente claro com mesas ao fundo"><figcaption>conexão</figcaption></figure>
+          <figure class="snap snap--2"><img src="assets/img/pov-campus-industria.webp" width="720" height="1280" loading="lazy" alt="Ponto de vista de Laura gravando com o celular, com o Campus da Indústria da Fiep na tela"><figcaption>real time</figcaption></figure>
+          <figure class="snap snap--3"><img src="assets/img/laura-perfil-camera.webp" width="900" height="1600" loading="lazy" alt="Laura de perfil, conferindo uma foto na câmera"><figcaption>captação</figcaption></figure>
+        </div>
+        <div class="cam__dev">
+          <img class="cam__img" src="assets/img/camera-instax.png" width="560" height="657" loading="lazy" alt="Câmera instantânea azul clara">
+          <button class="cam__btn" type="button" aria-label="Tirar as fotos de novo"></button>
+          <span class="cam__burst" aria-hidden="true"></span>
         </div>
       </div>
-      <div class="sobre__txt rv">
-        <p class="lead">Sou <strong>Estrategista de Conteúdo</strong> e <strong>Creator Mobile</strong>, formada em Comunicação Institucional pela UFPR e pós-graduada em Gestão de Mídias Digitais. Há mais de 5 anos atuo com <strong>estratégia, criação de conteúdo, redes sociais, vídeos, fotografia e cobertura de eventos.</strong></p>
-        <p>Gosto de estar perto do processo, da ideia à execução, transformando histórias e experiências em conteúdos que conectam pessoas e marcas.</p>
-        <p>Já passei por agência, indústria, comunicação institucional e marketing B2B, desenvolvendo conteúdo para LinkedIn, blog, e-mail marketing, landing pages e redes sociais.</p>
+      <div class="sobre__txt">
+        <p class="micro micro--r rv">Estratégia, criatividade e conteúdo<br>para transformar ideias em conexão.</p>
+        <h2 id="sobre-titulo" class="ttl ttl--xl rv"><span class="nb"><span class="cap">S</span>obre</span><br><span class="l2">mim</span></h2>
+        <div class="vline rv">
+          <p class="lead">Sou <strong>Estrategista de Conteúdo</strong> e <strong>Creator Mobile</strong>, formada em Comunicação Institucional pela UFPR e pós-graduada em Gestão de Mídias Digitais. Há mais de 5 anos atuo com <strong>estratégia, criação de conteúdo, redes sociais, vídeos, fotografia e cobertura de eventos.</strong></p>
+          <p>Gosto de estar perto do processo, da ideia à execução, transformando histórias e experiências em conteúdos que conectam pessoas e marcas.</p>
+          <p>Já passei por agência, indústria, comunicação institucional e marketing B2B, desenvolvendo conteúdo para LinkedIn, blog, e-mail marketing, landing pages e redes sociais.</p>
+        </div>
       </div>
     </div>
 
-    <div class="traj">
-      <div class="traj__col rv">
-        <h3 class="traj__h">Trajetória</h3>
+    <div class="bento">
+      <article class="bcard bcard--traj rv">
+        <h3 class="bcard__h">trajetória</h3>
         <ol class="tl" role="list">
           <li><span class="tl__d">mar 2026 — atual</span><strong>Soow Sigma</strong><span>Analista de Marketing Digital &amp; Conteúdo</span></li>
           <li><span class="tl__d">jun 2025 — mar 2026</span><strong>Sistema Fiep</strong><span>Analista de Marketing PL</span></li>
           <li><span class="tl__d">jul 2023 — dez 2024</span><strong>Rubber Brasil</strong><span>Produção de Conteúdo e Analista de Mídias Sociais</span></li>
           <li><span class="tl__d">jul 2021 — jun 2023</span><strong>Cria e Conecta</strong><span>Estagiária de Criação (agência)</span></li>
         </ol>
-      </div>
-      <div class="traj__col rv">
-        <h3 class="traj__h">Formação</h3>
-        <ol class="tl" role="list">
+      </article>
+      <article class="bcard rv">
+        <h3 class="bcard__h">formação</h3>
+        <ol class="tl tl--sm" role="list">
           <li><span class="tl__d">2025 — 2026</span><strong>Pós em Planejamento de Comunicação Integrada</strong><span>Uninter</span></li>
           <li><span class="tl__d">2024 — 2025</span><strong>Pós em Gestão de Mídias Digitais</strong><span>Uninter</span></li>
           <li><span class="tl__d">2020 — 2023</span><strong>Comunicação Institucional</strong><span>UFPR</span></li>
         </ol>
-      </div>
-      <div class="traj__col rv">
-        <h3 class="traj__h">Além disso</h3>
-        <ul class="traj__list" role="list">
+      </article>
+      <article class="bcard rv">
+        <h3 class="bcard__h">além disso</h3>
+        <ul class="bul" role="list">
           <li>Participante e finalista do Prêmio Expocom Regional Sul</li>
           <li>Apresentação de artigo no 2º ECONPOP</li>
           <li>Iniciação Científica sobre práticas comunicacionais de influenciadores digitais</li>
           <li>Certificações: IA for Leaders (presencial) e Plug Social Day</li>
-          <li>Inglês profissional completo</li>
         </ul>
-      </div>
+      </article>
+      <article class="bcard rv">
+        <h3 class="bcard__h">idioma</h3>
+        <p class="bcard__big">inglês</p>
+        <p>profissional completo</p>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- ============ 5. SERVIÇOS ============ -->
-<section class="band band--azul servicos" id="servicos" aria-labelledby="servicos-titulo">
+<!-- ================= 5. SERVIÇOS ================= -->
+<section class="band band--azul servicos" id="servicos" aria-labelledby="serv-titulo">
   <div class="wrap">
-    <div class="sec-head">
-      <h2 id="servicos-titulo" class="ttl rv"><span class="nb"><span class="cap">O</span></span> que<br><span class="l2">eu faço</span></h2>
-      <div class="sec-head__side rv">
+    <div class="shead">
+      <h2 id="serv-titulo" class="ttl ttl--xl rv"><span class="nb"><span class="cap">O</span> que</span><br><span class="l2">eu faço</span></h2>
+      <div class="shead__side serv__side rv">
+        <figure class="circle circle--sm"><img src="assets/img/bastidor-tripe.webp" width="900" height="1600" loading="lazy" alt="Bastidor de gravação: celular no tripé filmando uma mulher sentada à mesa"></figure>
+        <div>
         <p class="micro">Para quem</p>
         <ul class="pills" role="list">
           <li class="pill pill--off">Marcas</li>
@@ -243,11 +238,12 @@
           <li class="pill pill--off">Projetos institucionais</li>
           <li class="pill pill--off">Agências</li>
         </ul>
+        </div>
       </div>
     </div>
 
     <div class="serv">
-      <article class="serv__item rv">
+      <article class="serv__i rv">
         <span class="serv__n">01</span>
         <h3 class="serv__t">estratégia<br><span class="l2">de conteúdo</span></h3>
         <ul class="bul" role="list">
@@ -258,7 +254,7 @@
           <li>Posicionamento de conteúdo</li>
         </ul>
       </article>
-      <article class="serv__item rv">
+      <article class="serv__i rv">
         <span class="serv__n">02</span>
         <h3 class="serv__t">criação<br><span class="l2">de conteúdo</span></h3>
         <ul class="bul" role="list">
@@ -269,7 +265,7 @@
           <li>Conteúdo nativo para redes sociais</li>
         </ul>
       </article>
-      <article class="serv__item serv__item--hl rv">
+      <article class="serv__i serv__i--hl rv">
         <span class="serv__n">03</span>
         <h3 class="serv__t">creator<br><span class="l2">mobile</span></h3>
         <ul class="bul" role="list">
@@ -286,441 +282,400 @@
   </div>
 </section>
 
-<!-- ============ 6. MARCAS ============ -->
-<section class="band band--off marcas" id="marcas" aria-labelledby="marcas-titulo">
+<!-- ================= 6. MARCAS ================= -->
+<section class="band band--off arc marcas" id="marcas" aria-labelledby="marcas-titulo">
   <div class="wrap">
-    <div class="sec-head">
-      <h2 id="marcas-titulo" class="ttl rv"><span class="nb"><span class="cap">C</span>riação</span> de<br><span class="l2">conteúdo</span></h2>
-      <div class="sec-head__side rv">
+    <div class="shead">
+      <h2 id="marcas-titulo" class="ttl rv"><span class="nb"><span class="cap">M</span>arcas</span><br><span class="l2">atendidas</span></h2>
+      <div class="shead__side vline rv">
         <p class="sub">Diferentes marcas, diferentes histórias.</p>
         <p>Ao longo da minha trajetória, desenvolvi conteúdos para diferentes segmentos e objetivos, adaptando linguagem, formato e estratégia para cada projeto.</p>
       </div>
     </div>
-    <p class="micro rv">Perfis em que já atuei</p>
+    <p class="micro rv">Perfis em que já atuei · toque para ver o case</p>
     <ul class="mgrid" role="list">
-      <li class="rv">Velsis Soluções</li>
-      <li class="rv">Jabuti Bar</li>
-      <li class="rv">Dizzy Café Concerto</li>
-      <li class="rv">Mafê Kopacheski</li>
-      <li class="rv">Congresso Nacional Moveleiro</li>
-      <li class="rv">Expo+ Indústria</li>
-      <li class="rv">Sistema Fiep</li>
-      <li class="rv">Soow Sigma</li>
-      <li class="rv">Rubber Brasil</li>
+      <li class="rv"><span>Velsis Soluções</span></li>
+      <li class="rv"><a href="#case-perfis" data-brand><span>Jabuti Bar</span><span class="mgrid__go" aria-hidden="true">ver case ↓</span></a></li>
+      <li class="rv"><a href="#case-perfis" data-brand><span>Dizzy Café Concerto</span><span class="mgrid__go" aria-hidden="true">ver case ↓</span></a></li>
+      <li class="rv"><a href="#case-perfis" data-brand><span>Mafê Kopacheski</span><span class="mgrid__go" aria-hidden="true">ver case ↓</span></a></li>
+      <li class="rv"><a href="#case-congresso" data-brand><span>Congresso Nacional Moveleiro</span><span class="mgrid__go" aria-hidden="true">ver case ↓</span></a></li>
+      <li class="rv"><a href="#case-fiep" data-brand><span>Expo+ Indústria</span><span class="mgrid__go" aria-hidden="true">ver case ↓</span></a></li>
+      <li class="rv"><a href="#case-fiep" data-brand><span>Sistema Fiep</span><span class="mgrid__go" aria-hidden="true">ver case ↓</span></a></li>
+      <li class="rv"><a href="#case-soow" data-brand><span>Soow Sigma</span><span class="mgrid__go" aria-hidden="true">ver case ↓</span></a></li>
+      <li class="rv"><a href="#case-rubber" data-brand><span>Rubber Brasil</span><span class="mgrid__go" aria-hidden="true">ver case ↓</span></a></li>
     </ul>
-  </div>
-  <div class="marquee marquee--slow" aria-hidden="true">
-    <div class="marquee__track">
-      <span>Velsis Soluções</span><i>+</i><span>Jabuti Bar</span><i>+</i><span>Dizzy Café Concerto</span><i>+</i><span>Mafê Kopacheski</span><i>+</i><span>Congresso Nacional Moveleiro</span><i>+</i><span>Expo+ Indústria</span><i>+</i><span>Sistema Fiep</span><i>+</i><span>Soow Sigma</span><i>+</i><span>Rubber Brasil</span><i>+</i>
-      <span>Velsis Soluções</span><i>+</i><span>Jabuti Bar</span><i>+</i><span>Dizzy Café Concerto</span><i>+</i><span>Mafê Kopacheski</span><i>+</i><span>Congresso Nacional Moveleiro</span><i>+</i><span>Expo+ Indústria</span><i>+</i><span>Sistema Fiep</span><i>+</i><span>Soow Sigma</span><i>+</i><span>Rubber Brasil</span><i>+</i>
-    </div>
   </div>
 </section>
 
-<!-- ============ 7. CASES ============ -->
+<!-- ================= 7. CASES ================= -->
 <section id="cases" aria-labelledby="cases-titulo">
 
-  <!-- Congresso -->
-  <article class="band band--azul case" id="case-congresso" aria-labelledby="c1">
+  <!-- capítulo -->
+  <div class="band band--azul arc chapter">
+    <div class="chapter__grid" aria-hidden="true"></div>
     <div class="wrap">
-      <div class="cases__head">
-        <h2 id="cases-titulo" class="ttl rv"><span class="nb"><span class="cap">C</span>ases</span></h2>
-        <nav class="cases__idx rv" aria-label="Lista de cases">
-          <a class="pill pill--off" href="#case-congresso">Congresso Moveleiro</a>
-          <a class="pill pill--off" href="#case-fiep">Sistema Fiep</a>
-          <a class="pill pill--off" href="#case-epmais">EPMAIS &amp; Prêmio</a>
-          <a class="pill pill--off" href="#case-soow">Soow Sigma</a>
-          <a class="pill pill--off" href="#case-rubber">Rubber Brasil</a>
-          <a class="pill pill--off" href="#case-perfis">Outros perfis</a>
-        </nav>
-      </div>
+      <p class="micro chapter__k rv">capítulo · cases</p>
+      <h2 id="cases-titulo" class="chapter__t rv"><span class="cap">C</span>ASES</h2>
+      <p class="chapter__s rv">Diferentes marcas, diferentes histórias.</p>
+      <nav class="chapter__idx rv" aria-label="Lista de cases">
+        <a class="pill pill--off" href="#case-congresso">Congresso Moveleiro</a>
+        <a class="pill pill--off" href="#case-fiep">Sistema Fiep</a>
+        <a class="pill pill--off" href="#case-epmais">EPMAIS &amp; Prêmio</a>
+        <a class="pill pill--off" href="#case-soow">Soow Sigma</a>
+        <a class="pill pill--off" href="#case-rubber">Rubber Brasil</a>
+        <a class="pill pill--off" href="#case-perfis">Outros perfis</a>
+      </nav>
+    </div>
+  </div>
 
-      <div class="case__grid">
-        <div class="case__txt">
-          <span class="case__n rv">01</span>
-          <h3 id="c1" class="case__t rv">CONGRESSO NACIONAL<br>MOVELEIRO 2025</h3>
-          <p class="sub rv">Comunicação, conteúdo e cobertura de um grande evento.</p>
-          <p class="rv">Atuação na comunicação do Congresso Nacional Moveleiro 2025, desde o planejamento e produção de conteúdo até a cobertura durante o evento.</p>
+  <!-- 01 Congresso -->
+  <article class="band band--off case" id="case-congresso" aria-labelledby="c1">
+    <div class="wrap case__g">
+      <div class="case__txt">
+        <span class="case__n rv">01</span>
+        <h3 id="c1" class="case__t rv">CONGRESSO NACIONAL<br>MOVELEIRO 2025</h3>
+        <p class="sub rv">Comunicação, conteúdo e cobertura de um grande evento.</p>
+        <p class="rv">Atuação na comunicação do Congresso Nacional Moveleiro 2025, desde o planejamento e produção de conteúdo até a cobertura durante o evento.</p>
+        <div class="more rv">
+          <button class="more__btn" type="button" aria-expanded="false" aria-controls="m1"><span class="plus" aria-hidden="true"><span>+</span></span>O que fiz</button>
+          <div class="more__body" id="m1" hidden>
+            <ul class="bul bul--2" role="list">
+              <li>Planejamento de conteúdo</li>
+              <li>Gestão das redes sociais</li>
+              <li>Produção de textos e materiais de divulgação</li>
+              <li>Cobertura em tempo real</li>
+              <li>Captação de fotos e vídeos</li>
+              <li>Produção audiovisual</li>
+              <li>Conteúdo para pré, durante e pós-evento</li>
+              <li>Design das peças para as redes sociais</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="collage collage--a">
+        <figure class="phone rv"><img src="assets/img/print-congresso-grid.webp" width="600" height="1301" loading="lazy" alt="Print do feed do Instagram @congresso_moveleiro com posts verdes da 12ª edição do Congresso Nacional Moveleiro"></figure>
+        <figure class="ph ph--1 rv"><img src="assets/img/story-congresso-palco.webp" width="720" height="1280" loading="lazy" alt="Cenário verde do 12º Congresso Nacional Moveleiro com poltronas no palco"></figure>
+        <figure class="ph ph--2 rv">
+          <img src="assets/img/congresso-espaco.webp" width="700" height="935" loading="lazy" alt="Pessoa em frente ao painel de patrocinadores do 12º Congresso Nacional Moveleiro">
+          <button class="plus plus--edge" type="button" data-lightbox="assets/img/story-congresso-painel.webp" data-alt="Story de cobertura de painel no Congresso Nacional Moveleiro" aria-label="Ver story da cobertura do Congresso"><span aria-hidden="true">+</span></button>
+        </figure>
+      </div>
+    </div>
+  </article>
+
+  <!-- 02 Fiep -->
+  <article class="band band--azul case" id="case-fiep" aria-labelledby="c2">
+    <div class="wrap case__g case__g--rev">
+      <div class="case__txt">
+        <span class="case__n rv">02</span>
+        <h3 id="c2" class="case__t rv">SISTEMA FIEP</h3>
+        <p class="rv">Durante minha atuação no Sistema Fiep, participei do planejamento, produção e cobertura de diferentes pautas, projetos e eventos.</p>
+        <p class="micro rv">Entre eles</p>
+        <ul class="pills rv" role="list">
+          <li class="pill pill--off">Festival SESI de Robótica</li>
+          <li class="pill pill--off">SESI ODS</li>
+          <li class="pill pill--off">EPMAIS</li>
+          <li class="pill pill--off">Prêmio Sistema Fiep de Jornalismo</li>
+          <li class="pill pill--off">Rodada de Negócios Multissetorial da Fiep</li>
+          <li class="pill pill--off">Semana de Valorização da Indústria de Alimentos e Bebidas</li>
+          <li class="pill pill--off">EJA do Sesi PR</li>
+          <li class="pill pill--off">Visitas e pautas com empresas e indústrias</li>
+        </ul>
+        <div class="more rv">
+          <button class="more__btn" type="button" aria-expanded="false" aria-controls="m2"><span class="plus" aria-hidden="true"><span>+</span></span>Na prática</button>
+          <div class="more__body" id="m2" hidden>
+            <ul class="bul bul--2" role="list">
+              <li>Planejamento de pautas</li>
+              <li>Captação de conteúdo pelo celular</li>
+              <li>Fotografia</li>
+              <li>Vídeos para redes sociais</li>
+              <li>Cobertura de Stories</li>
+              <li>Produção de Reels</li>
+              <li>Acompanhamento de pautas</li>
+              <li>Entrevistas e depoimentos</li>
+              <li>Conteúdo em real time</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="collage collage--b">
+        <figure class="post rv">
+          <img src="assets/img/fiep-post-expo.webp" width="700" height="862" loading="lazy" alt="Post da Expo Mais Indústria 2026: 3 coisas que aumentam a produtividade da sua indústria em 2026">
+          <figcaption class="pill pill--off">Publicações Expo Mais Indústria</figcaption>
+        </figure>
+        <figure class="post post--2 rv">
+          <img src="assets/img/fiep-post-legislacao.webp" width="700" height="845" loading="lazy" alt="Post do Sistema Fiep: O ano vira. A legislação também. Cartilha sobre a Reforma Tributária">
+          <figcaption class="pill pill--off">Publicações Fiep</figcaption>
+        </figure>
+      </div>
+    </div>
+  </article>
+
+  <!-- 03 + 04 EPMAIS e Prêmio -->
+  <article class="band band--off case" id="case-epmais" aria-label="EPMAIS e Prêmio Sistema Fiep de Jornalismo">
+    <div class="wrap duo">
+      <div class="duo__i">
+        <figure class="phone phone--v rv">
+          <video class="autoplay" src="assets/video/story-epmais.mp4" poster="assets/img/poster-story-epmais.webp" muted loop playsinline preload="none" aria-label="Story de abertura do 2º EPMAIS no Campus da Indústria"></video>
+        </figure>
+        <div>
+          <span class="case__n rv">03</span>
+          <h3 class="case__t rv">EPMAIS</h3>
+          <p class="sub rv">Planejamento, divulgação e cobertura.</p>
+          <p class="rv">Atuação na comunicação do EPMAIS, participando do planejamento e desenvolvimento dos conteúdos de divulgação e da cobertura do evento. Do conteúdo que apresenta o evento ao público aos registros produzidos durante a experiência.</p>
           <div class="more rv">
-            <button class="more__btn" type="button" aria-expanded="false" aria-controls="m1"><span class="plus" aria-hidden="true"><span>+</span></span>O que fiz</button>
-            <div class="more__body" id="m1" hidden>
+            <button class="more__btn" type="button" aria-expanded="false" aria-controls="m3"><span class="plus" aria-hidden="true"><span>+</span></span>Entregas</button>
+            <div class="more__body" id="m3" hidden>
               <ul class="bul" role="list">
                 <li>Planejamento de conteúdo</li>
-                <li>Gestão das redes sociais</li>
-                <li>Produção de textos e materiais de divulgação</li>
-                <li>Cobertura em tempo real</li>
-                <li>Captação de fotos e vídeos</li>
-                <li>Produção audiovisual</li>
-                <li>Conteúdo para pré, durante e pós-evento</li>
-                <li>Design das peças para as redes sociais</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="case__media case__media--congresso">
-          <figure class="phone rv">
-            <img src="assets/img/print-congresso-grid.webp" width="600" height="1301" loading="lazy" alt="Print do feed do Instagram @congresso_moveleiro com posts verdes da 12ª edição do Congresso Nacional Moveleiro">
-          </figure>
-          <figure class="photo photo--a rv">
-            <img src="assets/img/story-congresso-palco.webp" width="720" height="1280" loading="lazy" alt="Cenário verde do 12º Congresso Nacional Moveleiro com poltronas no palco">
-          </figure>
-          <figure class="photo photo--b rv">
-            <img src="assets/img/congresso-espaco.webp" width="700" height="935" loading="lazy" alt="Pessoa posando em frente ao painel de patrocinadores do 12º Congresso Nacional Moveleiro">
-            <button class="plus plus--edge" type="button" data-lightbox="assets/img/story-congresso-painel.webp" data-alt="Story de cobertura de painel no Congresso Nacional Moveleiro" aria-label="Ver story da cobertura do Congresso"><span aria-hidden="true">+</span></button>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </article>
-
-  <!-- Sistema Fiep -->
-  <article class="band band--off case" id="case-fiep" aria-labelledby="c2">
-    <div class="wrap">
-      <div class="case__grid case__grid--rev">
-        <div class="case__txt">
-          <span class="case__n rv">02</span>
-          <h3 id="c2" class="case__t rv">SISTEMA FIEP</h3>
-          <p class="rv">Durante minha atuação no Sistema Fiep, participei do planejamento, produção e cobertura de diferentes pautas, projetos e eventos.</p>
-          <p class="micro rv">Entre eles</p>
-          <ul class="pills pills--wrap rv" role="list">
-            <li class="pill pill--azul">Festival SESI de Robótica</li>
-            <li class="pill pill--azul">SESI ODS</li>
-            <li class="pill pill--azul">EPMAIS</li>
-            <li class="pill pill--azul">Prêmio Sistema Fiep de Jornalismo</li>
-            <li class="pill pill--azul">Rodada de Negócios Multissetorial da Fiep</li>
-            <li class="pill pill--azul">Semana de Valorização da Indústria de Alimentos e Bebidas</li>
-            <li class="pill pill--azul">EJA do Sesi PR</li>
-            <li class="pill pill--azul">Visitas e pautas com empresas e indústrias</li>
-          </ul>
-          <div class="more rv">
-            <button class="more__btn" type="button" aria-expanded="false" aria-controls="m2"><span class="plus" aria-hidden="true"><span>+</span></span>Na prática</button>
-            <div class="more__body" id="m2" hidden>
-              <ul class="bul bul--2" role="list">
-                <li>Planejamento de pautas</li>
-                <li>Captação de conteúdo pelo celular</li>
-                <li>Fotografia</li>
-                <li>Vídeos para redes sociais</li>
+                <li>Produção de posts</li>
+                <li>Roteiros e textos</li>
+                <li>Divulgação</li>
                 <li>Cobertura de Stories</li>
-                <li>Produção de Reels</li>
-                <li>Acompanhamento de pautas</li>
-                <li>Entrevistas e depoimentos</li>
-                <li>Conteúdo em real time</li>
+                <li>Captação de fotos e vídeos</li>
+                <li>Conteúdo em tempo real</li>
               </ul>
             </div>
           </div>
         </div>
-        <div class="case__media case__media--fiep">
-          <figure class="post rv">
-            <img src="assets/img/fiep-post-expo.webp" width="700" height="862" loading="lazy" alt="Post da Expo Mais Indústria 2026: 3 coisas que aumentam a produtividade da sua indústria em 2026">
-            <figcaption class="pill pill--azul">Publicações Expo Mais Indústria</figcaption>
-          </figure>
-          <figure class="post post--b rv">
-            <img src="assets/img/fiep-post-legislacao.webp" width="700" height="845" loading="lazy" alt="Post do Sistema Fiep: O ano vira. A legislação também. Cartilha sobre a Reforma Tributária">
-            <figcaption class="pill pill--azul">Publicações Fiep</figcaption>
-          </figure>
+      </div>
+      <div class="duo__i">
+        <figure class="phone rv"><img src="assets/img/story-premio-jornalismo.webp" width="720" height="1280" loading="lazy" alt="Story com o celular mostrando a galeria de fotos diante do palco do 10º Prêmio Sistema Fiep de Jornalismo"></figure>
+        <div>
+          <span class="case__n rv">04</span>
+          <h3 class="case__t rv">PRÊMIO SISTEMA<br>FIEP DE JORNALISMO</h3>
+          <p class="sub rv">Comunicação em tempo real.</p>
+          <p class="rv">Cobertura de Stories durante o Prêmio Sistema Fiep de Jornalismo, registrando os principais momentos da premiação e transformando a experiência do evento em conteúdo para as redes sociais.</p>
         </div>
       </div>
     </div>
   </article>
 
-  <!-- EPMAIS + Prêmio -->
-  <article class="band band--azul case" id="case-epmais" aria-label="EPMAIS e Prêmio Sistema Fiep de Jornalismo">
-    <div class="wrap">
-      <div class="duo">
-        <div class="duo__item">
-          <figure class="phone phone--video rv">
-            <video class="autoplay" src="assets/video/story-epmais.mp4" poster="assets/img/poster-story-epmais.webp" muted loop playsinline preload="none" aria-label="Story de abertura do 2º EPMAIS no Campus da Indústria"></video>
-          </figure>
-          <div class="duo__txt">
-            <span class="case__n rv">03</span>
-            <h3 class="case__t rv">EPMAIS</h3>
-            <p class="sub rv">Planejamento, divulgação e cobertura.</p>
-            <p class="rv">Atuação na comunicação do EPMAIS, participando do planejamento e desenvolvimento dos conteúdos de divulgação e da cobertura do evento. Do conteúdo que apresenta o evento ao público aos registros produzidos durante a experiência.</p>
-            <div class="more rv">
-              <button class="more__btn" type="button" aria-expanded="false" aria-controls="m3"><span class="plus" aria-hidden="true"><span>+</span></span>Entregas</button>
-              <div class="more__body" id="m3" hidden>
-                <ul class="bul" role="list">
-                  <li>Planejamento de conteúdo</li>
-                  <li>Produção de posts</li>
-                  <li>Roteiros e textos</li>
-                  <li>Divulgação</li>
-                  <li>Cobertura de Stories</li>
-                  <li>Captação de fotos e vídeos</li>
-                  <li>Conteúdo em tempo real</li>
-                </ul>
-              </div>
-            </div>
+  <!-- 05 Soow -->
+  <article class="band band--azul case" id="case-soow" aria-labelledby="c5">
+    <div class="wrap case__g">
+      <div class="case__txt">
+        <span class="case__n rv">05</span>
+        <h3 id="c5" class="case__t rv">SOOW SIGMA</h3>
+        <p class="sub rv">Conteúdo para uma marca de tecnologia e cibersegurança.</p>
+        <p class="rv">Atuação no planejamento e produção de conteúdo para uma empresa B2B de tecnologia e cibersegurança, com foco em fortalecer a presença digital e traduzir temas técnicos para diferentes públicos.</p>
+        <div class="more rv">
+          <button class="more__btn" type="button" aria-expanded="false" aria-controls="m5"><span class="plus" aria-hidden="true"><span>+</span></span>Conteúdos</button>
+          <div class="more__body" id="m5" hidden>
+            <ul class="bul bul--2" role="list">
+              <li>LinkedIn e Newsletters</li>
+              <li>Blog</li>
+              <li>E-mail marketing</li>
+              <li>Landing pages</li>
+              <li>Redes sociais</li>
+              <li>Materiais de comunicação</li>
+              <li>Campanhas de marketing</li>
+            </ul>
           </div>
         </div>
-        <div class="duo__item">
-          <figure class="phone rv">
-            <img src="assets/img/story-premio-jornalismo.webp" width="720" height="1280" loading="lazy" alt="Story com o celular mostrando a galeria de fotos diante do palco do 10º Prêmio Sistema Fiep de Jornalismo">
-          </figure>
-          <div class="duo__txt">
-            <span class="case__n rv">04</span>
-            <h3 class="case__t rv">PRÊMIO SISTEMA<br>FIEP DE JORNALISMO</h3>
-            <p class="sub rv">Comunicação em tempo real.</p>
-            <p class="rv">Cobertura de Stories durante o Prêmio Sistema Fiep de Jornalismo, registrando os principais momentos da premiação e transformando a experiência do evento em conteúdo para as redes sociais.</p>
-          </div>
-        </div>
+      </div>
+      <div class="collage collage--c">
+        <figure class="phone rv"><img src="assets/img/print-soow.webp" width="520" height="1126" loading="lazy" alt="Print do feed do Instagram da Soow Sigma com posts em azul e preto sobre tecnologia e cibersegurança"></figure>
+        <figure class="ph ph--3 rv"><img src="assets/img/outro-video-1.webp" width="400" height="711" loading="lazy" alt="Frame de vídeo com duas pessoas no espaço da Soow Sigma"></figure>
       </div>
     </div>
   </article>
 
-  <!-- Soow Sigma -->
-  <article class="band band--off case" id="case-soow" aria-labelledby="c5">
-    <div class="wrap">
-      <div class="case__grid case__grid--rev">
-        <div class="case__txt">
-          <span class="case__n rv">05</span>
-          <h3 id="c5" class="case__t case__t--split rv">SOOW<br>SIGMA</h3>
-          <p class="sub rv">Conteúdo para uma marca de tecnologia e cibersegurança.</p>
-          <p class="rv">Atuação no planejamento e produção de conteúdo para uma empresa B2B de tecnologia e cibersegurança, com foco em fortalecer a presença digital e traduzir temas técnicos para diferentes públicos.</p>
-          <div class="more rv">
-            <button class="more__btn" type="button" aria-expanded="false" aria-controls="m5"><span class="plus" aria-hidden="true"><span>+</span></span>Conteúdos</button>
-            <div class="more__body" id="m5" hidden>
-              <ul class="bul" role="list">
-                <li>LinkedIn e Newsletters</li>
-                <li>Blog</li>
-                <li>E-mail marketing</li>
-                <li>Landing pages</li>
-                <li>Redes sociais</li>
-                <li>Materiais de comunicação</li>
-                <li>Campanhas de marketing</li>
-              </ul>
-            </div>
+  <!-- 06 Rubber -->
+  <article class="band band--off case" id="case-rubber" aria-labelledby="c6">
+    <div class="wrap case__g case__g--rev">
+      <div class="case__txt">
+        <span class="case__n rv">06</span>
+        <h3 id="c6" class="case__t rv">RUBBER BRASIL</h3>
+        <p class="sub rv">Construção de playgrounds infantis e aplicação de pisos emborrachados monolíticos EPDM.</p>
+        <p class="rv">Atuação na comunicação digital da marca, com foco em gestão de redes sociais, planejamento e produção de conteúdo, fotografia e produção audiovisual.</p>
+        <div class="more rv">
+          <button class="more__btn" type="button" aria-expanded="false" aria-controls="m6"><span class="plus" aria-hidden="true"><span>+</span></span>Minha atuação</button>
+          <div class="more__body" id="m6" hidden>
+            <ul class="bul" role="list">
+              <li>Planejamento e gestão das redes sociais</li>
+              <li>Produção de conteúdo para diferentes plataformas</li>
+              <li>Captação e edição de vídeos</li>
+              <li>Fotografia de playgrounds e projetos</li>
+              <li>Produção de vídeos testemunhais e criativos para campanhas</li>
+              <li>Análise de métricas e acompanhamento de resultados</li>
+              <li>Suporte em campanhas online</li>
+              <li>Apoio à comunicação interna e endomarketing</li>
+            </ul>
           </div>
-        </div>
-        <div class="case__media case__media--one">
-          <figure class="phone rv">
-            <img src="assets/img/print-soow.webp" width="520" height="1126" loading="lazy" alt="Print do feed do Instagram da Soow Sigma com posts em azul e preto sobre tecnologia e cibersegurança">
-          </figure>
-          <figure class="photo photo--c rv">
-            <img src="assets/img/outro-video-1.webp" width="400" height="711" loading="lazy" alt="Frame de vídeo com duas pessoas no espaço da Soow Sigma">
-          </figure>
         </div>
       </div>
-    </div>
-  </article>
-
-  <!-- Rubber -->
-  <article class="band band--azul case" id="case-rubber" aria-labelledby="c6">
-    <div class="wrap">
-      <div class="case__grid">
-        <div class="case__txt">
-          <span class="case__n rv">06</span>
-          <h3 id="c6" class="case__t case__t--split rv">RUBBER<br>BRASIL</h3>
-          <p class="sub rv">Construção de playgrounds infantis e aplicação de pisos emborrachados monolíticos EPDM.</p>
-          <p class="rv">Atuação na comunicação digital da marca, com foco em gestão de redes sociais, planejamento e produção de conteúdo, fotografia e produção audiovisual.</p>
-          <div class="more rv">
-            <button class="more__btn" type="button" aria-expanded="false" aria-controls="m6"><span class="plus" aria-hidden="true"><span>+</span></span>Minha atuação</button>
-            <div class="more__body" id="m6" hidden>
-              <ul class="bul" role="list">
-                <li>Planejamento e gestão das redes sociais</li>
-                <li>Produção de conteúdo para diferentes plataformas</li>
-                <li>Captação e edição de vídeos</li>
-                <li>Fotografia de playgrounds e projetos</li>
-                <li>Produção de vídeos testemunhais e criativos para campanhas</li>
-                <li>Análise de métricas e acompanhamento de resultados</li>
-                <li>Suporte em campanhas online</li>
-                <li>Apoio à comunicação interna e endomarketing</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="case__media case__media--one">
-          <figure class="phone rv">
-            <img src="assets/img/print-rubber.webp" width="520" height="1126" loading="lazy" alt="Print do feed do Instagram @rubberbrasil com fotos coloridas de playgrounds">
-          </figure>
-        </div>
+      <div class="collage collage--c">
+        <figure class="phone rv"><img src="assets/img/print-rubber.webp" width="520" height="1126" loading="lazy" alt="Print do feed do Instagram @rubberbrasil com fotos coloridas de playgrounds"></figure>
       </div>
     </div>
   </article>
 
   <!-- Outros perfis -->
-  <article class="band band--off case perfis" id="case-perfis" aria-labelledby="c7">
+  <article class="band band--azul case perfis" id="case-perfis" aria-labelledby="c7">
     <div class="wrap">
-      <div class="sec-head">
+      <div class="shead">
         <h3 id="c7" class="case__t rv">OUTROS PERFIS</h3>
-        <p class="rv sec-head__side">Cada perfil com sua própria história e o seu jeito de ser contada.</p>
+        <p class="shead__side rv">Cada perfil com sua própria história e o seu jeito de ser contada.</p>
       </div>
       <ul class="perfis__row" role="list">
-        <li class="rv">
-          <figure class="phone phone--sm"><img src="assets/img/print-jabuti.webp" width="600" height="1301" loading="lazy" alt="Print do feed do Instagram @jabutibar com fotos de pratos e drinks"></figure>
-          <p class="perfis__n">Jabuti Bar</p>
-        </li>
-        <li class="rv">
-          <figure class="phone phone--sm"><img src="assets/img/print-dizzy.webp" width="600" height="1301" loading="lazy" alt="Print do feed do Instagram @dizzycafeconcerto com capas de Reels de agenda e shows"></figure>
-          <p class="perfis__n">Dizzy Café Concerto</p>
-        </li>
-        <li class="rv">
-          <figure class="phone phone--sm"><img src="assets/img/print-mafe.webp" width="600" height="1301" loading="lazy" alt="Print do feed do Instagram @mafekopacheski com posts em tons claros"></figure>
-          <p class="perfis__n">Mafê Kopacheski</p>
-        </li>
-        <li class="rv">
-          <figure class="phone phone--sm"><img src="assets/img/story-captacao-jabuti.webp" width="720" height="1280" loading="lazy" alt="Story com o texto 'Captação de ontem pro @jabutibar' mostrando a galeria com um prato fotografado"></figure>
-          <p class="perfis__n">Bastidor · Jabuti Bar</p>
-        </li>
+        <li class="rv"><figure class="phone"><img src="assets/img/print-jabuti.webp" width="600" height="1301" loading="lazy" alt="Print do feed do Instagram @jabutibar com fotos de pratos e drinks"></figure><p class="perfis__n">Jabuti Bar</p></li>
+        <li class="rv"><figure class="phone"><img src="assets/img/print-dizzy.webp" width="600" height="1301" loading="lazy" alt="Print do feed do Instagram @dizzycafeconcerto com capas de Reels de agenda e shows"></figure><p class="perfis__n">Dizzy Café Concerto</p></li>
+        <li class="rv"><figure class="phone"><img src="assets/img/print-mafe.webp" width="600" height="1301" loading="lazy" alt="Print do feed do Instagram @mafekopacheski com posts em tons claros"></figure><p class="perfis__n">Mafê Kopacheski</p></li>
+        <li class="rv"><figure class="phone"><img src="assets/img/story-captacao-jabuti.webp" width="720" height="1280" loading="lazy" alt="Story com o texto 'Captação de ontem pro @jabutibar' mostrando a galeria com um prato fotografado"></figure><p class="perfis__n">Bastidor · Jabuti Bar</p></li>
       </ul>
     </div>
   </article>
 </section>
 
-<!-- ============ 8. CONTEÚDO EM MOVIMENTO ============ -->
-<section class="band band--azul movimento" id="movimento" aria-labelledby="mov-titulo">
+<!-- ================= 8. CONTEÚDO EM MOVIMENTO + BASTIDORES ================= -->
+<section class="band band--off arc movimento" id="movimento" aria-labelledby="mov-titulo">
   <div class="wrap">
-    <div class="sec-head sec-head--line">
+    <div class="shead">
       <h2 id="mov-titulo" class="ttl rv"><span class="nb"><span class="cap">C</span>onteúdo</span><br><span class="l2">em movimento</span></h2>
-      <div class="sec-head__side rv">
+      <div class="shead__side vline rv">
         <p class="sub">Algumas coisas funcionam melhor quando a gente dá o play.</p>
         <p>Como <strong>Creator</strong>, gosto de estar onde as coisas acontecem. Capto, roteirizo e edito conteúdos pensados para a linguagem das redes, do vídeo mais produzido ao conteúdo espontâneo de um evento em <strong>real time</strong>.</p>
       </div>
     </div>
 
-    <div class="vids">
-      <article class="vcard vcard--feat rv">
-        <div class="vcard__media">
+    <div class="vids" role="list">
+      <article class="vcard vcard--feat rv" role="listitem">
+        <div class="vcard__m">
           <img src="assets/img/reel-102mil.webp" width="540" height="960" loading="lazy" alt="Capa de Reel com o texto 'Esse é' sobre uma rua à noite">
+          <span class="vcard__badge">+102 mil</span>
         </div>
-        <div class="vcard__txt">
-          <h3 class="vcard__t">+102 MIL VISUALIZAÇÕES</h3>
-          <p>Um dos meus Reels alcançou mais de 102 mil visualizações de forma orgânica.</p>
-        </div>
+        <h3 class="vcard__t">+102 MIL VISUALIZAÇÕES</h3>
+        <p>Um dos meus Reels alcançou mais de 102 mil visualizações de forma orgânica. <span class="ph-txt">[INSERIR LINK DO REEL]</span></p>
       </article>
-
-      <article class="vcard rv">
-        <button class="vcard__media vcard__play" type="button" data-video="assets/video/reel-evento.mp4" data-poster="assets/img/poster-reel-evento.webp" aria-label="Assistir: Reel de evento">
+      <article class="vcard rv" role="listitem">
+        <button class="vcard__m" type="button" data-video="assets/video/reel-evento.mp4" data-poster="assets/img/poster-reel-evento.webp" aria-label="Assistir: Reel de evento">
           <img src="assets/img/poster-reel-evento.webp" width="540" height="960" loading="lazy" alt="">
           <span class="plus plus--play" aria-hidden="true"><span>+</span></span>
         </button>
-        <div class="vcard__txt">
-          <h3 class="vcard__t">REEL DE EVENTO</h3>
-        </div>
+        <h3 class="vcard__t">REEL DE EVENTO</h3>
+        <p><span class="ph-txt">[INSERIR NOME DO PROJETO E CONTEXTO]</span></p>
       </article>
-
-      <article class="vcard rv">
-        <button class="vcard__media vcard__play" type="button" data-video="assets/video/story-epmais.mp4" data-poster="assets/img/poster-story-epmais.webp" aria-label="Assistir: Stories do 2º EPMAIS">
+      <article class="vcard rv" role="listitem">
+        <button class="vcard__m" type="button" data-video="assets/video/story-epmais.mp4" data-poster="assets/img/poster-story-epmais.webp" aria-label="Assistir: Stories do 2º EPMAIS">
           <img src="assets/img/poster-story-epmais.webp" width="540" height="960" loading="lazy" alt="">
           <span class="plus plus--play" aria-hidden="true"><span>+</span></span>
         </button>
-        <div class="vcard__txt">
-          <h3 class="vcard__t">STORIES · 2º EPMAIS</h3>
-          <p>Abertura do evento em real time, direto do Campus da Indústria.</p>
-        </div>
+        <h3 class="vcard__t">STORIES · 2º EPMAIS</h3>
+        <p>Abertura do evento em real time, direto do Campus da Indústria.</p>
       </article>
-
-      <article class="vcard rv">
-        <button class="vcard__media vcard__play" type="button" data-video="assets/video/story-padaria.mp4" data-poster="assets/img/poster-story-padaria.webp" aria-label="Assistir: captação na Padaria América">
+      <article class="vcard rv" role="listitem">
+        <button class="vcard__m" type="button" data-video="assets/video/story-padaria.mp4" data-poster="assets/img/poster-story-padaria.webp" aria-label="Assistir: captação na Padaria América">
           <img src="assets/img/poster-story-padaria.webp" width="540" height="960" loading="lazy" alt="">
           <span class="plus plus--play" aria-hidden="true"><span>+</span></span>
         </button>
-        <div class="vcard__txt">
-          <h3 class="vcard__t">CAPTAÇÃO DO DIA</h3>
-          <p>Padaria América.</p>
-        </div>
+        <h3 class="vcard__t">CAPTAÇÃO DO DIA</h3>
+        <p>Padaria América.</p>
       </article>
-
-      <article class="vcard rv">
-        <div class="vcard__media">
-          <img src="assets/img/senai-na-rua.webp" width="360" height="640" loading="lazy" alt="Capa da série Senai na Rua com o título sobre um outdoor">
-        </div>
-        <div class="vcard__txt">
-          <h3 class="vcard__t">SENAI NA RUA</h3>
-          <p>Entrevista para a série “Senai na Rua”, com produção de conteúdo e abordagem para vídeo.</p>
-          <p class="micro">O que é “fazer a boa”?</p>
-        </div>
+      <article class="vcard rv" role="listitem">
+        <div class="vcard__m"><img src="assets/img/senai-na-rua.webp" width="360" height="640" loading="lazy" alt="Capa da série Senai na Rua com o título sobre um outdoor"></div>
+        <h3 class="vcard__t">SENAI NA RUA</h3>
+        <p>Entrevista para a série “Senai na Rua”, com produção de conteúdo e abordagem para vídeo.</p>
       </article>
     </div>
+    <p class="micro vids__hint" aria-hidden="true">arraste para o lado →</p>
 
     <div class="outros">
-      <h3 class="ttl ttl--sm rv"><span class="nb"><span class="cap">O</span>utros</span><br><span class="l2">vídeos</span></h3>
+      <h3 class="ttl ttl--sm rv"><span class="nb"><span class="cap">O</span>utros</span> vídeos</h3>
       <ul class="outros__row" role="list">
-        <li class="rv"><button type="button" class="thumb" data-lightbox="assets/img/outro-video-3.webp" data-alt="Frame de vídeo com Camila Zanoncini para o Senai" aria-label="Ampliar frame: vídeo Senai"><img src="assets/img/outro-video-3.webp" width="400" height="711" loading="lazy" alt="Frame de vídeo com entrevistada em camiseta do Senai, com o nome Camila Zanoncini na tela"></button></li>
+        <li class="rv"><button type="button" class="thumb" data-lightbox="assets/img/outro-video-3.webp" data-alt="Frame de vídeo com entrevistada em camiseta do Senai" aria-label="Ampliar frame: vídeo Senai"><img src="assets/img/outro-video-3.webp" width="400" height="711" loading="lazy" alt="Frame de vídeo com entrevistada em camiseta do Senai, com o nome Camila Zanoncini na tela"></button></li>
         <li class="rv"><button type="button" class="thumb" data-lightbox="assets/img/outro-video-5.webp" data-alt="Frame de vídeo institucional" aria-label="Ampliar frame: vídeo institucional"><img src="assets/img/outro-video-5.webp" width="400" height="711" loading="lazy" alt="Frame de vídeo com mulher falando sentada à mesa, legenda 'eu faço parte do time financeiro'"></button></li>
         <li class="rv"><button type="button" class="thumb" data-lightbox="assets/img/outro-video-8.webp" data-alt="Frame de entrevista em evento" aria-label="Ampliar frame: entrevista em evento"><img src="assets/img/outro-video-8.webp" width="400" height="711" loading="lazy" alt="Frame de entrevista com Marcos Dybas da Natividade, vice-presidente do Sistema Fiep"></button></li>
         <li class="rv"><button type="button" class="thumb" data-lightbox="assets/img/outro-video-4.webp" data-alt="Frame de vídeo de ambiente" aria-label="Ampliar frame: vídeo de ambiente"><img src="assets/img/outro-video-4.webp" width="400" height="711" loading="lazy" alt="Frame de vídeo de uma mesa posta com arranjos em tons laranja, diante de janelas amplas"></button></li>
         <li class="rv"><button type="button" class="thumb" data-lightbox="assets/img/outro-video-7.webp" data-alt="Frame de vídeo A essência da Casa Conceito" aria-label="Ampliar frame: Casa Conceito"><img src="assets/img/outro-video-7.webp" width="400" height="711" loading="lazy" alt="Frame de vídeo com o texto 'A essência da Casa Conceito' sobre uma bancada"></button></li>
       </ul>
+      <p class="micro"><span class="ph-txt">[INSERIR LINKS DOS VÍDEOS COMPLETOS]</span></p>
     </div>
   </div>
 </section>
 
-<!-- ============ BASTIDORES ============ -->
-<section class="band band--off bastidores" aria-labelledby="bast-titulo">
-  <div class="wrap bast">
+<section class="band band--azul bast" aria-labelledby="bast-titulo">
+  <div class="wrap bast__g">
     <div class="bast__txt">
-      <h2 id="bast-titulo" class="ttl rv"><span class="nb"><span class="cap">A</span>lém</span><br><span class="l2">do feed</span></h2>
+      <h2 id="bast-titulo" class="ttl rv"><span class="nb"><span class="cap">B</span>astidores</span></h2>
       <p class="sub rv">Conteúdo também acontece no mundo real.</p>
       <p class="rv">Minha experiência com eventos me levou a desenvolver um olhar de Creator Mobile: identificar o que merece virar conteúdo, captar o momento certo e transformar a experiência em Stories, Reels e outros formatos em tempo real.</p>
-      <ul class="bast__words rv" role="list">
-        <li>Captação</li><li>Eventos</li><li>Gravações</li><li>Fotografia</li><li>Produção</li><li>Bastidores</li>
+      <ul class="pills rv" role="list">
+        <li class="pill pill--off">Captação</li><li class="pill pill--off">Eventos</li><li class="pill pill--off">Gravações</li><li class="pill pill--off">Fotografia</li><li class="pill pill--off">Produção</li>
       </ul>
     </div>
-    <div class="bast__grid">
-      <figure class="rv"><img src="assets/img/laura-perfil-camera.webp" width="900" height="1600" loading="lazy" alt="Laura de perfil, segurando a câmera e conferindo uma foto, em um terraço com paredes de vidro"></figure>
+    <div class="bast__photos">
       <figure class="rv"><img src="assets/img/bastidor-tripe.webp" width="900" height="1600" loading="lazy" alt="Bastidor de gravação: celular no tripé filmando uma mulher sentada à mesa de uma sala de reunião"></figure>
       <figure class="rv"><img src="assets/img/story-padaria.webp" width="720" height="1280" loading="lazy" alt="Celular na mão mostrando a galeria de fotos sobre uma mesa de café, com o texto 'captação do dia'">
         <button class="plus plus--edge" type="button" data-video="assets/video/story-padaria.mp4" data-poster="assets/img/poster-story-padaria.webp" aria-label="Assistir ao vídeo da captação na Padaria América"><span aria-hidden="true">+</span></button>
       </figure>
-      <figure class="rv"><img src="assets/img/laura-bastidor-camera.webp" width="900" height="1600" loading="lazy" alt="Laura de costas para a câmera, ajustando o equipamento em um espaço de evento com pessoas ao fundo"></figure>
+      <figure class="rv"><img src="assets/img/laura-bastidor-camera.webp" width="900" height="1600" loading="lazy" alt="Laura ajustando a câmera em um espaço de evento com paredes de vidro"></figure>
     </div>
   </div>
 </section>
 
-<!-- ============ 9. PROCESSO ============ -->
-<section class="band band--azul processo" id="processo" aria-labelledby="proc-titulo">
+<!-- ================= 9. PROCESSO ================= -->
+<section class="band band--off processo" id="processo" aria-labelledby="proc-titulo">
   <div class="wrap proc">
-    <ol class="proc__list" role="list">
-      <li class="pcard rv"><span class="pcard__n">1.</span><span class="pcard__t">Briefing &amp; Alinhamento</span></li>
-      <li class="pcard rv"><span class="pcard__n">2.</span><span class="pcard__t">Estratégia &amp; Planejamento</span></li>
-      <li class="pcard rv"><span class="pcard__n">3.</span><span class="pcard__t">Criação &amp; Produção</span></li>
-      <li class="pcard rv"><span class="pcard__n">4.</span><span class="pcard__t">Publicação &amp; Análise</span></li>
-    </ol>
-    <div class="proc__side">
-      <p class="micro rv">Toda história<br>merece um jeito<br>de ser contada.</p>
+    <div class="proc__head">
       <h2 id="proc-titulo" class="ttl ttl--xl rv"><span class="nb"><span class="cap">P</span>rocesso</span><br><span class="l2">criativo</span></h2>
-      <p class="micro rv">Gosto de estar perto do processo,<br>da ideia à execução.</p>
+      <p class="proc__sub vline rv">Gosto de estar perto do processo, da ideia à execução.</p>
     </div>
+    <ol class="steps" role="list">
+      <li class="step rv"><span class="step__n">1.</span><span class="step__t">Briefing &amp; Alinhamento</span></li>
+      <li class="step rv"><span class="step__n">2.</span><span class="step__t">Estratégia &amp; Planejamento</span></li>
+      <li class="step rv"><span class="step__n">3.</span><span class="step__t">Criação &amp; Produção</span></li>
+      <li class="step rv"><span class="step__n">4.</span><span class="step__t">Publicação &amp; Análise</span></li>
+    </ol>
   </div>
 </section>
 
-<!-- ============ 10. FERRAMENTAS ============ -->
-<section class="band band--off ferramentas" aria-labelledby="ferr-titulo">
-  <div class="wrap ferr">
+<!-- ================= 10. FERRAMENTAS ================= -->
+<section class="band band--azul ferr" aria-labelledby="ferr-titulo">
+  <div class="wrap ferr__g">
     <h2 id="ferr-titulo" class="ttl rv"><span class="nb"><span class="cap">F</span>erramentas</span></h2>
-    <ul class="ferr__list" role="list">
-      <li class="pill pill--azul rv">Instagram</li>
-      <li class="pill pill--azul rv">Meta Business Suite</li>
-      <li class="pill pill--azul rv">Canva</li>
-      <li class="pill pill--azul rv">LinkedIn</li>
-      <li class="pill pill--azul rv">Google Analytics</li>
-      <li class="pill pill--azul rv">Google Workspace</li>
-      <li class="pill pill--azul rv">CapCut</li>
-      <li class="pill pill--azul rv">WordPress</li>
-      <li class="pill pill--azul rv">Ferramentas de IA</li>
+    <ul class="pills pills--lg" role="list">
+      <li class="pill pill--off rv">Instagram</li>
+      <li class="pill pill--off rv">Meta Business Suite</li>
+      <li class="pill pill--off rv">Canva</li>
+      <li class="pill pill--off rv">LinkedIn</li>
+      <li class="pill pill--off rv">Google Analytics</li>
+      <li class="pill pill--off rv">Google Workspace</li>
+      <li class="pill pill--off rv">CapCut</li>
+      <li class="pill pill--off rv">WordPress</li>
+      <li class="pill pill--off rv">Ferramentas de IA</li>
     </ul>
   </div>
 </section>
 
-<!-- ============ 11. CONTATO ============ -->
-<section class="band band--azul contato" id="contato" aria-labelledby="cont-titulo">
-  <div class="wrap cont">
-    <div class="cont__left">
-      <figure class="polaroid cont__polaroid" data-tilt>
+<!-- ================= 11. CONTATO ================= -->
+<section class="band band--off arc contato" id="contato" aria-labelledby="cont-titulo">
+  <div class="wrap">
+    <div class="cont__top">
+      <h2 id="cont-titulo" class="ttl ttl--xl cont__ttl rv"><span class="nb"><span class="cap">V</span>amos</span><br><span class="l2">trabalhar</span><span class="script-w">juntos?</span></h2>
+      <figure class="polaroid cont__pola rv">
         <span class="polaroid__back" aria-hidden="true"></span>
         <span class="polaroid__front">
           <img src="assets/img/cta-retrato.webp" width="900" height="1350" loading="lazy" alt="Retrato de Laura Moro sorrindo, de camiseta branca, em fundo claro">
         </span>
         <img class="polaroid__clip" src="assets/img/prendedor.webp" width="300" height="260" alt="" aria-hidden="true">
-        <a class="plus plus--edge" href="#form" aria-label="Ir para o formulário"><span aria-hidden="true">+</span></a>
       </figure>
-      <h2 id="cont-titulo" class="ttl cont__ttl rv"><span class="nb"><span class="cap">V</span>amos</span><br><span class="l2">trabalhar</span><span class="script-word">juntos?</span></h2>
     </div>
+    <p class="cont__lead rv">Se você tem uma ideia, projeto ou marca que precisa de conteúdo, vamos conversar.</p>
 
-    <div class="cont__right">
-      <p class="cont__lead rv">Se você tem uma ideia, projeto ou marca que precisa de conteúdo, vamos conversar.</p>
+    <ul class="ccards" role="list">
+      <li class="rv"><a class="ccard" href="mailto:lauramoro325@gmail.com"><span class="micro">E-mail</span><span class="ccard__v">lauramoro325<wbr>@gmail.com</span><span class="ccard__go" aria-hidden="true">↗</span></a></li>
+      <li class="rv"><a class="ccard" href="https://linkedin.com/in/laura-moro-a968071a4" target="_blank" rel="noopener"><span class="micro">LinkedIn</span><span class="ccard__v">Laura Moro</span><span class="ccard__go" aria-hidden="true">↗</span></a></li>
+      <li class="rv"><a class="ccard" href="https://instagram.com/lauramoro_" target="_blank" rel="noopener"><span class="micro">Instagram</span><span class="ccard__v">@lauramoro_</span><span class="ccard__go" aria-hidden="true">↗</span></a></li>
+      <li data-whatsapp hidden><a class="ccard" href="#" target="_blank" rel="noopener"><span class="micro">WhatsApp</span><span class="ccard__v" data-whatsapp-label></span><span class="ccard__go" aria-hidden="true">↗</span></a></li>
+    </ul>
 
-      <form class="form rv" id="form" novalidate>
+    <div class="cont__form rv">
+      <div class="cont__form-side">
+        <h3 class="ttl ttl--sm"><span class="nb"><span class="cap">C</span>onta</span> pra mim</h3>
+        <p>Prefere escrever por aqui? Preencha e a mensagem chega pronta no seu e-mail para enviar.</p>
+      </div>
+      <form class="form" id="form" novalidate>
         <fieldset class="form__set">
           <legend class="micro">O que você precisa? <span>(opcional)</span></legend>
           <div class="chips">
@@ -730,15 +685,17 @@
             <label class="chip"><input type="checkbox" name="interesse" value="Ainda não sei"><span>Ainda não sei</span></label>
           </div>
         </fieldset>
+        <div class="form__row">
         <div class="field">
           <label for="f-nome">Seu nome</label>
-          <input id="f-nome" name="nome" type="text" autocomplete="name" required>
+          <input id="f-nome" name="nome" type="text" autocomplete="name" required aria-describedby="e-nome">
           <p class="field__err" id="e-nome" hidden>Conta pra mim como posso te chamar.</p>
         </div>
         <div class="field">
           <label for="f-email">Seu e-mail</label>
-          <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+          <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="e-email">
           <p class="field__err" id="e-email" hidden>Confere o e-mail? Parece que falta alguma coisa.</p>
+        </div>
         </div>
         <div class="field">
           <label for="f-marca">Marca, empresa ou projeto <span>(opcional)</span></label>
@@ -746,33 +703,25 @@
         </div>
         <div class="field">
           <label for="f-msg">Conta um pouco da sua ideia</label>
-          <textarea id="f-msg" name="mensagem" rows="4" required></textarea>
+          <textarea id="f-msg" name="mensagem" rows="7" required aria-describedby="e-msg"></textarea>
           <p class="field__err" id="e-msg" hidden>Escreve pelo menos uma frase sobre o projeto.</p>
         </div>
         <button class="btn btn--dark btn--big" type="submit">Enviar mensagem <span aria-hidden="true">→</span></button>
         <p class="form__ok" role="status" hidden>Abrimos seu e-mail com a mensagem pronta. É só enviar. Se nada abriu, escreva para <a href="mailto:lauramoro325@gmail.com">lauramoro325@gmail.com</a>.</p>
       </form>
-
-      <ul class="cont__links rv" role="list">
-        <li><a href="mailto:lauramoro325@gmail.com"><span class="micro">E-mail</span>lauramoro325@gmail.com</a></li>
-        <li><a href="https://linkedin.com/in/laura-moro-a968071a4" target="_blank" rel="noopener"><span class="micro">LinkedIn</span>linkedin.com/in/laura-moro</a></li>
-        <li><a href="https://instagram.com/lauramoro_" target="_blank" rel="noopener"><span class="micro">Instagram</span>instagram.com/lauramoro_</a></li>
-        <li><a href="https://linktr.ee/laura.moro" target="_blank" rel="noopener"><span class="micro">Linktree</span>linktr.ee/laura.moro</a></li>
-        <li data-whatsapp hidden><a href="#" target="_blank" rel="noopener"><span class="micro">WhatsApp</span><span data-whatsapp-label></span></a></li>
-      </ul>
     </div>
   </div>
 </section>
 </main>
 
-<!-- ============ 12. FOOTER ============ -->
-<footer class="band band--off foot">
+<!-- ================= 12. FOOTER ================= -->
+<footer class="band band--azul foot">
   <div class="wrap">
     <div class="foot__top">
       <div class="foot__brand">
-        <p class="foot__logo"><span class="cap">L</span>aura <span class="cap">M</span>oro</p>
         <p class="micro">Estrategista de Conteúdo | Creator Mobile</p>
         <p class="foot__tag">Conteúdo para contar histórias, criar conexões e deixar marcas.</p>
+        <a class="btn btn--dark" href="#contato">Vamos conversar</a>
       </div>
       <nav class="foot__col" aria-label="Rodapé">
         <p class="micro">Navegação</p>
@@ -791,19 +740,19 @@
         <a href="http://lattes.cnpq.br/7117428088453613" target="_blank" rel="noopener">Currículo Lattes</a>
       </div>
     </div>
+    <p class="foot__lock" aria-hidden="true"><span class="cap">L</span>AURA <span class="cap">M</span>ORO</p>
     <div class="foot__bot">
       <p>Curitiba · Paraná</p>
       <p>© <span data-year>2026</span> Laura Moro</p>
-      <a class="foot__up" href="#inicio">Voltar ao topo <span aria-hidden="true">↑</span></a>
+      <a href="#inicio">Voltar ao topo <span aria-hidden="true">↑</span></a>
     </div>
   </div>
 </footer>
 
-<a class="fab" href="#contato" aria-label="Vamos conversar" hidden>Vamos conversar</a>
+<a class="fab btn btn--dark" href="#contato" hidden>Vamos conversar</a>
 
-<!-- Modal de vídeo / imagem -->
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Visualização" hidden>
-  <button class="modal__close plus" type="button" aria-label="Fechar"><span aria-hidden="true">+</span></button>
+  <button class="modal__close plus is-open" type="button" aria-label="Fechar"><span aria-hidden="true">+</span></button>
   <div class="modal__body"></div>
 </div>
 
